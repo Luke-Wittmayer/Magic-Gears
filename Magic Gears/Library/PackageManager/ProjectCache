@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638300586136342606
-    m_Hash: 721017021
+      ticks: 638300596990466982
+    m_Hash: 2850356363
   m_LockFileStatus:
     m_FilePath: C:/Users/Luke/Documents/GitHub/Magic-Gears/Magic Gears/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638300586529543800
-    m_Hash: 2311458558
+      ticks: 638300596990466982
+    m_Hash: 3977217051
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:

@@ -21,7 +21,7 @@ public class AnimationStateController : MonoBehaviour
     {
 
         //Play animation if moving key is pressed
-        if (characterClass.direction.x == 0 && characterClass.direction.z == 0)
+        if (characterClass.direction.x == 0 && characterClass.direction.z == 0 || characterClass.canMove == false)
         {
             animator.SetBool("IsWalking", false);
         }

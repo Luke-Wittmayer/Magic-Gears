@@ -11593,6 +11593,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 161d1dbc44cf40c4d87ef77480feb98e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerPrefab: {fileID: 210673183}
+  enemyPrefab: {fileID: 1637769713}
+  playerBattleStation: {fileID: 0}
+  enemyBattleStation: {fileID: 0}
   state: 0
 --- !u!4 &1891562965
 Transform:

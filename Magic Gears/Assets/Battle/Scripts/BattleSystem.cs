@@ -9,28 +9,36 @@ public class BattleSystem : MonoBehaviour
     public GameObject playerPrefab;
     public GameObject enemyPrefab;
 
-    public Transform playerBattleStation;
-    public Transform enemyBattleStation;
+    // public Transform playerBattleStation;
+    // public Transform enemyBattleStation;
 
-    Unit playerUnit;
-    Unit enemyUnit;
-    Unit target;
+    public Unit playerUnit;
+    public Unit enemyUnit;
+
     public BattleState state;
+
+    public BattleHUD playerHUD;
 
     // Start is called before the first frame update
     void Start()
     {
         state = BattleState.START;
+        playerPrefab.SetActive(true);
         SetUpBattle();
     }
 
     void SetUpBattle()
     {
-        GameObject playerGO = Instantiate(playerPrefab, playerBattleStation);
-        playerUnit = playerGO.GetComponent<Unit>();
+        // GameObject playerGO = Instantiate(playerPrefab);
+        // GameObject enemyGO = Instantiate(enemyPrefab);
 
-        GameObject enemyGO = Instantiate(enemyPrefab, enemyBattleStation);
-        enemyUnit = enemyGO.GetComponent<Unit>();
+        // playerGO.SetActive(true);
+        // enemyGO.SetActive(true);
+
+        playerUnit = playerPrefab.GetComponent<Unit>();
+        enemyUnit = enemyPrefab.GetComponent<Unit>();
+
+        playerHUD.SetHUD(playerUnit);
 
         state = BattleState.PLAYERTURN;
         PlayerTurn();
@@ -38,9 +46,11 @@ public class BattleSystem : MonoBehaviour
 
     void PlayerBasicAttack(){
         // Damage the enemy
-        bool isDead = target.TakeDamage(playerUnit.damage);
+        bool isDead = enemyUnit.TakeDamage(playerUnit.damage);
+        playerHUD.SetMana(2);
 
-        Debug.Log("The attack is successful on " + target.unitName + "!");
+        Debug.Log("The attack is successful on " + enemyUnit.unitName + "!");
+        Debug.Log(enemyUnit.unitName + " now has " + enemyUnit.currentHP + " remaining.");
 
         if(isDead){
             state = BattleState.WON;
@@ -76,18 +86,18 @@ public class BattleSystem : MonoBehaviour
         }
     }
 
-    public void SelectTarget(Unit selection){
-        Debug.Log("Clicked!");
-        if( state != BattleState.TARGETSELECT){
-            Debug.Log("Stopping!");
-            Debug.Log(state);
-            return;
-        } else {
-            Debug.Log("Continuing!");
-            target = selection;
-            PlayerBasicAttack();
-        }
-    }
+    // public void SelectTarget(Unit selection){
+    //     Debug.Log("Clicked!");
+    //     if( state != BattleState.TARGETSELECT){
+    //         Debug.Log("Stopping!");
+    //         Debug.Log(state);
+    //         return;
+    //     } else {
+    //         Debug.Log("Continuing!");
+    //         //target = selection;
+    //         PlayerBasicAttack();
+    //     }
+    // }
 
     void PlayerTurn()
     {
@@ -99,7 +109,7 @@ public class BattleSystem : MonoBehaviour
             return;
         }
         Debug.Log("Initiating Attack!");
-        state = BattleState.TARGETSELECT;
+        PlayerBasicAttack();
     }
 
 

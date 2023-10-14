@@ -10,12 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4812580356085195889}
   - component: {fileID: 8376778103839080526}
-  - component: {fileID: 6764411452183132353}
-  - component: {fileID: 1926722951010823368}
-  - component: {fileID: -9156588515388835}
+  - component: {fileID: -4273175281978280611}
+  - component: {fileID: 6460584701829901146}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -52,7 +51,30 @@ MonoBehaviour:
   damage: 2
   maxHP: 10
   currentHP: 10
---- !u!114 &6764411452183132353
+  maxMana: 0
+  currentMana: 0
+--- !u!95 &-4273175281978280611
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7527366076258539603}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 5961b834d0b54fc9828d7c3ef7ac8279, type: 3}
+  m_Controller: {fileID: 9100000, guid: 4198fa9b9a5842c0a5e4559b286248eb, type: 2}
+  m_CullingMode: 1
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6460584701829901146
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -61,75 +83,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7527366076258539603}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Script: {fileID: 11500000, guid: b0e9b746bba7cc747b18c5fa628bd67f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 4
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 630911809177100653, guid: 5ad427cd75b3a1e45a492ae1da30be94, type: 3}
-          m_TargetAssemblyTypeName: BattleSystem, Assembly-CSharp
-          m_MethodName: SelectTarget
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 8376778103839080526}
-            m_ObjectArgumentAssemblyTypeName: Unit, Assembly-CSharp
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
---- !u!65 &1926722951010823368
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7527366076258539603}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1.3624847, y: 1.3214357, z: 1}
-  m_Center: {x: 0.009517401, y: 0.6033354, z: 0}
---- !u!114 &-9156588515388835
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7527366076258539603}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0913009667a8e4d40aeb211dbef00ac1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  definedButton: {fileID: 7527366076258539603}
-  OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 630911809177100653, guid: 5ad427cd75b3a1e45a492ae1da30be94, type: 3}
-        m_TargetAssemblyTypeName: BattleSystem, Assembly-CSharp
-        m_MethodName: SelectTarget
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 8376778103839080526}
-          m_ObjectArgumentAssemblyTypeName: Unit, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  Enemy: {fileID: 0}
 --- !u!1001 &160398328666172945
 PrefabInstance:
   m_ObjectHideFlags: 0

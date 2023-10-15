@@ -5,6 +5,9 @@ using UnityEngine;
 public class PlayerAnimationController : MonoBehaviour
 {
     private const string BASIC_ATTACK = "BasicAttack";
+    private const string MANA_STEAL = "StealManaAttack";
+    private const string SPEND_MANA = "SpendManaAttack";
+    private const string DAMAGE = "GetHit";
     public GameObject pistol;
     public GameObject rifle;
 
@@ -17,14 +20,21 @@ public class PlayerAnimationController : MonoBehaviour
     }
 
     public void BasicAttack() {
-        pistol.SetActive(false);
-        rifle.SetActive(true);
+        pistol.SetActive(true);
+        rifle.SetActive(false);
         animator.SetTrigger(BASIC_ATTACK);
-        // pistol.SetActive(true);
-        // rifle.SetActive(false);
+    }
+
+    public void ManaStealAttack() {
+        animator.SetTrigger(MANA_STEAL);
+    }
+
+    public void SpendManaAttack() {
+        animator.SetTrigger(SPEND_MANA);
     }
 
     public void Damaged(){
+        animator.SetTrigger(DAMAGE);
     }
 }
 

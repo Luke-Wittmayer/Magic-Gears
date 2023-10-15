@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyAnimationController : MonoBehaviour
 {
     private const string DAMAGED = "GetHit";
+    private const string BASIC_ATTACK = "BasicAttack";
     [SerializeField] private GameObject Enemy;
     private Animator animator;
 
@@ -13,9 +14,8 @@ public class EnemyAnimationController : MonoBehaviour
         
     }
 
-    public void BasicAttack() {
-        // pistol.SetActive(true);
-        // rifle.SetActive(false);
+    public void EnemyBasicAttack() {
+        animator.SetTrigger(BASIC_ATTACK);
     }
 
     public void Damaged(){

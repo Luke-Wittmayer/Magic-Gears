@@ -23,4 +23,11 @@ public class Unit : MonoBehaviour
         }
     }
 
+    public void UpdateMana(int mana){
+        currentMana += mana;
+        if(currentMana < 0){
+            currentMana = 0;
+        }
+    }
+
 }

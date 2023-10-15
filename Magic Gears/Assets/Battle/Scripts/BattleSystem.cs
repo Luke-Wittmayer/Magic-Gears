@@ -14,6 +14,8 @@ public class BattleSystem : MonoBehaviour
 
     public Unit playerUnit;
     public Unit enemyUnit;
+    private PlayerAnimationController playerAnimator;
+    private EnemyAnimationController enemyAnimator;
 
     public BattleState state;
 
@@ -37,6 +39,8 @@ public class BattleSystem : MonoBehaviour
 
         playerUnit = playerPrefab.GetComponent<Unit>();
         enemyUnit = enemyPrefab.GetComponent<Unit>();
+        playerAnimator = playerPrefab.GetComponent<PlayerAnimationController>();
+        enemyAnimator = enemyPrefab.GetComponent<EnemyAnimationController>();
 
         playerHUD.SetHUD(playerUnit);
 
@@ -47,7 +51,52 @@ public class BattleSystem : MonoBehaviour
     void PlayerBasicAttack(){
         // Damage the enemy
         bool isDead = enemyUnit.TakeDamage(playerUnit.damage);
+        playerUnit.UpdateMana(2);
         playerHUD.SetMana(2);
+
+        Debug.Log("The attack is successful on " + enemyUnit.unitName + "!");
+        Debug.Log(enemyUnit.unitName + " now has " + enemyUnit.currentHP + " remaining.");
+
+        if(isDead){
+            state = BattleState.WON;
+            Debug.Log("You win!");
+            EndBattle();
+        } else 
+        {
+            state = BattleState.ENEMYTURN;
+            EnemyTurn();
+        }
+    }
+
+
+    void PlayerStealManaAttack(){
+        // Damage the enemy
+        bool isDead = enemyUnit.TakeDamage(playerUnit.damage/2);
+        playerUnit.UpdateMana(4);
+        playerHUD.SetMana(4);
+
+        Debug.Log("The attack is successful on " + enemyUnit.unitName + "!");
+        Debug.Log(enemyUnit.unitName + " now has " + enemyUnit.currentHP + " remaining.");
+
+        if(isDead){
+            state = BattleState.WON;
+            Debug.Log("You win!");
+            EndBattle();
+        } else 
+        {
+            state = BattleState.ENEMYTURN;
+            EnemyTurn();
+        }
+    }
+
+    void PlayerSpendManaAttack(){
+        if(playerUnit.currentMana < 4){
+            return;
+        }
+        // Damage the enemy
+        bool isDead = enemyUnit.TakeDamage(playerUnit.damage*2);
+        playerUnit.UpdateMana(-4);
+        playerHUD.SetMana(-4);
 
         Debug.Log("The attack is successful on " + enemyUnit.unitName + "!");
         Debug.Log(enemyUnit.unitName + " now has " + enemyUnit.currentHP + " remaining.");
@@ -65,7 +114,8 @@ public class BattleSystem : MonoBehaviour
 
     void EnemyTurn(){
         Debug.Log("Enemy unit attacks!");
-
+        enemyAnimator.EnemyBasicAttack();
+        playerAnimator.Damaged();
         bool isDead = playerUnit.TakeDamage(enemyUnit.damage);
 
         if(isDead){
@@ -110,6 +160,20 @@ public class BattleSystem : MonoBehaviour
         }
         Debug.Log("Initiating Attack!");
         PlayerBasicAttack();
+    }
+
+    public void OnStealManaButton(){
+        if(state != BattleState.PLAYERTURN){
+            return;
+        }
+        PlayerStealManaAttack();
+    }
+
+    public void OnSpendManaButton(){
+        if(state != BattleState.PLAYERTURN){
+            return;
+        }
+        PlayerSpendManaAttack();
     }
 
 

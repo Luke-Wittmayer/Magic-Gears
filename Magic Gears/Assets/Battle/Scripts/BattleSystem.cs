@@ -19,7 +19,7 @@ public class BattleSystem : MonoBehaviour
 
     public BattleState state;
 
-    public BattleHUD playerHUD;
+    public BattleHUD HUD;
 
     // Start is called before the first frame update
     void Start()
@@ -42,7 +42,7 @@ public class BattleSystem : MonoBehaviour
         playerAnimator = playerPrefab.GetComponent<PlayerAnimationController>();
         enemyAnimator = enemyPrefab.GetComponent<EnemyAnimationController>();
 
-        playerHUD.SetHUD(playerUnit);
+        HUD.SetupHUD();
 
         state = BattleState.PLAYERTURN;
         PlayerTurn();
@@ -52,7 +52,7 @@ public class BattleSystem : MonoBehaviour
         // Damage the enemy
         bool isDead = enemyUnit.TakeDamage(playerUnit.damage);
         playerUnit.UpdateMana(2);
-        playerHUD.SetMana(2);
+        HUD.SetMana(2);
 
         Debug.Log("The attack is successful on " + enemyUnit.unitName + "!");
         Debug.Log(enemyUnit.unitName + " now has " + enemyUnit.currentHP + " remaining.");
@@ -73,7 +73,7 @@ public class BattleSystem : MonoBehaviour
         // Damage the enemy
         bool isDead = enemyUnit.TakeDamage(playerUnit.damage/2);
         playerUnit.UpdateMana(4);
-        playerHUD.SetMana(4);
+        HUD.SetMana(4);
 
         Debug.Log("The attack is successful on " + enemyUnit.unitName + "!");
         Debug.Log(enemyUnit.unitName + " now has " + enemyUnit.currentHP + " remaining.");
@@ -96,7 +96,7 @@ public class BattleSystem : MonoBehaviour
         // Damage the enemy
         bool isDead = enemyUnit.TakeDamage(playerUnit.damage*2);
         playerUnit.UpdateMana(-4);
-        playerHUD.SetMana(-4);
+        HUD.SetMana(-4);
 
         Debug.Log("The attack is successful on " + enemyUnit.unitName + "!");
         Debug.Log(enemyUnit.unitName + " now has " + enemyUnit.currentHP + " remaining.");

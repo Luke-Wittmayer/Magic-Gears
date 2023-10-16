@@ -20,6 +20,9 @@ public class CharacterClass : MonoBehaviour
     [SerializeField] private Transform cameraTransform;
 
     public Vector3 direction = new Vector3(0, 0, 0); //Movement direction. Made public for the conversations and animation classes
+
+    [SerializeField] public int levelCompleted = 0;
+
     //----------------------------------------------------------------------------------------------------------------------------
 
     void Start()
@@ -58,7 +61,14 @@ public class CharacterClass : MonoBehaviour
             moveSpeed = originalMoveSpeed;
         }
 
-        direction = Quaternion.AngleAxis(cameraTransform.rotation.eulerAngles.y, Vector3.up) * direction;
+        if (ch != null)
+        {
+            direction = Quaternion.AngleAxis(cameraTransform.rotation.eulerAngles.y, Vector3.up) * direction;
+        }
+        else
+        {
+            ch = GetComponent<CharacterController>();
+        }
 
         ch.Move(direction);
 

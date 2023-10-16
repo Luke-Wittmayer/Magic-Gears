@@ -52,7 +52,8 @@ public class BattleSystem : MonoBehaviour
         // Damage the enemy
         bool isDead = enemyUnit.TakeDamage(playerUnit.damage);
         playerUnit.UpdateMana(2);
-        HUD.SetMana(2);
+        HUD.SetMana(playerUnit.currentMana);
+        HUD.SetEnemyHealth(enemyUnit.currentHP);
 
         Debug.Log("The attack is successful on " + enemyUnit.unitName + "!");
         Debug.Log(enemyUnit.unitName + " now has " + enemyUnit.currentHP + " remaining.");
@@ -73,7 +74,8 @@ public class BattleSystem : MonoBehaviour
         // Damage the enemy
         bool isDead = enemyUnit.TakeDamage(playerUnit.damage/2);
         playerUnit.UpdateMana(4);
-        HUD.SetMana(4);
+        HUD.SetMana(playerUnit.currentMana);
+        HUD.SetEnemyHealth(enemyUnit.currentHP);
 
         Debug.Log("The attack is successful on " + enemyUnit.unitName + "!");
         Debug.Log(enemyUnit.unitName + " now has " + enemyUnit.currentHP + " remaining.");
@@ -96,7 +98,8 @@ public class BattleSystem : MonoBehaviour
         // Damage the enemy
         bool isDead = enemyUnit.TakeDamage(playerUnit.damage*2);
         playerUnit.UpdateMana(-4);
-        HUD.SetMana(-4);
+        HUD.SetMana(playerUnit.currentMana);
+        HUD.SetEnemyHealth(enemyUnit.currentHP);
 
         Debug.Log("The attack is successful on " + enemyUnit.unitName + "!");
         Debug.Log(enemyUnit.unitName + " now has " + enemyUnit.currentHP + " remaining.");
@@ -117,6 +120,7 @@ public class BattleSystem : MonoBehaviour
         enemyAnimator.EnemyBasicAttack();
         playerAnimator.Damaged();
         bool isDead = playerUnit.TakeDamage(enemyUnit.damage);
+        HUD.SetPlayerHealth(playerUnit.currentHP);
 
         if(isDead){
             state = BattleState.LOST;

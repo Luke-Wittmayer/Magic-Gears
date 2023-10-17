@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44805712, g: 0.49806666, b: 0.57552564, a: 1}
+  m_IndirectSpecularColor: {r: 0.44805646, g: 0.49806583, b: 0.5755247, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4289,6 +4289,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbf07ef48a1a6034996617272f889dc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &491988523 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3540446522646125547, guid: 0eddd52c5f3a8aa49ad8843e547b8584, type: 3}
+  m_PrefabInstance: {fileID: 118606314}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 491988520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ec14fbb9b227c4489fb72e750c7197c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &492159850
 GameObject:
   m_ObjectHideFlags: 0
@@ -5538,6 +5549,7 @@ MonoBehaviour:
   playerHealth: {fileID: 815158870}
   enemyHealth: {fileID: 921612186}
   enemyUnit: {fileID: 113162791}
+  playerUnit: {fileID: 491988523}
 --- !u!224 &638197519
 RectTransform:
   m_ObjectHideFlags: 0

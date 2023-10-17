@@ -9,6 +9,7 @@ public class BattleHUD : MonoBehaviour
     public Image playerHealth;
     public Image enemyHealth;
     public Unit enemyUnit;
+    public Unit playerUnit;
 
     public void SetupHUD(){
         manaFill.fillAmount = 0f;
@@ -19,12 +20,12 @@ public class BattleHUD : MonoBehaviour
 
     public void SetMana(int mana){
         float manaf = (float)mana;
-        manaFill.fillAmount = manaf/10;
+        manaFill.fillAmount = manaf/playerUnit.maxMana;
     }
 
     public void SetPlayerHealth(int health) {
         float healthf = (float)health;
-        playerHealth.fillAmount = healthf/10;
+        playerHealth.fillAmount = healthf/playerUnit.maxHP;
     }
 
     public void SetEnemyHealth(int health) {

@@ -21,7 +21,7 @@ public class SceneChange : MonoBehaviour
     {
         if(level == 1)
         {
-            SceneManager.LoadScene("Hub_Update3");
+            SceneManager.LoadScene("10_15_hub_design");
         }
         else if (level == 2)
         {

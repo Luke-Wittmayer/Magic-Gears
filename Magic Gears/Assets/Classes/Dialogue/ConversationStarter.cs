@@ -61,7 +61,6 @@ public class ConversationStarter : MonoBehaviour
         {
             if (characterClass != null)
             {
-                Debug.Log("NAME IS:" + ConversationManager.Instance);
                 if (Input.GetKeyDown(KeyCode.Mouse0) && !ConversationManager.Instance.IsConversationActive && !imageIsActive)
                 {
                     //Start conversation and stop player from moving

@@ -5,22 +5,26 @@ using UnityEngine;
 public class ShowAlly : MonoBehaviour
 {
     // Used to know when to show the ally according to the character level
-    CharacterClass characterClass;
-    bool activated = false;
+    [SerializeField] CharacterClass characterClass;
+    bool activated = true;
 
     [SerializeField] int levelToUnlock;
-    public GameObject characterGameObject; // Reference to the character GameObject
+    [SerializeField] private GameObject characterGameObject; // Reference to the character GameObject
 
     // Start is called before the first frame update
     void Start()
     {
         // Make sure to check if the characterGameObject is not null before using it
-        if (characterGameObject != null)
+        if (levelToUnlock > characterClass.levelCompleted)
         {
-            Debug.Log("Reaches this point");
+            Debug.Log("TESTING" + characterClass.levelCompleted + "    " + levelToUnlock);
             characterGameObject.SetActive(false);
         }
-        characterClass = GetComponent<CharacterClass>();
+        else
+        {
+            Debug.Log("ELSE TESTING" + characterClass.levelCompleted + "    " + levelToUnlock);
+            characterGameObject.SetActive(true);
+        }
     }
 
     // Update is called once per frame
@@ -28,20 +32,4 @@ public class ShowAlly : MonoBehaviour
     {
     }
 
-    public void ShowInHub()
-    {
-        // Activate the character GameObject after defeating the level
-        if (activated || characterGameObject == null)
-        {
-            Debug.Log("Reaches this point");
-            return;
-        }
-
-        if (characterClass.levelCompleted >= levelToUnlock)
-        {
-            activated = true;
-            characterGameObject.SetActive(true);
-        }
-        return;
-    }
 }

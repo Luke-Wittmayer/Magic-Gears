@@ -7,6 +7,8 @@ public class CharacterClass : MonoBehaviour
 {
     //Variables:
     //----------------------------------------------------------------------------------------------------------------------------
+    public bool canMove; // Used to stop player from moving when talking to an NPC. Set to public so that the NPC class can set it to false and true later
+
     [SerializeField] float moveSpeed;
     private float originalMoveSpeed;
     [SerializeField] float twoKeysPressed; //Adjust the speed of the character when two keys are pressed at the same time
@@ -15,19 +17,28 @@ public class CharacterClass : MonoBehaviour
     [SerializeField] private float smoothTime = 0.05f; //Used to make a more smooth rotation when moving into different directions
     private float currentVelocity;
 
-    public Vector3 direction = new Vector3(0, 0, 0); //Movement direction
+    [SerializeField] private Transform cameraTransform;
+
+    public Vector3 direction = new Vector3(0, 0, 0); //Movement direction. Made public for the conversations and animation classes
+
+    [SerializeField] public int levelCompleted = 0;
+
     //----------------------------------------------------------------------------------------------------------------------------
 
     void Start()
     {
         //Initialize variables
         originalMoveSpeed = moveSpeed; // Store the original moveSpeed
+        canMove = true;
         ch = GetComponent<CharacterController>();
     }
 
     void Update()
     {
-        MoveCharacter();
+        if (canMove)
+        {
+            MoveCharacter();
+        }
 
 
     }
@@ -50,6 +61,15 @@ public class CharacterClass : MonoBehaviour
             moveSpeed = originalMoveSpeed;
         }
 
+        if (ch != null)
+        {
+            direction = Quaternion.AngleAxis(cameraTransform.rotation.eulerAngles.y, Vector3.up) * direction;
+        }
+        else
+        {
+            ch = GetComponent<CharacterController>();
+        }
+
         ch.Move(direction);
 
         RotateInMovement();
@@ -67,6 +87,18 @@ public class CharacterClass : MonoBehaviour
             var targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
             var angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref currentVelocity, smoothTime);
             transform.rotation = Quaternion.Euler(0.0f, angle, 0.0f);
+        }
+    }
+
+    private void OnApplicationFocus(bool focus)
+    {
+        if (focus)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.None;
         }
     }
 }

@@ -4,13 +4,13 @@ fetchPreview = true
 defaultFlags = 0
 keepOpen = false
 queryFolder = "Assets"
-onBoardingDoNotAskAgain = false
+onBoardingDoNotAskAgain = true
 showPackageIndexes = false
 showStatusBar = false
 scopes = {
-	"last_search.3BE40471" = "colli"
+	"last_search.3BE40471" = "canvas"
 	"OpenInspectorPreview.3BE40471" = "0"
-	"currentGroup.3BE40471" = "settings"
+	"currentGroup.3BE40471" = "all"
 }
 providers = {
 	packages = {

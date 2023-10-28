@@ -6,18 +6,21 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Main Menu.unity
+    path: Assets/Scenes/Menu/Main Menu.unity
     guid: 49588bca5bb6ce94d8d84bdeb999859d
   - enabled: 1
-    path: Assets/Scenes/10_15_hub_design.unity
+    path: Assets/Scenes/Hub/Hub.unity
     guid: 070f31db63ab6d54682f3318ff2eedd6
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/Scenes/Combat Scene - Luke.unity
+    path: Assets/Scenes/Combats/Combat Scene - Luke.unity
     guid: 9c4f5f318f4a8df4b8f1f876480759c6
   - enabled: 1
-    path: Assets/Scenes/Hub_Update3.unity
+    path: Assets/Scenes/Hub/OLD_Hub.unity
     guid: 807ece4d5114a424fbc1e1ac8f3537b0
+  - enabled: 1
+    path: Assets/Scenes/Dialogues/Dialogue1.1.unity
+    guid: 5f5ba2c47fb35a942bdc2b09a2eb056c
   m_configObjects: {}

@@ -48,7 +48,9 @@ public class BattleSystem : MonoBehaviour
         PlayerTurn();
     }
 
-    IEnumerator PlayerBasicAttack(){
+    IEnumerator DPSBasicAttack(){
+        // Set enemy turn to prevent spam clicking
+        state = BattleState.ENEMYTURN;
         // Damage the enemy
         playerAnimator.BasicAttack();
         playerUnit.UpdateMana(2);
@@ -68,7 +70,6 @@ public class BattleSystem : MonoBehaviour
         } else 
         {
             if(playerAnimator.UltimateState == 0){
-                state = BattleState.ENEMYTURN;
                 StartCoroutine(EnemyTurn());
             }else {
                 PlayerTurn();
@@ -77,7 +78,9 @@ public class BattleSystem : MonoBehaviour
     }
 
 
-    void PlayerStealManaAttack(){
+    void DPSStealManaAttack(){
+        // Set enemy turn to prevent spam clicking
+        state = BattleState.ENEMYTURN;
         // Damage the enemy
         playerAnimator.ManaStealAttack();
         playerUnit.UpdateMana(4);
@@ -104,7 +107,9 @@ public class BattleSystem : MonoBehaviour
         }
     }
 
-    IEnumerator PlayerSpendManaAttack(){
+    IEnumerator DPSSpendManaAttack(){
+        // Set enemy turn to prevent spam clicking
+        state = BattleState.ENEMYTURN;
         if(playerUnit.currentMana < 4){
             yield break;
         }
@@ -135,7 +140,9 @@ public class BattleSystem : MonoBehaviour
         }
     }
 
-        IEnumerator PlayerUltimateAttack(){
+        IEnumerator DPSUltimateAttack(){
+        // Set enemy turn to prevent spam clicking
+        state = BattleState.ENEMYTURN;
         if(playerUnit.currentMana < 10){
             yield break;
         }
@@ -189,51 +196,39 @@ public class BattleSystem : MonoBehaviour
         }
     }
 
-    // public void SelectTarget(Unit selection){
-    //     Debug.Log("Clicked!");
-    //     if( state != BattleState.TARGETSELECT){
-    //         Debug.Log("Stopping!");
-    //         Debug.Log(state);
-    //         return;
-    //     } else {
-    //         Debug.Log("Continuing!");
-    //         //target = selection;
-    //         PlayerBasicAttack();
-    //     }
-    // }
-
     void PlayerTurn()
     {
+        Debug.Log("Player turn!");
+        state = BattleState.PLAYERTURN;
     }
 
-    public void OnBasicAttackButton()
+    public void OnAtkOne()
     {
         if (state != BattleState.PLAYERTURN){
             return;
         }
-        Debug.Log("Initiating Attack!");
-        StartCoroutine(PlayerBasicAttack());
+        StartCoroutine(DPSBasicAttack());
     }
 
-    public void OnStealManaButton(){
+    public void OnAtkTwo(){
         if(state != BattleState.PLAYERTURN){
             return;
         }
-        PlayerStealManaAttack();
+        StartCoroutine(DPSSpendManaAttack());
     }
 
-    public void OnSpendManaButton(){
+    public void OnAtkThree(){
         if(state != BattleState.PLAYERTURN){
             return;
         }
-        StartCoroutine(PlayerSpendManaAttack());
+        DPSStealManaAttack();
     }
 
-    public void OnUltimateAttack(){
+    public void OnAtkFour(){
         if(state != BattleState.PLAYERTURN){
             return;
         }
-        StartCoroutine(PlayerUltimateAttack());
+        StartCoroutine(DPSUltimateAttack());
     }
 
 

@@ -108,11 +108,11 @@ public class BattleSystem : MonoBehaviour
     }
 
     IEnumerator DPSSpendManaAttack(){
-        // Set enemy turn to prevent spam clicking
-        state = BattleState.ENEMYTURN;
         if(playerUnit.currentMana < 4){
             yield break;
         }
+        // Set enemy turn to prevent spam clicking
+        state = BattleState.ENEMYTURN;
         // Damage the enemy
         bool isDead = enemyUnit.TakeDamage(playerUnit.damage*2);
         playerAnimator.SpendManaAttack();
@@ -141,11 +141,11 @@ public class BattleSystem : MonoBehaviour
     }
 
         IEnumerator DPSUltimateAttack(){
-        // Set enemy turn to prevent spam clicking
-        state = BattleState.ENEMYTURN;
         if(playerUnit.currentMana < 10){
             yield break;
         }
+        // Set enemy turn to prevent spam clicking
+        state = BattleState.ENEMYTURN;
         // Damage the enemy
         bool isDead = enemyUnit.TakeDamage(playerUnit.damage*2);
         playerAnimator.UltimateAttack();

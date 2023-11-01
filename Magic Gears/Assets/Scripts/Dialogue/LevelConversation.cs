@@ -55,5 +55,46 @@ public class LevelConversation : MonoBehaviour
         {
             SceneManager.LoadScene("Main Menu");
         }
+        else if (teleportTo == 3)
+        {
+            SceneManager.LoadScene("Hub");
+        }
+        else if (teleportTo == 4)
+        {
+            SceneManager.LoadScene("Main Menu");
+        }
+        else if (teleportTo == 5)
+        {
+            SceneManager.LoadScene("Hub");
+        }
+        else if (teleportTo == 6)
+        {
+            SceneManager.LoadScene("Main Menu");
+        }
+        else if (teleportTo == 7)
+        {
+            SceneManager.LoadScene("Hub");
+        }
+        else if (teleportTo == 8)
+        {
+            SceneManager.LoadScene("Main Menu");
+        }
+        else if (teleportTo == 9)
+        {
+            SceneManager.LoadScene("Hub");
+        }
+        else if (teleportTo == 10)
+        {
+            SceneManager.LoadScene("Main Menu");
+        }
+        else if (teleportTo == 11)
+        {
+            SceneManager.LoadScene("Hub");
+        }
+        else if (teleportTo == 12)
+        {
+            SceneManager.LoadScene("Main Menu");
+        }
+
     }
 }

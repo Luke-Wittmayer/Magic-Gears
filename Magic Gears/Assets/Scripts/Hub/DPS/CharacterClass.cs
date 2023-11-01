@@ -27,10 +27,16 @@ public class CharacterClass : MonoBehaviour
 
     void Start()
     {
+        //TESTING LINES. NOTES: WHEN COMPLITING A WHOLE WAVE, WRITE IN THE WIN CONDITION THE TWO PLAYERPREFS LINES SHOWN BELOW TO UPDATE THE CURRENTLEVEL VALUE INSIDE THE HUB!!!!
+        PlayerPrefs.SetInt("Level", 3);
+        PlayerPrefs.Save();
         //Initialize variables
         originalMoveSpeed = moveSpeed; // Store the original moveSpeed
         canMove = true;
         ch = GetComponent<CharacterController>();
+        if(levelCompleted <= PlayerPrefs.GetInt("Level")){
+            levelCompleted = PlayerPrefs.GetInt("Level");
+        }
     }
 
     void Update()

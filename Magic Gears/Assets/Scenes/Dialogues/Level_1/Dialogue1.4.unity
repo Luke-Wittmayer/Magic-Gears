@@ -8403,7 +8403,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   conversation: {fileID: 1587082711}
-  teleportTo: 3
+  teleportTo: 4
 --- !u!4 &1587082713
 Transform:
   m_ObjectHideFlags: 0

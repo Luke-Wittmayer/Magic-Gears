@@ -21,6 +21,18 @@ EditorBuildSettings:
     path: Assets/Scenes/Hub/OLD_Hub.unity
     guid: 807ece4d5114a424fbc1e1ac8f3537b0
   - enabled: 1
-    path: Assets/Scenes/Dialogues/Dialogue1.1.unity
+    path: Assets/Scenes/Dialogues/Level_1/Dialogue1.1.unity
     guid: 5f5ba2c47fb35a942bdc2b09a2eb056c
+  - enabled: 1
+    path: Assets/Scenes/Dialogues/Level_1/Dialogue1.2.unity
+    guid: 6dfa9aaac2c67bb419bf1e4c42f09765
+  - enabled: 1
+    path: Assets/Scenes/Dialogues/Level_1/Dialogue1.3.unity
+    guid: b8083c22bbfc3c941b43c1144fd9264e
+  - enabled: 1
+    path: Assets/Scenes/Dialogues/Level_1/Dialogue1.4.unity
+    guid: 507e4e28516b7b1469312a45335d0384
+  - enabled: 1
+    path: Assets/Scenes/Dialogues/Level_2/Dialogue2.1.unity
+    guid: bf316c0c3593e98418526eea2516b0ec
   m_configObjects: {}

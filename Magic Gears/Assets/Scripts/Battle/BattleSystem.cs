@@ -54,7 +54,7 @@ public class BattleSystem : MonoBehaviour
         // Damage the enemy
         playerAnimator.BasicAttack();
         playerUnit.UpdateMana(2);
-        HUD.SetMana(playerUnit.currentMana);
+        HUD.SetPlayerMana(playerUnit.currentMana);
         yield return new WaitForSeconds(.5f);
         bool isDead = enemyUnit.TakeDamage(playerUnit.damage);
         HUD.SetEnemyHealth(enemyUnit.currentHP);
@@ -85,7 +85,7 @@ public class BattleSystem : MonoBehaviour
         playerAnimator.ManaStealAttack();
         playerUnit.UpdateMana(4);
         bool isDead = enemyUnit.TakeDamage(playerUnit.damage/2);
-        HUD.SetMana(playerUnit.currentMana);
+        HUD.SetPlayerMana(playerUnit.currentMana);
         HUD.SetEnemyHealth(enemyUnit.currentHP);
         enemyAnimator.Damaged();
 
@@ -118,7 +118,7 @@ public class BattleSystem : MonoBehaviour
         playerAnimator.SpendManaAttack();
         yield return new WaitForSeconds(.5f);
         playerUnit.UpdateMana(-4);
-        HUD.SetMana(playerUnit.currentMana);
+        HUD.SetPlayerMana(playerUnit.currentMana);
         HUD.SetEnemyHealth(enemyUnit.currentHP);
         enemyAnimator.Damaged();
 
@@ -151,7 +151,7 @@ public class BattleSystem : MonoBehaviour
         playerAnimator.UltimateAttack();
         yield return new WaitForSeconds(.5f);
         playerUnit.UpdateMana(-10);
-        HUD.SetMana(playerUnit.currentMana);
+        HUD.SetPlayerMana(playerUnit.currentMana);
         HUD.SetEnemyHealth(enemyUnit.currentHP);
         enemyAnimator.Damaged();
 

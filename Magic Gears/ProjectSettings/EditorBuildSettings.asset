@@ -15,17 +15,17 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/Scenes/Combats/Combat Scene - Luke.unity
-    guid: 9c4f5f318f4a8df4b8f1f876480759c6
-  - enabled: 1
-    path: Assets/Scenes/Hub/OLD_Hub.unity
-    guid: 807ece4d5114a424fbc1e1ac8f3537b0
-  - enabled: 1
     path: Assets/Scenes/Dialogues/Level_1/Dialogue1.1.unity
     guid: 5f5ba2c47fb35a942bdc2b09a2eb056c
   - enabled: 1
+    path: Assets/Scenes/Combats/Combat Scene - Luke.unity
+    guid: 9c4f5f318f4a8df4b8f1f876480759c6
+  - enabled: 1
     path: Assets/Scenes/Dialogues/Level_1/Dialogue1.2.unity
     guid: 6dfa9aaac2c67bb419bf1e4c42f09765
+  - enabled: 1
+    path: Assets/Scenes/Hub/OLD_Hub.unity
+    guid: 807ece4d5114a424fbc1e1ac8f3537b0
   - enabled: 1
     path: Assets/Scenes/Dialogues/Level_1/Dialogue1.3.unity
     guid: b8083c22bbfc3c941b43c1144fd9264e

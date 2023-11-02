@@ -18,21 +18,66 @@ EditorBuildSettings:
     path: Assets/Scenes/Dialogues/Level_1/Dialogue1.1.unity
     guid: 5f5ba2c47fb35a942bdc2b09a2eb056c
   - enabled: 1
-    path: Assets/Scenes/Combats/Combat Scene - Luke.unity
+    path: Assets/Scenes/Combats/Level_1/Wave 1.1.unity
     guid: 9c4f5f318f4a8df4b8f1f876480759c6
   - enabled: 1
     path: Assets/Scenes/Dialogues/Level_1/Dialogue1.2.unity
     guid: 6dfa9aaac2c67bb419bf1e4c42f09765
   - enabled: 1
-    path: Assets/Scenes/Hub/OLD_Hub.unity
-    guid: 807ece4d5114a424fbc1e1ac8f3537b0
+    path: Assets/Scenes/Combats/Level_1/Wave 1.2.unity
+    guid: a03e337f2cbf95e4c9c5c3d2a803e84c
   - enabled: 1
     path: Assets/Scenes/Dialogues/Level_1/Dialogue1.3.unity
     guid: b8083c22bbfc3c941b43c1144fd9264e
   - enabled: 1
+    path: Assets/Scenes/Combats/Level_1/Wave 1.3.unity
+    guid: 8a10c99600a159349bba71280da28806
+  - enabled: 1
     path: Assets/Scenes/Dialogues/Level_1/Dialogue1.4.unity
     guid: 507e4e28516b7b1469312a45335d0384
   - enabled: 1
+    path: Assets/Scenes/Hub/OLD_Hub.unity
+    guid: 807ece4d5114a424fbc1e1ac8f3537b0
+  - enabled: 1
     path: Assets/Scenes/Dialogues/Level_2/Dialogue2.1.unity
     guid: bf316c0c3593e98418526eea2516b0ec
+  - enabled: 1
+    path: Assets/Scenes/Combats/Level_2/Wave 2.1.unity
+    guid: af6d4f18a46e4974e94e7ad7617cd7d7
+  - enabled: 1
+    path: Assets/Scenes/Dialogues/Level_2/Dialogue2.2.unity
+    guid: 7ad4138e020217b4a811199da8b9dc38
+  - enabled: 1
+    path: Assets/Scenes/Combats/Level_2/Wave 2.2.unity
+    guid: 6fa4fc93c55d3964f8a3840a554a3459
+  - enabled: 1
+    path: Assets/Scenes/Dialogues/Level_2/Dialogue2.3.unity
+    guid: 1371e11faf96f3b43ad532d25757d607
+  - enabled: 1
+    path: Assets/Scenes/Combats/Level_2/Wave 2.3.unity
+    guid: 243d0f865292200498b5a0675c4e773d
+  - enabled: 1
+    path: Assets/Scenes/Dialogues/Level_2/Dialogue2.4.unity
+    guid: bb64e9916db566642b54d0c5416fabe9
+  - enabled: 1
+    path: Assets/Scenes/Dialogues/Level_3/Dialogue3.1.unity
+    guid: 6414192cd99b7254eb1ff6b132389e01
+  - enabled: 1
+    path: Assets/Scenes/Combats/Level_3/Wave 3.1.unity
+    guid: 38a70e389deff7a4496d16cf24bf470c
+  - enabled: 1
+    path: Assets/Scenes/Dialogues/Level_3/Dialogue3.2.unity
+    guid: d5d68a135f7f77e468d4d369639f691c
+  - enabled: 1
+    path: Assets/Scenes/Combats/Level_3/Wave 3.2.unity
+    guid: dc27ca028335b7c44963826347f8d980
+  - enabled: 1
+    path: Assets/Scenes/Dialogues/Level_3/Dialogue3.3.unity
+    guid: 7fc51dd61e99c7c44b8d98aa0083a04a
+  - enabled: 1
+    path: Assets/Scenes/Combats/Level_3/Wave 3.3.unity
+    guid: 121e4b8431a6bb744a8cf799831ffdf2
+  - enabled: 1
+    path: Assets/Scenes/Dialogues/Level_3/Dialogue3.4.unity
+    guid: bc328ad2c9a9ed342a9f656d09529c17
   m_configObjects: {}

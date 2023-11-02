@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using static storeLevel;
 using UnityEngine;
 
 //NOTE: This class is being used also in AnimationStateController class
@@ -23,19 +24,18 @@ public class CharacterClass : MonoBehaviour
 
     [SerializeField] public int levelCompleted = 0;
 
+
     //----------------------------------------------------------------------------------------------------------------------------
 
     void Start()
     {
-        //TESTING LINES. NOTES: WHEN COMPLITING A WHOLE WAVE, WRITE IN THE WIN CONDITION THE TWO PLAYERPREFS LINES SHOWN BELOW TO UPDATE THE CURRENTLEVEL VALUE INSIDE THE HUB!!!!
-        PlayerPrefs.SetInt("Level", 3);
-        PlayerPrefs.Save();
         //Initialize variables
+        Cursor.lockState = CursorLockMode.Locked;
         originalMoveSpeed = moveSpeed; // Store the original moveSpeed
         canMove = true;
         ch = GetComponent<CharacterController>();
-        if(levelCompleted <= PlayerPrefs.GetInt("Level")){
-            levelCompleted = PlayerPrefs.GetInt("Level");
+        if (levelCompleted <= storeLevel.level){
+            levelCompleted = storeLevel.level;
         }
     }
 

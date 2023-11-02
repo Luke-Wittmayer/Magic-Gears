@@ -25,11 +25,11 @@ public class SceneChange : MonoBehaviour
         }
         else if (level == 2)
         {
-            SceneManager.LoadScene("OLD_Hub");
+            SceneManager.LoadScene("Dialogue2.1");
         }
         else if (level == 3)
         {
-            SceneManager.LoadScene("OLD_Hub");
+            SceneManager.LoadScene("Dialogue3.1");
         }
         else if (level == 0)
         {

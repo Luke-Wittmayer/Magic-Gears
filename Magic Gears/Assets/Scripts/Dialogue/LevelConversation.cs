@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 using DialogueEditor;
+using static storeLevel;
 using UnityEngine.SceneManagement;
 
 public class LevelConversation : MonoBehaviour
@@ -45,55 +46,54 @@ public class LevelConversation : MonoBehaviour
     {
         if (teleportTo == 1)
         {
-            SceneManager.LoadScene("Combat Scene - Luke");
+            SceneManager.LoadScene("Wave 1.1");
         }
         else if (teleportTo == 2)
         {
-            SceneManager.LoadScene("Hub");
+            SceneManager.LoadScene("Wave 1.2");
         }
         else if (teleportTo == 3)
         {
-            SceneManager.LoadScene("Main Menu");
-        }
-        else if (teleportTo == 3)
-        {
-            SceneManager.LoadScene("Hub");
+            SceneManager.LoadScene("Wave 1.3");
         }
         else if (teleportTo == 4)
         {
-            SceneManager.LoadScene("Main Menu");
+            storeLevel.level = 1;
+            SceneManager.LoadScene("Hub");
         }
         else if (teleportTo == 5)
         {
-            SceneManager.LoadScene("Hub");
+            SceneManager.LoadScene("Wave 2.1");
         }
         else if (teleportTo == 6)
         {
-            SceneManager.LoadScene("Main Menu");
+            SceneManager.LoadScene("Wave 2.2");
         }
         else if (teleportTo == 7)
         {
-            SceneManager.LoadScene("Hub");
+            SceneManager.LoadScene("Wave 2.3");
         }
         else if (teleportTo == 8)
         {
-            SceneManager.LoadScene("Main Menu");
+            storeLevel.level = 2;
+            SceneManager.LoadScene("Hub");
         }
         else if (teleportTo == 9)
         {
-            SceneManager.LoadScene("Hub");
+            SceneManager.LoadScene("Wave 3.1");
         }
         else if (teleportTo == 10)
         {
-            SceneManager.LoadScene("Main Menu");
+            SceneManager.LoadScene("Wave 3.2");
         }
         else if (teleportTo == 11)
         {
-            SceneManager.LoadScene("Hub");
+            SceneManager.LoadScene("Wave 3.3");
         }
         else if (teleportTo == 12)
         {
-            SceneManager.LoadScene("Main Menu");
+            storeLevel.level = 3;
+            SceneManager.LoadScene("Hub");
         }
 
     }

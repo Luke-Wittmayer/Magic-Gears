@@ -31,9 +31,6 @@ public class ConversationStarter : MonoBehaviour
         {
             inside = true;
             characterClass = other.GetComponent<CharacterClass>();
-            if (characterClass != null) {
-                ConversationManager.Instance.SetInt("CurrentLevel", characterClass.levelCompleted);
-            }
 
         }
     }
@@ -119,7 +116,11 @@ public class ConversationStarter : MonoBehaviour
      private void ConversationStart()
      {
         Debug.Log("A conversation has began.");
-     }
+        if (characterClass != null)
+        {
+            ConversationManager.Instance.SetInt("CurrentLevel", characterClass.levelCompleted);
+        }
+    }
 
       private void ConversationEnd()
      {

@@ -419,22 +419,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83189876d4d389f43b7dd2e925aa112e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentIDCounter: 134
-  json: "{\"Options\":[{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":-35,\"yPos\":-429},\"ID\":17,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Yes\",\"parentUIDs\":[0],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":125}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":226,\"yPos\":-423},\"ID\":67,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"No\",\"parentUIDs\":[0],\"SpeechUID\":-1}],\"Parameters\":[],\"SpeechNodes\":[{\"Connections\":[{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":17},{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":67}],\"EditorInfo\":{\"isRoot\":true,\"xPos\":56.5,\"yPos\":-541},\"ID\":0,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Do
-    you want to skip this dialogue of the story?\\n\",\"parentUIDs\":[],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Narrator\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":126}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":220,\"yPos\":-325},\"ID\":125,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Surrender.\",\"parentUIDs\":[67],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Lunk\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":127}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":233,\"yPos\":-225},\"ID\":126,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Alright,
-    glad thats over with. Listen, I can\u2019t feed you my weapon, but I could really
-    use your help if you know anything.\",\"parentUIDs\":[125],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Harper\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":128}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":237,\"yPos\":-114},\"ID\":127,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Shiny
-    metal place\u2026\",\"parentUIDs\":[126],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Lunk\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":129}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":228,\"yPos\":-6},\"ID\":128,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Shiny
-    metal? Everything here is rusted though.\\r\",\"parentUIDs\":[127],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Harper\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":130}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":224,\"yPos\":104},\"ID\":129,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Perhaps
-    it possesses knowledge of a locale that is better preserved\u2014a prospect that
-    may align with thy search.\",\"parentUIDs\":[128],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Ocellus\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":131}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":227,\"yPos\":208},\"ID\":130,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Yes.
-    Guarded. Dangerous. Weak. Alone.\",\"parentUIDs\":[129],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Lunk\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":132}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":237,\"yPos\":315},\"ID\":131,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Tell
-    you what big guy, you show us to that shiny place, and we\u2019ll explore it
-    and face what's inside together. Then you can eat all the shiny metal you want
-    there!\",\"parentUIDs\":[130],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Harper\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":133}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":217,\"yPos\":429},\"ID\":132,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"...Agree.\",\"parentUIDs\":[131],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Lunk\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":221,\"yPos\":534},\"ID\":133,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"
-    With another guide in your roster you begin to follow Lunk towards the \u201Cshiny
-    metal place\u201D. Hopefully this place of preservation amidst the sea of ruin
-    will give you the answers you seek.\\r\\n\",\"parentUIDs\":[132],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Narrator\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0}]}"
+  CurrentIDCounter: 150
+  json: "{\"Options\":[{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":150,\"yPos\":-1277},\"ID\":17,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Yes\",\"parentUIDs\":[0],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":134}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":411,\"yPos\":-1271},\"ID\":67,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"No\",\"parentUIDs\":[0],\"SpeechUID\":-1}],\"Parameters\":[],\"SpeechNodes\":[{\"Connections\":[{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":17},{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":67}],\"EditorInfo\":{\"isRoot\":true,\"xPos\":241.5,\"yPos\":-1389},\"ID\":0,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Do
+    you want to skip this dialogue of the story?\\n\",\"parentUIDs\":[],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Narrator\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":135}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":421,\"yPos\":-1186},\"ID\":134,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"With
+    a final, thunderous roar, the dragon was defeated, crumbling to the chamber's
+    floor in a cascade of shimmering scales.\",\"parentUIDs\":[67],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Narrator\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":136}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":428,\"yPos\":-1095},\"ID\":135,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"As
+    the dust settled, the chamber lay in eerie silence, the dragon's once-formidable
+    presence reduced to a broken and defeated creature. The machine, battered but
+    brimming with potential, loomed in the background, an emblem of the dragon's
+    shattered ambitions.\\r\",\"parentUIDs\":[134],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Narrator\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":137}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":436,\"yPos\":-951},\"ID\":136,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"What
+    now?\",\"parentUIDs\":[135],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Lunk\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":138}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":451,\"yPos\":-845},\"ID\":137,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"You
+    move forward and study the machine. It seems the dragon really had made headway
+    into fixing it. Although it would never be able to contain the world's mana,
+    what it could gather was a vast amount.\\r\",\"parentUIDs\":[136],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Narrator\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":139}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":434,\"yPos\":-727},\"ID\":138,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"There\u2019s
+    no fixing things as they are now. But what if we could prevent them? What if
+    we went back?\",\"parentUIDs\":[137],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Harper\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":140}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":426,\"yPos\":-628},\"ID\":139,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Thou
+    jests not, surely. Art thou truly proposing the utilization of this contraption
+    for temporal travel? Such an action would irrevocably alter the fabric of reality,
+    rendering all... so\u2026\",\"parentUIDs\":[138],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Ocellus\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":141}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":448,\"yPos\":-509},\"ID\":140,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Complicated.\",\"parentUIDs\":[139],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Lunk\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":142}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":435,\"yPos\":-379},\"ID\":141,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Probably,
+    but I knew fixing things was never going to be simple.\",\"parentUIDs\":[140],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Harper\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":143}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":418,\"yPos\":-262},\"ID\":142,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"With
+    a few adjustments to the machine it thrums to life, lights flashing on and generators
+    whirling. You watch as the mana in the air begins to swirl into its mechanical
+    body, powering it for a great feat of magic.\",\"parentUIDs\":[141],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Narrator\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":144}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":407,\"yPos\":-160},\"ID\":143,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Besides,
+    I have no questions now. Who wants to see what the world was like before it all
+    went wrong?\",\"parentUIDs\":[142],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Harper\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":145}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":415,\"yPos\":-49},\"ID\":144,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"That
+    doth indeed promise an enticing odyssey.\\r\",\"parentUIDs\":[143],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Ocellus\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":146}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":399,\"yPos\":55},\"ID\":145,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Lots
+    of metal?\\r\",\"parentUIDs\":[144],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Lunk\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":147}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":411,\"yPos\":146},\"ID\":146,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Yeah
+    buddy, and no rust to be seen.\",\"parentUIDs\":[145],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Harper\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":148}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":393,\"yPos\":270},\"ID\":147,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"I
+    go!\\r\",\"parentUIDs\":[146],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Lunk\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":149}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":427,\"yPos\":387},\"ID\":148,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"With
+    the party in agreement, you throw the switch and declare your wish. The machine
+    roars as its output of magic is focused, bending the laws of space and time.
+    A brilliant shimmering light engulfs you, sending you back to a time long forgotten,
+    where endless potential still waits.\",\"parentUIDs\":[147],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Narrator\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":420,\"yPos\":490},\"ID\":149,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"The
+    End.\",\"parentUIDs\":[148],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0}]}"
   saveVersion: 110
   DefaultName: 
   DefaultSprite: {fileID: 0}
@@ -443,15 +460,22 @@ MonoBehaviour:
   - {fileID: 1153763670}
   - {fileID: 1153763669}
   - {fileID: 1153763668}
-  - {fileID: 1153763667}
-  - {fileID: 1153763666}
-  - {fileID: 1153763665}
-  - {fileID: 1153763664}
-  - {fileID: 1153763663}
-  - {fileID: 1153763662}
-  - {fileID: 1153763661}
-  - {fileID: 1153763660}
-  - {fileID: 1153763658}
+  - {fileID: 1153763686}
+  - {fileID: 1153763685}
+  - {fileID: 1153763684}
+  - {fileID: 1153763683}
+  - {fileID: 1153763682}
+  - {fileID: 1153763681}
+  - {fileID: 1153763680}
+  - {fileID: 1153763679}
+  - {fileID: 1153763678}
+  - {fileID: 1153763677}
+  - {fileID: 1153763676}
+  - {fileID: 1153763675}
+  - {fileID: 1153763674}
+  - {fileID: 1153763673}
+  - {fileID: 1153763672}
+  - {fileID: 1153763671}
   ContinueFont: {fileID: 0}
   EndConversationFont: {fileID: 0}
   Event:
@@ -655,15 +679,22 @@ GameObject:
   - component: {fileID: 1153763670}
   - component: {fileID: 1153763669}
   - component: {fileID: 1153763668}
-  - component: {fileID: 1153763667}
-  - component: {fileID: 1153763666}
-  - component: {fileID: 1153763665}
-  - component: {fileID: 1153763664}
-  - component: {fileID: 1153763663}
-  - component: {fileID: 1153763662}
-  - component: {fileID: 1153763661}
-  - component: {fileID: 1153763660}
-  - component: {fileID: 1153763658}
+  - component: {fileID: 1153763686}
+  - component: {fileID: 1153763685}
+  - component: {fileID: 1153763684}
+  - component: {fileID: 1153763683}
+  - component: {fileID: 1153763682}
+  - component: {fileID: 1153763681}
+  - component: {fileID: 1153763680}
+  - component: {fileID: 1153763679}
+  - component: {fileID: 1153763678}
+  - component: {fileID: 1153763677}
+  - component: {fileID: 1153763676}
+  - component: {fileID: 1153763675}
+  - component: {fileID: 1153763674}
+  - component: {fileID: 1153763673}
+  - component: {fileID: 1153763672}
+  - component: {fileID: 1153763671}
   m_Layer: 0
   m_Name: ConversationEventInfo
   m_TagString: Untagged
@@ -671,25 +702,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1153763658
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1153763657}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00abedce3cdbbba46bf2d86c9518c9f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event:
-    m_PersistentCalls:
-      m_Calls: []
-  NodeID: 133
-  TMPFont: {fileID: 0}
-  Icon: {fileID: 0}
-  Audio: {fileID: 0}
 --- !u!4 &1153763659
 Transform:
   m_ObjectHideFlags: 0
@@ -705,158 +717,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 511203297}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1153763660
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1153763657}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00abedce3cdbbba46bf2d86c9518c9f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event:
-    m_PersistentCalls:
-      m_Calls: []
-  NodeID: 132
-  TMPFont: {fileID: 0}
-  Icon: {fileID: 21300000, guid: 5d7bf32a7f6e5184d84f34873f66e385, type: 3}
-  Audio: {fileID: 0}
---- !u!114 &1153763661
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1153763657}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00abedce3cdbbba46bf2d86c9518c9f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event:
-    m_PersistentCalls:
-      m_Calls: []
-  NodeID: 131
-  TMPFont: {fileID: 0}
-  Icon: {fileID: 21300000, guid: ca7cecd6ce28b4d0b89bb58aefec4fc8, type: 3}
-  Audio: {fileID: 0}
---- !u!114 &1153763662
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1153763657}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00abedce3cdbbba46bf2d86c9518c9f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event:
-    m_PersistentCalls:
-      m_Calls: []
-  NodeID: 130
-  TMPFont: {fileID: 0}
-  Icon: {fileID: 21300000, guid: 5d7bf32a7f6e5184d84f34873f66e385, type: 3}
-  Audio: {fileID: 0}
---- !u!114 &1153763663
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1153763657}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00abedce3cdbbba46bf2d86c9518c9f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event:
-    m_PersistentCalls:
-      m_Calls: []
-  NodeID: 129
-  TMPFont: {fileID: 0}
-  Icon: {fileID: 21300000, guid: a71ca0097edca654eb6e7a8fd02bc160, type: 3}
-  Audio: {fileID: 0}
---- !u!114 &1153763664
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1153763657}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00abedce3cdbbba46bf2d86c9518c9f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event:
-    m_PersistentCalls:
-      m_Calls: []
-  NodeID: 128
-  TMPFont: {fileID: 0}
-  Icon: {fileID: 21300000, guid: ca7cecd6ce28b4d0b89bb58aefec4fc8, type: 3}
-  Audio: {fileID: 0}
---- !u!114 &1153763665
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1153763657}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00abedce3cdbbba46bf2d86c9518c9f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event:
-    m_PersistentCalls:
-      m_Calls: []
-  NodeID: 127
-  TMPFont: {fileID: 0}
-  Icon: {fileID: 21300000, guid: 5d7bf32a7f6e5184d84f34873f66e385, type: 3}
-  Audio: {fileID: 0}
---- !u!114 &1153763666
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1153763657}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00abedce3cdbbba46bf2d86c9518c9f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event:
-    m_PersistentCalls:
-      m_Calls: []
-  NodeID: 126
-  TMPFont: {fileID: 0}
-  Icon: {fileID: 21300000, guid: ca7cecd6ce28b4d0b89bb58aefec4fc8, type: 3}
-  Audio: {fileID: 0}
---- !u!114 &1153763667
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1153763657}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00abedce3cdbbba46bf2d86c9518c9f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event:
-    m_PersistentCalls:
-      m_Calls: []
-  NodeID: 125
-  TMPFont: {fileID: 0}
-  Icon: {fileID: 21300000, guid: 5d7bf32a7f6e5184d84f34873f66e385, type: 3}
-  Audio: {fileID: 0}
 --- !u!114 &1153763668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -911,6 +771,310 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   NodeID: 0
+  TMPFont: {fileID: 0}
+  Icon: {fileID: 0}
+  Audio: {fileID: 0}
+--- !u!114 &1153763671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1153763657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00abedce3cdbbba46bf2d86c9518c9f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event:
+    m_PersistentCalls:
+      m_Calls: []
+  NodeID: 149
+  TMPFont: {fileID: 0}
+  Icon: {fileID: 0}
+  Audio: {fileID: 0}
+--- !u!114 &1153763672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1153763657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00abedce3cdbbba46bf2d86c9518c9f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event:
+    m_PersistentCalls:
+      m_Calls: []
+  NodeID: 148
+  TMPFont: {fileID: 0}
+  Icon: {fileID: 0}
+  Audio: {fileID: 0}
+--- !u!114 &1153763673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1153763657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00abedce3cdbbba46bf2d86c9518c9f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event:
+    m_PersistentCalls:
+      m_Calls: []
+  NodeID: 147
+  TMPFont: {fileID: 0}
+  Icon: {fileID: 21300000, guid: 5d7bf32a7f6e5184d84f34873f66e385, type: 3}
+  Audio: {fileID: 0}
+--- !u!114 &1153763674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1153763657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00abedce3cdbbba46bf2d86c9518c9f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event:
+    m_PersistentCalls:
+      m_Calls: []
+  NodeID: 146
+  TMPFont: {fileID: 0}
+  Icon: {fileID: 21300000, guid: ca7cecd6ce28b4d0b89bb58aefec4fc8, type: 3}
+  Audio: {fileID: 0}
+--- !u!114 &1153763675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1153763657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00abedce3cdbbba46bf2d86c9518c9f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event:
+    m_PersistentCalls:
+      m_Calls: []
+  NodeID: 145
+  TMPFont: {fileID: 0}
+  Icon: {fileID: 21300000, guid: 5d7bf32a7f6e5184d84f34873f66e385, type: 3}
+  Audio: {fileID: 0}
+--- !u!114 &1153763676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1153763657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00abedce3cdbbba46bf2d86c9518c9f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event:
+    m_PersistentCalls:
+      m_Calls: []
+  NodeID: 144
+  TMPFont: {fileID: 0}
+  Icon: {fileID: 21300000, guid: a71ca0097edca654eb6e7a8fd02bc160, type: 3}
+  Audio: {fileID: 0}
+--- !u!114 &1153763677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1153763657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00abedce3cdbbba46bf2d86c9518c9f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event:
+    m_PersistentCalls:
+      m_Calls: []
+  NodeID: 143
+  TMPFont: {fileID: 0}
+  Icon: {fileID: 21300000, guid: ca7cecd6ce28b4d0b89bb58aefec4fc8, type: 3}
+  Audio: {fileID: 0}
+--- !u!114 &1153763678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1153763657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00abedce3cdbbba46bf2d86c9518c9f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event:
+    m_PersistentCalls:
+      m_Calls: []
+  NodeID: 142
+  TMPFont: {fileID: 0}
+  Icon: {fileID: 0}
+  Audio: {fileID: 0}
+--- !u!114 &1153763679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1153763657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00abedce3cdbbba46bf2d86c9518c9f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event:
+    m_PersistentCalls:
+      m_Calls: []
+  NodeID: 141
+  TMPFont: {fileID: 0}
+  Icon: {fileID: 21300000, guid: ca7cecd6ce28b4d0b89bb58aefec4fc8, type: 3}
+  Audio: {fileID: 0}
+--- !u!114 &1153763680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1153763657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00abedce3cdbbba46bf2d86c9518c9f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event:
+    m_PersistentCalls:
+      m_Calls: []
+  NodeID: 140
+  TMPFont: {fileID: 0}
+  Icon: {fileID: 21300000, guid: 5d7bf32a7f6e5184d84f34873f66e385, type: 3}
+  Audio: {fileID: 0}
+--- !u!114 &1153763681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1153763657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00abedce3cdbbba46bf2d86c9518c9f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event:
+    m_PersistentCalls:
+      m_Calls: []
+  NodeID: 139
+  TMPFont: {fileID: 0}
+  Icon: {fileID: 21300000, guid: a71ca0097edca654eb6e7a8fd02bc160, type: 3}
+  Audio: {fileID: 0}
+--- !u!114 &1153763682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1153763657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00abedce3cdbbba46bf2d86c9518c9f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event:
+    m_PersistentCalls:
+      m_Calls: []
+  NodeID: 138
+  TMPFont: {fileID: 0}
+  Icon: {fileID: 21300000, guid: ca7cecd6ce28b4d0b89bb58aefec4fc8, type: 3}
+  Audio: {fileID: 0}
+--- !u!114 &1153763683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1153763657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00abedce3cdbbba46bf2d86c9518c9f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event:
+    m_PersistentCalls:
+      m_Calls: []
+  NodeID: 137
+  TMPFont: {fileID: 0}
+  Icon: {fileID: 0}
+  Audio: {fileID: 0}
+--- !u!114 &1153763684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1153763657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00abedce3cdbbba46bf2d86c9518c9f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event:
+    m_PersistentCalls:
+      m_Calls: []
+  NodeID: 136
+  TMPFont: {fileID: 0}
+  Icon: {fileID: 21300000, guid: 5d7bf32a7f6e5184d84f34873f66e385, type: 3}
+  Audio: {fileID: 0}
+--- !u!114 &1153763685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1153763657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00abedce3cdbbba46bf2d86c9518c9f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event:
+    m_PersistentCalls:
+      m_Calls: []
+  NodeID: 135
+  TMPFont: {fileID: 0}
+  Icon: {fileID: 0}
+  Audio: {fileID: 0}
+--- !u!114 &1153763686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1153763657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00abedce3cdbbba46bf2d86c9518c9f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event:
+    m_PersistentCalls:
+      m_Calls: []
+  NodeID: 134
   TMPFont: {fileID: 0}
   Icon: {fileID: 0}
   Audio: {fileID: 0}

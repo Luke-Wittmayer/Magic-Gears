@@ -12,7 +12,7 @@ public class BattleSystem : MonoBehaviour
     // public Transform playerBattleStation;
     // public Transform enemyBattleStation;
 
-    public Unit playerUnit;
+    public DPSPlayer playerUnit;
     public Unit enemyUnit;
     private PlayerAnimationController playerAnimator;
     private EnemyAnimationController enemyAnimator;
@@ -37,7 +37,7 @@ public class BattleSystem : MonoBehaviour
         // playerGO.SetActive(true);
         // enemyGO.SetActive(true);
 
-        playerUnit = playerPrefab.GetComponent<Unit>();
+        playerUnit = playerPrefab.GetComponent<DPSPlayer>();
         enemyUnit = enemyPrefab.GetComponent<Unit>();
         playerAnimator = playerPrefab.GetComponent<PlayerAnimationController>();
         enemyAnimator = enemyPrefab.GetComponent<EnemyAnimationController>();
@@ -48,146 +48,146 @@ public class BattleSystem : MonoBehaviour
         PlayerTurn();
     }
 
-    IEnumerator DPSBasicAttack(){
-        // Set enemy turn to prevent spam clicking
-        state = BattleState.ENEMYTURN;
-        // Damage the enemy
-        playerAnimator.BasicAttack();
-        playerUnit.UpdateMana(2);
-        HUD.SetPlayerMana(playerUnit.currentMana);
-        yield return new WaitForSeconds(.5f);
-        bool isDead = enemyUnit.TakeDamage(playerUnit.damage);
-        HUD.SetEnemyHealth(enemyUnit.currentHP);
-        enemyAnimator.Damaged();
+    // IEnumerator DPSBasicAttack(){
+    //     // Set enemy turn to prevent spam clicking
+    //     state = BattleState.ENEMYTURN;
+    //     // Damage the enemy
+    //     playerAnimator.BasicAttack();
+    //     playerUnit.UpdateMana(2);
+    //     HUD.SetPlayerMana(playerUnit.currentMana);
+    //     yield return new WaitForSeconds(.5f);
+    //     bool isDead = enemyUnit.TakeDamage(playerUnit.damage);
+    //     HUD.SetEnemyHealth(enemyUnit.currentHP);
+    //     enemyAnimator.Damaged();
 
-        Debug.Log("The attack is successful on " + enemyUnit.unitName + "!");
-        Debug.Log(enemyUnit.unitName + " now has " + enemyUnit.currentHP + " remaining.");
+    //     Debug.Log("The attack is successful on " + enemyUnit.unitName + "!");
+    //     Debug.Log(enemyUnit.unitName + " now has " + enemyUnit.currentHP + " remaining.");
 
-        if(isDead){
-            state = BattleState.WON;
-            Debug.Log("You win!");
-            EndBattle();
-        } else 
-        {
-            if(playerAnimator.UltimateState == 0){
-                StartCoroutine(EnemyTurn());
-            }else {
-                PlayerTurn();
-            }
-        }
-    }
+    //     if(isDead){
+    //         state = BattleState.WON;
+    //         Debug.Log("You win!");
+    //         EndBattle();
+    //     } else 
+    //     {
+    //         if(playerAnimator.UltimateState == 0){
+    //             StartCoroutine(EnemyTurn());
+    //         }else {
+    //             PlayerTurn();
+    //         }
+    //     }
+    // }
 
 
-    void DPSStealManaAttack(){
-        // Set enemy turn to prevent spam clicking
-        state = BattleState.ENEMYTURN;
-        // Damage the enemy
-        playerAnimator.ManaStealAttack();
-        playerUnit.UpdateMana(4);
-        bool isDead = enemyUnit.TakeDamage(playerUnit.damage/2);
-        HUD.SetPlayerMana(playerUnit.currentMana);
-        HUD.SetEnemyHealth(enemyUnit.currentHP);
-        enemyAnimator.Damaged();
+    // void DPSStealManaAttack(){
+    //     // Set enemy turn to prevent spam clicking
+    //     state = BattleState.ENEMYTURN;
+    //     // Damage the enemy
+    //     playerAnimator.ManaStealAttack();
+    //     playerUnit.UpdateMana(4);
+    //     bool isDead = enemyUnit.TakeDamage(playerUnit.damage/2);
+    //     HUD.SetPlayerMana(playerUnit.currentMana);
+    //     HUD.SetEnemyHealth(enemyUnit.currentHP);
+    //     enemyAnimator.Damaged();
 
-        Debug.Log("The attack is successful on " + enemyUnit.unitName + "!");
-        Debug.Log(enemyUnit.unitName + " now has " + enemyUnit.currentHP + " remaining.");
+    //     Debug.Log("The attack is successful on " + enemyUnit.unitName + "!");
+    //     Debug.Log(enemyUnit.unitName + " now has " + enemyUnit.currentHP + " remaining.");
 
-        if(isDead){
-            state = BattleState.WON;
-            Debug.Log("You win!");
-            EndBattle();
-        } else 
-        {
-            if(playerAnimator.UltimateState == 0){
-                state = BattleState.ENEMYTURN;
-                StartCoroutine(EnemyTurn());
-            }else {
-                PlayerTurn();
-            }
-        }
-    }
+    //     if(isDead){
+    //         state = BattleState.WON;
+    //         Debug.Log("You win!");
+    //         EndBattle();
+    //     } else 
+    //     {
+    //         if(playerAnimator.UltimateState == 0){
+    //             state = BattleState.ENEMYTURN;
+    //             StartCoroutine(EnemyTurn());
+    //         }else {
+    //             PlayerTurn();
+    //         }
+    //     }
+    // }
 
-    IEnumerator DPSSpendManaAttack(){
-        if(playerUnit.currentMana < 4){
-            yield break;
-        }
-        // Set enemy turn to prevent spam clicking
-        state = BattleState.ENEMYTURN;
-        // Damage the enemy
-        bool isDead = enemyUnit.TakeDamage(playerUnit.damage*2);
-        playerAnimator.SpendManaAttack();
-        yield return new WaitForSeconds(.5f);
-        playerUnit.UpdateMana(-4);
-        HUD.SetPlayerMana(playerUnit.currentMana);
-        HUD.SetEnemyHealth(enemyUnit.currentHP);
-        enemyAnimator.Damaged();
+    // IEnumerator DPSSpendManaAttack(){
+    //     if(playerUnit.currentMana < 4){
+    //         yield break;
+    //     }
+    //     // Set enemy turn to prevent spam clicking
+    //     state = BattleState.ENEMYTURN;
+    //     // Damage the enemy
+    //     bool isDead = enemyUnit.TakeDamage(playerUnit.damage*2);
+    //     playerAnimator.SpendManaAttack();
+    //     yield return new WaitForSeconds(.5f);
+    //     playerUnit.UpdateMana(-4);
+    //     HUD.SetPlayerMana(playerUnit.currentMana);
+    //     HUD.SetEnemyHealth(enemyUnit.currentHP);
+    //     enemyAnimator.Damaged();
 
-        Debug.Log("The attack is successful on " + enemyUnit.unitName + "!");
-        Debug.Log(enemyUnit.unitName + " now has " + enemyUnit.currentHP + " remaining.");
+    //     Debug.Log("The attack is successful on " + enemyUnit.unitName + "!");
+    //     Debug.Log(enemyUnit.unitName + " now has " + enemyUnit.currentHP + " remaining.");
 
-        if(isDead){
-            state = BattleState.WON;
-            Debug.Log("You win!");
-            EndBattle();
-        } else 
-        {
-            if(playerAnimator.UltimateState == 0){
-                state = BattleState.ENEMYTURN;
-                StartCoroutine(EnemyTurn());
-            }else {
-                PlayerTurn();
-            }
-        }
-    }
+    //     if(isDead){
+    //         state = BattleState.WON;
+    //         Debug.Log("You win!");
+    //         EndBattle();
+    //     } else 
+    //     {
+    //         if(playerAnimator.UltimateState == 0){
+    //             state = BattleState.ENEMYTURN;
+    //             StartCoroutine(EnemyTurn());
+    //         }else {
+    //             PlayerTurn();
+    //         }
+    //     }
+    // }
 
-        IEnumerator DPSUltimateAttack(){
-        if(playerUnit.currentMana < 10){
-            yield break;
-        }
-        // Set enemy turn to prevent spam clicking
-        state = BattleState.ENEMYTURN;
-        // Damage the enemy
-        bool isDead = enemyUnit.TakeDamage(playerUnit.damage*2);
-        playerAnimator.UltimateAttack();
-        yield return new WaitForSeconds(.5f);
-        playerUnit.UpdateMana(-10);
-        HUD.SetPlayerMana(playerUnit.currentMana);
-        HUD.SetEnemyHealth(enemyUnit.currentHP);
-        enemyAnimator.Damaged();
+    //     IEnumerator DPSUltimateAttack(){
+    //     if(playerUnit.currentMana < 10){
+    //         yield break;
+    //     }
+    //     // Set enemy turn to prevent spam clicking
+    //     state = BattleState.ENEMYTURN;
+    //     // Damage the enemy
+    //     bool isDead = enemyUnit.TakeDamage(playerUnit.damage*2);
+    //     playerAnimator.UltimateAttack();
+    //     yield return new WaitForSeconds(.5f);
+    //     playerUnit.UpdateMana(-10);
+    //     HUD.SetPlayerMana(playerUnit.currentMana);
+    //     HUD.SetEnemyHealth(enemyUnit.currentHP);
+    //     enemyAnimator.Damaged();
 
-        Debug.Log("The attack is successful on " + enemyUnit.unitName + "!");
-        Debug.Log(enemyUnit.unitName + " now has " + enemyUnit.currentHP + " remaining.");
+    //     Debug.Log("The attack is successful on " + enemyUnit.unitName + "!");
+    //     Debug.Log(enemyUnit.unitName + " now has " + enemyUnit.currentHP + " remaining.");
 
-        if(isDead){
-            state = BattleState.WON;
-            Debug.Log("You win!");
-            EndBattle();
-        } else 
-        {
-            PlayerTurn();
-        }
-    }
+    //     if(isDead){
+    //         state = BattleState.WON;
+    //         Debug.Log("You win!");
+    //         EndBattle();
+    //     } else 
+    //     {
+    //         PlayerTurn();
+    //     }
+    // }
 
-    IEnumerator EnemyTurn(){
-        Debug.Log("Enemy unit attacks!");
-        yield return new WaitForSeconds(1f);
-        enemyAnimator.EnemyBasicAttack();
-        yield return new WaitForSeconds(.5f);
-        playerAnimator.Damaged();
-        bool isDead = playerUnit.TakeDamage(enemyUnit.damage);
-        HUD.SetPlayerHealth(playerUnit.currentHP);
+    // public IEnumerator EnemyAttack1(){
+    //     Debug.Log("Enemy unit attacks!");
+    //     yield return new WaitForSeconds(1f);
+    //     enemyAnimator.EnemyBasicAttack();
+    //     yield return new WaitForSeconds(.5f);
+    //     playerAnimator.Damaged();
+    //     bool isDead = playerUnit.TakeDamage(enemyUnit.damage);
+    //     HUD.SetPlayerHealth(playerUnit.currentHP);
 
-        if(isDead){
-            state = BattleState.LOST; 
-            Debug.Log("You lose!");
-            EndBattle();
-        }else {
-            state = BattleState.PLAYERTURN;
-            PlayerTurn();
-        }
-    }
+    //     if(isDead){
+    //         state = BattleState.LOST; 
+    //         Debug.Log("You lose!");
+    //         EndBattle();
+    //     }else {
+    //         state = BattleState.PLAYERTURN;
+    //         PlayerTurn();
+    //     }
+    // }
 
-    void EndBattle(){
+    public void EndBattle(){
         if(state == BattleState.WON){
             enemyAnimator.Dead();
             playerAnimator.Win();
@@ -196,40 +196,40 @@ public class BattleSystem : MonoBehaviour
         }
     }
 
-    void PlayerTurn()
+    public void PlayerTurn()
     {
         Debug.Log("Player turn!");
         state = BattleState.PLAYERTURN;
     }
 
-    public void OnAtkOne()
-    {
-        if (state != BattleState.PLAYERTURN){
-            return;
-        }
-        StartCoroutine(DPSBasicAttack());
-    }
+    // public void OnAtkOne()
+    // {
+    //     if (state != BattleState.PLAYERTURN){
+    //         return;
+    //     }
+    //     StartCoroutine(DPSBasicAttack());
+    // }
 
-    public void OnAtkTwo(){
-        if(state != BattleState.PLAYERTURN){
-            return;
-        }
-        StartCoroutine(DPSSpendManaAttack());
-    }
+    // public void OnAtkTwo(){
+    //     if(state != BattleState.PLAYERTURN){
+    //         return;
+    //     }
+    //     StartCoroutine(DPSSpendManaAttack());
+    // }
 
-    public void OnAtkThree(){
-        if(state != BattleState.PLAYERTURN){
-            return;
-        }
-        DPSStealManaAttack();
-    }
+    // public void OnAtkThree(){
+    //     if(state != BattleState.PLAYERTURN){
+    //         return;
+    //     }
+    //     DPSStealManaAttack();
+    // }
 
-    public void OnAtkFour(){
-        if(state != BattleState.PLAYERTURN){
-            return;
-        }
-        StartCoroutine(DPSUltimateAttack());
-    }
+    // public void OnAtkFour(){
+    //     if(state != BattleState.PLAYERTURN){
+    //         return;
+    //     }
+    //     StartCoroutine(DPSUltimateAttack());
+    // }
 
 
 }

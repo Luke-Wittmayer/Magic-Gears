@@ -9,7 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6554057633414463649}
-  - component: {fileID: -2191272307870020816}
+  - component: {fileID: 7269424123822997990}
+  - component: {fileID: -1880875062336761047}
+  - component: {fileID: -7876269952242915196}
   m_Layer: 0
   m_Name: DPS
   m_TagString: Untagged
@@ -25,15 +27,36 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4041738798989974148}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalRotation: {x: 0, y: 0.64665353, z: 0, w: -0.7627839}
+  m_LocalPosition: {x: 6.95, y: 0.322, z: 0.449}
+  m_LocalScale: {x: 0.26758, y: 0.26758, z: 0.26758}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 8951590772855616497}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
---- !u!114 &-2191272307870020816
+--- !u!95 &7269424123822997990
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4041738798989974148}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: ad4bb82bd843da1479ee67de1f1804c5, type: 3}
+  m_Controller: {fileID: 9100000, guid: 8d1e18993efb345e8a79288c04b62ef8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-1880875062336761047
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -42,13 +65,36 @@ MonoBehaviour:
   m_GameObject: {fileID: 4041738798989974148}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ec14fbb9b227c4489fb72e750c7197c, type: 3}
+  m_Script: {fileID: 11500000, guid: cbf07ef48a1a6034996617272f889dc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  UltimateState: 0
+  pistol: {fileID: 7510528619858064960, guid: 7ea4ac0022de91142aadeff877fa1824, type: 3}
+  rifle: {fileID: 6948081837284883828, guid: d12097ce3c216604c8624a2da1c02260, type: 3}
+  player: {fileID: 4041738798989974148}
+--- !u!114 &-7876269952242915196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4041738798989974148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a0625a905869476eb171431799c892b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerAnimator: {fileID: -1880875062336761047}
+  enemyAnimator: {fileID: 6460584701829901146, guid: 8b0684a9e27c54241a582604297eb3ee, type: 3}
+  enemyUnit: {fileID: 8376778103839080526, guid: 8b0684a9e27c54241a582604297eb3ee, type: 3}
   unitName: DPS
   damage: 5
-  maxHP: 10
-  currentHP: 10
+  maxHP: 50
+  currentHP: 50
+  maxMana: 10
+  currentMana: 0
+  HUD: {fileID: 0}
+  battlesystem: {fileID: 6578732251241383942, guid: db6f44f516e0c5d468b8c0ad598f8a06, type: 3}
 --- !u!1001 &1193463733461991056
 PrefabInstance:
   m_ObjectHideFlags: 0

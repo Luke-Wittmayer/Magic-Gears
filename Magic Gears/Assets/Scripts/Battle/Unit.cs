@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class Unit : MonoBehaviour
 {
-    private PlayerAnimationController playerAnimator;
-    private EnemyAnimationController enemyAnimator;
-    public Unit enemyUnit;
+    public PlayerAnimationController playerAnimator;
+    public EnemyAnimationController enemyAnimator;
+    public BattleSystem battlesystem;
+    public Enemy enemyUnit;
+    public Unit currentPlayerUnit;
     public string unitName;
 
     public int damage; 
@@ -22,19 +24,20 @@ public class Unit : MonoBehaviour
 
     }
 
-    public void Atk2() {
+    public virtual void Atk2() {
 
     }
 
-    public void Atk3() {
+    public virtual void Atk3() {
         
     }
 
-    public void Atk4() {
+    public virtual void Atk4() {
 
     }
 
     public bool TakeDamage(int dmg){
+        Debug.Log(dmg);
         currentHP -= dmg;
 
         if(currentHP <= 0){

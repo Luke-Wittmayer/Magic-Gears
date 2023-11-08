@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Unit : MonoBehaviour
 {
+    private PlayerAnimationController playerAnimator;
+    private EnemyAnimationController enemyAnimator;
+    public Unit enemyUnit;
     public string unitName;
 
     public int damage; 
@@ -12,6 +15,24 @@ public class Unit : MonoBehaviour
 
     public int maxMana;
     public int currentMana;
+
+    public BattleHUD HUD;
+
+    public virtual void Atk1() {
+
+    }
+
+    public void Atk2() {
+
+    }
+
+    public void Atk3() {
+        
+    }
+
+    public void Atk4() {
+
+    }
 
     public bool TakeDamage(int dmg){
         currentHP -= dmg;

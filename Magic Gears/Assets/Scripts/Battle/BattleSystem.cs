@@ -42,6 +42,8 @@ public class BattleSystem : MonoBehaviour
         playerAnimator = playerPrefab.GetComponent<PlayerAnimationController>();
         enemyAnimator = enemyPrefab.GetComponent<EnemyAnimationController>();
 
+        Unit.maxPlayerMana = 50;
+        Unit.currentPlayerMana = 0;
         HUD.SetupHUD();
 
         state = BattleState.PLAYERTURN;

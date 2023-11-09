@@ -15,10 +15,11 @@ public class Unit : MonoBehaviour
     public int maxHP;
     public int currentHP;
 
-    public int maxMana;
-    public int currentMana;
+    public static int maxPlayerMana;
+    public static int currentPlayerMana;
 
     public BattleHUD HUD;
+    public ParticleSystem switchParticles;
 
     public virtual void Atk1() {
 
@@ -33,7 +34,7 @@ public class Unit : MonoBehaviour
     }
 
     public virtual void Atk4() {
-
+        
     }
 
     public bool TakeDamage(int dmg){
@@ -47,10 +48,10 @@ public class Unit : MonoBehaviour
         }
     }
 
-    public void UpdateMana(int mana){
-        currentMana += mana;
-        if(currentMana < 0){
-            currentMana = 0;
+    public void UpdatePlayerMana(int mana){
+        currentPlayerMana += mana;
+        if(currentPlayerMana < 0){
+            currentPlayerMana = 0;
         }
     }
 

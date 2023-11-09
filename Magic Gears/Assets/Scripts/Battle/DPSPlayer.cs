@@ -40,8 +40,8 @@ public class DPSPlayer : Unit
         battlesystem.state = BattleState.ENEMYTURN;
         // Damage the enemy
         playerAnimator.BasicAttack();
-        this.UpdateMana(2);
-        HUD.SetPlayerMana(this.currentMana);
+        UpdatePlayerMana(2);
+        HUD.SetPlayerMana(currentPlayerMana);
         yield return new WaitForSeconds(.5f);
         bool isDead = enemyUnit.TakeDamage(this.damage);
         HUD.SetEnemyHealth(enemyUnit.currentHP);
@@ -70,9 +70,9 @@ public class DPSPlayer : Unit
         battlesystem.state = BattleState.ENEMYTURN;
         // Damage the enemy
         playerAnimator.ManaStealAttack();
-        this.UpdateMana(4);
+        UpdatePlayerMana(4);
         bool isDead = enemyUnit.TakeDamage(this.damage/2);
-        HUD.SetPlayerMana(this.currentMana);
+        HUD.SetPlayerMana(currentPlayerMana);
         HUD.SetEnemyHealth(enemyUnit.currentHP);
         enemyAnimator.Damaged();
         //yield return new WaitForSeconds(0f);
@@ -96,7 +96,7 @@ public class DPSPlayer : Unit
     }
 
     IEnumerator DPSSpendManaAttack(){
-        if(this.currentMana < 4){
+        if(currentPlayerMana < 4){
             yield break;
         }
         // Set enemy turn to prevent spam clicking
@@ -105,8 +105,8 @@ public class DPSPlayer : Unit
         bool isDead = enemyUnit.TakeDamage(this.damage*2);
         playerAnimator.SpendManaAttack();
         yield return new WaitForSeconds(.5f);
-        this.UpdateMana(-4);
-        HUD.SetPlayerMana(this.currentMana);
+        UpdatePlayerMana(-4);
+        HUD.SetPlayerMana(currentPlayerMana);
         HUD.SetEnemyHealth(enemyUnit.currentHP);
         enemyAnimator.Damaged();
 
@@ -129,7 +129,7 @@ public class DPSPlayer : Unit
     }
 
     IEnumerator DPSUltimateAttack(){
-        if(this.currentMana < 10){
+        if(currentPlayerMana < 10){
             yield break;
         }
         // Set enemy turn to prevent spam clicking
@@ -138,8 +138,8 @@ public class DPSPlayer : Unit
         bool isDead = enemyUnit.TakeDamage(this.damage*2);
         playerAnimator.UltimateAttack();
         yield return new WaitForSeconds(.5f);
-        this.UpdateMana(-10);
-        HUD.SetPlayerMana(this.currentMana);
+        UpdatePlayerMana(-10);
+        HUD.SetPlayerMana(currentPlayerMana);
         HUD.SetEnemyHealth(enemyUnit.currentHP);
         enemyAnimator.Damaged();
 

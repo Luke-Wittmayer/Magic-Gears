@@ -13960,7 +13960,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7876269952242915196, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
       propertyPath: currentHP
-      value: 100
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: -7876269952242915196, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
       propertyPath: enemyUnit
@@ -13979,9 +13979,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 113162789}
     - target: {fileID: -7876269952242915196, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
+      propertyPath: manaCostBasic
+      value: -15
+      objectReference: {fileID: 0}
+    - target: {fileID: -7876269952242915196, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
+      propertyPath: manaCostDefense
+      value: -25
+      objectReference: {fileID: 0}
+    - target: {fileID: -7876269952242915196, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
+      propertyPath: manaCostOffense
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: -7876269952242915196, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
       propertyPath: switchParticles
       value: 
       objectReference: {fileID: 438243662}
+    - target: {fileID: -7876269952242915196, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
+      propertyPath: manaCostUltimate
+      value: 90
+      objectReference: {fileID: 0}
     - target: {fileID: -7876269952242915196, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
       propertyPath: currentPlayerUnit
       value: 
@@ -14997,7 +15013,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3108030142283472347, guid: 8b0684a9e27c54241a582604297eb3ee, type: 3}
       propertyPath: currentHP
-      value: 50
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3108030142283472347, guid: 8b0684a9e27c54241a582604297eb3ee, type: 3}
       propertyPath: damageBig

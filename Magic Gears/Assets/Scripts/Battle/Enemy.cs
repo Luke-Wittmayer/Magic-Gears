@@ -8,11 +8,6 @@ public class Enemy : Unit
     public int maxEnemyMana;
     public int currentEnemyMana;
 
-    public int manaCostBasic;
-    public int manaCostDefense;
-    public int manaCostOffense;
-    public int manaCostUltimate;
-
     public CurrentAtk currentAtk;
 
     void Start() {
@@ -93,5 +88,6 @@ public class Enemy : Unit
             currentEnemyMana = 0;
         }
     }
+
 
 }

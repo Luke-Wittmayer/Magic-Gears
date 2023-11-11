@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum BattleState { START, PLAYERTURN, ENEMYTURN, WON, LOST, TARGETSELECT }
+public enum BattleState { START, PLAYERTURN, ENEMYTURN, WON, LOST, SWITCHING }
 
 public class BattleSystem : MonoBehaviour
 {
@@ -42,7 +42,7 @@ public class BattleSystem : MonoBehaviour
         playerAnimator = playerPrefab.GetComponent<PlayerAnimationController>();
         enemyAnimator = enemyPrefab.GetComponent<EnemyAnimationController>();
 
-        Unit.maxPlayerMana = 50;
+        Unit.maxPlayerMana = 100;
         Unit.currentPlayerMana = 0;
         HUD.SetupHUD();
 

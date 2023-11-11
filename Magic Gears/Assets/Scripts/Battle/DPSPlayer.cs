@@ -6,6 +6,13 @@ using UnityEngine;
 
 public class DPSPlayer : Unit
 {
+    /*
+    DPS Character moves:
+    Basic
+    Defense: Steal mana
+    Offense: Use mana
+    Ultimate: extra turn
+    */
     
     public override void Atk1() {
         if (battlesystem.state != BattleState.PLAYERTURN){
@@ -40,11 +47,11 @@ public class DPSPlayer : Unit
         battlesystem.state = BattleState.ENEMYTURN;
         // Damage the enemy
         playerAnimator.BasicAttack();
-        UpdatePlayerMana(2);
-        HUD.SetPlayerMana(currentPlayerMana);
+        UpdatePlayerMana(manaCostBasic);
+        HUD.SetPlayerMana();
         yield return new WaitForSeconds(.5f);
         bool isDead = enemyUnit.TakeDamage(this.damageBasic);
-        HUD.SetEnemyHealth(enemyUnit.currentHP);
+        //HUD.SetEnemyHealth();
         enemyAnimator.Damaged();
 
         Debug.Log("The attack is successful on " + enemyUnit.unitName + "!");
@@ -70,10 +77,11 @@ public class DPSPlayer : Unit
         battlesystem.state = BattleState.ENEMYTURN;
         // Damage the enemy
         playerAnimator.ManaStealAttack();
-        UpdatePlayerMana(4);
+        UpdatePlayerMana(manaCostDefense);
+        enemyUnit.UpdateEnemyMana(-manaCostDefense);
         bool isDead = enemyUnit.TakeDamage(this.damageBasic/2);
-        HUD.SetPlayerMana(currentPlayerMana);
-        HUD.SetEnemyHealth(enemyUnit.currentHP);
+        HUD.SetPlayerMana();
+        //HUD.SetEnemyHealth();
         enemyAnimator.Damaged();
         //yield return new WaitForSeconds(0f);
 
@@ -96,7 +104,8 @@ public class DPSPlayer : Unit
     }
 
     IEnumerator DPSSpendManaAttack(){
-        if(currentPlayerMana < 4){
+        if(currentPlayerMana < manaCostOffense){
+            Debug.Log("Not enough mana!");
             yield break;
         }
         // Set enemy turn to prevent spam clicking
@@ -105,9 +114,9 @@ public class DPSPlayer : Unit
         bool isDead = enemyUnit.TakeDamage(this.damageBasic*2);
         playerAnimator.SpendManaAttack();
         yield return new WaitForSeconds(.5f);
-        UpdatePlayerMana(-4);
-        HUD.SetPlayerMana(currentPlayerMana);
-        HUD.SetEnemyHealth(enemyUnit.currentHP);
+        UpdatePlayerMana(manaCostOffense);
+        HUD.SetPlayerMana();
+        //HUD.SetEnemyHealth();
         enemyAnimator.Damaged();
 
         Debug.Log("The attack is successful on " + enemyUnit.unitName + "!");
@@ -129,7 +138,8 @@ public class DPSPlayer : Unit
     }
 
     IEnumerator DPSUltimateAttack(){
-        if(currentPlayerMana < 10){
+        if(currentPlayerMana < manaCostUltimate){
+            Debug.Log("Not enough mana!");
             yield break;
         }
         // Set enemy turn to prevent spam clicking
@@ -138,9 +148,9 @@ public class DPSPlayer : Unit
         bool isDead = enemyUnit.TakeDamage(this.damageBasic*2);
         playerAnimator.UltimateAttack();
         yield return new WaitForSeconds(.5f);
-        UpdatePlayerMana(-10);
-        HUD.SetPlayerMana(currentPlayerMana);
-        HUD.SetEnemyHealth(enemyUnit.currentHP);
+        UpdatePlayerMana(manaCostUltimate);
+        HUD.SetPlayerMana();
+        //HUD.SetEnemyHealth();
         enemyAnimator.Damaged();
 
         Debug.Log("The attack is successful on " + enemyUnit.unitName + "!");

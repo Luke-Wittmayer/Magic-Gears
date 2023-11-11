@@ -28,30 +28,47 @@ public class BattleHUD : MonoBehaviour
         }
     }
     public void SetupHUD(){
-        playerMana.fillAmount = 0f;
-        playerHealth.fillAmount = 1f;
-        enemyMana.fillAmount = 0f;
-        enemyHealth.fillAmount = 1f;
+        playerMana.fillAmount = (float)Unit.currentPlayerMana/Unit.maxPlayerMana;
+        playerHealth.fillAmount = (float)currentPlayerUnit.currentHP/currentPlayerUnit.maxHP;
+        enemyMana.fillAmount = (float)enemyUnit.currentEnemyMana/enemyUnit.maxEnemyMana;
+        enemyHealth.fillAmount = (float)enemyUnit.currentHP/enemyUnit.maxHP;
+    }
+
+    public void updateAllHealth() {
+        SetPlayerHealth();
+        SetEnemyHealth();
+    }
+
+    public void updateAllMana() {
+        SetEnemyMana();
+        SetPlayerMana();
+    }
+
+    public void updateAllValues() {
+        SetEnemyHealth();
+        SetEnemyMana();
+        SetPlayerHealth();
+        SetPlayerMana();
     }
 
 
-    public void SetPlayerMana(int mana){
-        float manaf = (float)mana;
+    public void SetPlayerMana(){
+        float manaf = (float)Unit.currentPlayerMana;
         playerMana.fillAmount = manaf/Unit.maxPlayerMana;
     }
 
-    public void SetPlayerHealth(int health) {
-        float healthf = (float)health;
-    playerHealth.fillAmount = healthf/currentPlayerUnit.maxHP;
+    public void SetPlayerHealth() {
+        float healthf = (float)currentPlayerUnit.currentHP;
+        playerHealth.fillAmount = healthf/currentPlayerUnit.maxHP;
     }
 
-    public void SetEnemyMana(int mana){
-        float manaf = (float)mana;
+    public void SetEnemyMana(){
+        float manaf = (float)enemyUnit.currentEnemyMana;
         enemyMana.fillAmount = manaf/enemyUnit.maxEnemyMana;
     }
 
-    public void SetEnemyHealth(int health) {
-        float healthf = (float)health;
+    public void SetEnemyHealth() {
+        float healthf = (float)enemyUnit.currentHP;
         enemyHealth.fillAmount = healthf/enemyUnit.maxHP;
     }
 
@@ -78,21 +95,22 @@ public class BattleHUD : MonoBehaviour
             currentPlayerUnit.gameObject.SetActive(false);
             currentPlayerUnit = DPS;
             DPS.gameObject.SetActive(true);
+            updateAllValues();
         }
     }
 
     public void switchToHealer(Unit Healer) {
-        if(Healer == currentPlayerUnit) {
+        if(Healer == currentPlayerUnit || battle.state != BattleState.PLAYERTURN) {
             Debug.Log("No");
             return;
         }
         else {
             Debug.Log("Switch");
+            battle.state = BattleState.SWITCHING;
             StartCoroutine(switchToHealerE(Healer));
         }
     }
     IEnumerator switchToHealerE(Unit Healer) {
-        
         Debug.Log("Switching");
         currentPlayerUnit.switchParticles.Stop();
         if(!currentPlayerUnit.switchParticles.isPlaying) {
@@ -104,7 +122,8 @@ public class BattleHUD : MonoBehaviour
         currentPlayerUnit.gameObject.SetActive(false);
         currentPlayerUnit = Healer;
         Healer.gameObject.SetActive(true);
-        
+        updateAllValues();
+        battle.state = BattleState.PLAYERTURN;
     }
     
 }

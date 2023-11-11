@@ -9,11 +9,9 @@ public class Cactus : Enemy
     public enum ReflectState {YES, NO}
 
     public ReflectState reflectState;
-    private int atk;
 
     void Start() {
         reflectState = ReflectState.NO;
-        atk = 1;
     }
     
     public int damageBig;
@@ -37,9 +35,16 @@ public class Cactus : Enemy
         if(reflectState == ReflectState.YES) {
             //reflected damage = damage taken
             Debug.Log("Reflecting: " + currentPlayerUnit.currentHP + " health");
-            currentPlayerUnit.TakeDamage(dmg);
+            bool isDead = currentPlayerUnit.TakeDamage(dmg);
             Debug.Log("Reflecting: " + currentPlayerUnit.currentHP + " health");
             reflectState = ReflectState.NO;
+
+            if(isDead){
+                battlesystem.state = BattleState.LOST; 
+                Debug.Log("You lose!");
+                battlesystem.EndBattle();
+                return false;
+            }
         }
         return base.TakeDamage(dmg);
     }
@@ -73,10 +78,10 @@ public class Cactus : Enemy
         yield return new WaitForSeconds(.5f);
         Debug.Log("Enemy gains " + manaCostBasic + "mana");
         UpdateEnemyMana(manaCostBasic);
-        HUD.SetEnemyMana(currentEnemyMana);
+        HUD.SetEnemyMana();
         playerAnimator.Damaged();
         bool isDead = currentPlayerUnit.TakeDamage(damageBasic);
-        HUD.SetPlayerHealth(currentPlayerUnit.currentHP);
+        //HUD.SetPlayerHealth();
 
         if(isDead){
             battlesystem.state = BattleState.LOST; 
@@ -94,7 +99,7 @@ public class Cactus : Enemy
         enemyAnimator.EnemyBasicAttack();
         yield return new WaitForSeconds(.5f);
         UpdateEnemyMana(manaCostDefense);
-        HUD.SetEnemyMana(currentEnemyMana);
+        HUD.SetEnemyMana();
         reflectState = ReflectState.YES;
 
         battlesystem.state = BattleState.PLAYERTURN;
@@ -111,10 +116,10 @@ public class Cactus : Enemy
         enemyAnimator.EnemyBasicAttack();
         yield return new WaitForSeconds(.5f);
         UpdateEnemyMana(manaCostOffense);
-        HUD.SetEnemyMana(currentEnemyMana);
+        HUD.SetEnemyMana();
         playerAnimator.Damaged();
         bool isDead = currentPlayerUnit.TakeDamage(damageBig);
-        HUD.SetPlayerHealth(currentPlayerUnit.currentHP);
+        //HUD.SetPlayerHealth();
 
         if(isDead){
             battlesystem.state = BattleState.LOST; 

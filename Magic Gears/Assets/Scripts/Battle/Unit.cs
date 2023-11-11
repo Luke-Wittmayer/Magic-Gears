@@ -18,6 +18,11 @@ public class Unit : MonoBehaviour
     public static int maxPlayerMana;
     public static int currentPlayerMana;
 
+    public int manaCostBasic;
+    public int manaCostDefense;
+    public int manaCostOffense;
+    public int manaCostUltimate;
+
     public BattleHUD HUD;
     public ParticleSystem switchParticles;
 
@@ -40,6 +45,7 @@ public class Unit : MonoBehaviour
     public virtual bool TakeDamage(int dmg){
         //Debug.Log(dmg);
         currentHP -= dmg;
+        HUD.updateAllHealth();
 
         if(currentHP <= 0){
             return true;
@@ -49,9 +55,14 @@ public class Unit : MonoBehaviour
     }
 
     public void UpdatePlayerMana(int mana){
-        currentPlayerMana += mana;
+        currentPlayerMana -= mana;
+        //check for negative mana values
         if(currentPlayerMana < 0){
             currentPlayerMana = 0;
+        }
+        //check for upper mana limit
+        if(currentPlayerMana > maxPlayerMana) {
+            currentPlayerMana = maxPlayerMana;
         }
     }
 

@@ -43,7 +43,7 @@ public class DPSPlayer : Unit
         UpdatePlayerMana(2);
         HUD.SetPlayerMana(currentPlayerMana);
         yield return new WaitForSeconds(.5f);
-        bool isDead = enemyUnit.TakeDamage(this.damage);
+        bool isDead = enemyUnit.TakeDamage(this.damageBasic);
         HUD.SetEnemyHealth(enemyUnit.currentHP);
         enemyAnimator.Damaged();
 
@@ -57,7 +57,7 @@ public class DPSPlayer : Unit
         } else 
         {
             if(playerAnimator.UltimateState == 0){
-                enemyUnit.Attacker();
+                enemyUnit.chooseAttack();
             }else {
                 battlesystem.PlayerTurn();
             }
@@ -71,7 +71,7 @@ public class DPSPlayer : Unit
         // Damage the enemy
         playerAnimator.ManaStealAttack();
         UpdatePlayerMana(4);
-        bool isDead = enemyUnit.TakeDamage(this.damage/2);
+        bool isDead = enemyUnit.TakeDamage(this.damageBasic/2);
         HUD.SetPlayerMana(currentPlayerMana);
         HUD.SetEnemyHealth(enemyUnit.currentHP);
         enemyAnimator.Damaged();
@@ -88,7 +88,7 @@ public class DPSPlayer : Unit
         {
             if(playerAnimator.UltimateState == 0){
                 battlesystem.state = BattleState.ENEMYTURN;
-                enemyUnit.Attacker();
+                enemyUnit.chooseAttack();
             }else {
                 battlesystem.PlayerTurn();
             }
@@ -102,7 +102,7 @@ public class DPSPlayer : Unit
         // Set enemy turn to prevent spam clicking
         battlesystem.state = BattleState.ENEMYTURN;
         // Damage the enemy
-        bool isDead = enemyUnit.TakeDamage(this.damage*2);
+        bool isDead = enemyUnit.TakeDamage(this.damageBasic*2);
         playerAnimator.SpendManaAttack();
         yield return new WaitForSeconds(.5f);
         UpdatePlayerMana(-4);
@@ -121,7 +121,7 @@ public class DPSPlayer : Unit
         {
             if(playerAnimator.UltimateState == 0){
                 battlesystem.state = BattleState.ENEMYTURN;
-                enemyUnit.Attacker();
+                enemyUnit.chooseAttack();
             }else {
                 battlesystem.PlayerTurn();
             }
@@ -135,7 +135,7 @@ public class DPSPlayer : Unit
         // Set enemy turn to prevent spam clicking
         battlesystem.state = BattleState.ENEMYTURN;
         // Damage the enemy
-        bool isDead = enemyUnit.TakeDamage(this.damage*2);
+        bool isDead = enemyUnit.TakeDamage(this.damageBasic*2);
         playerAnimator.UltimateAttack();
         yield return new WaitForSeconds(.5f);
         UpdatePlayerMana(-10);

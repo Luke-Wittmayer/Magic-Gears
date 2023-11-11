@@ -10,8 +10,8 @@ public class Unit : MonoBehaviour
     public Enemy enemyUnit;
     public Unit currentPlayerUnit;
     public string unitName;
-
-    public int damage; 
+ 
+    public int damageBasic;
     public int maxHP;
     public int currentHP;
 
@@ -37,8 +37,8 @@ public class Unit : MonoBehaviour
         
     }
 
-    public bool TakeDamage(int dmg){
-        Debug.Log(dmg);
+    public virtual bool TakeDamage(int dmg){
+        //Debug.Log(dmg);
         currentHP -= dmg;
 
         if(currentHP <= 0){

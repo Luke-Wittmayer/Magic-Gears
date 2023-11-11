@@ -13955,9 +13955,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 638197518}
     - target: {fileID: -7876269952242915196, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
+      propertyPath: maxHP
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: -7876269952242915196, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
+      propertyPath: currentHP
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: -7876269952242915196, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
       propertyPath: enemyUnit
       value: 
       objectReference: {fileID: 113162794}
+    - target: {fileID: -7876269952242915196, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
+      propertyPath: damageBasic
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: -7876269952242915196, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
       propertyPath: battlesystem
       value: 
@@ -14973,7 +14985,7 @@ PrefabInstance:
       objectReference: {fileID: 638197518}
     - target: {fileID: 3108030142283472347, guid: 8b0684a9e27c54241a582604297eb3ee, type: 3}
       propertyPath: maxHP
-      value: 20
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 3108030142283472347, guid: 8b0684a9e27c54241a582604297eb3ee, type: 3}
       propertyPath: damage
@@ -14985,12 +14997,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3108030142283472347, guid: 8b0684a9e27c54241a582604297eb3ee, type: 3}
       propertyPath: currentHP
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3108030142283472347, guid: 8b0684a9e27c54241a582604297eb3ee, type: 3}
+      propertyPath: damageBig
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 3108030142283472347, guid: 8b0684a9e27c54241a582604297eb3ee, type: 3}
       propertyPath: enemyUnit
       value: 
       objectReference: {fileID: 113162794}
+    - target: {fileID: 3108030142283472347, guid: 8b0684a9e27c54241a582604297eb3ee, type: 3}
+      propertyPath: damageBasic
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3108030142283472347, guid: 8b0684a9e27c54241a582604297eb3ee, type: 3}
       propertyPath: battlesystem
       value: 
@@ -15000,13 +15020,29 @@ PrefabInstance:
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 3108030142283472347, guid: 8b0684a9e27c54241a582604297eb3ee, type: 3}
+      propertyPath: reflectState
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3108030142283472347, guid: 8b0684a9e27c54241a582604297eb3ee, type: 3}
       propertyPath: enemyAnimator
       value: 
       objectReference: {fileID: 113162789}
     - target: {fileID: 3108030142283472347, guid: 8b0684a9e27c54241a582604297eb3ee, type: 3}
+      propertyPath: manaCostBasic
+      value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3108030142283472347, guid: 8b0684a9e27c54241a582604297eb3ee, type: 3}
       propertyPath: playerAnimator
       value: 
       objectReference: {fileID: 407912880}
+    - target: {fileID: 3108030142283472347, guid: 8b0684a9e27c54241a582604297eb3ee, type: 3}
+      propertyPath: manaCostDefense
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3108030142283472347, guid: 8b0684a9e27c54241a582604297eb3ee, type: 3}
+      propertyPath: manaCostOffense
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 3108030142283472347, guid: 8b0684a9e27c54241a582604297eb3ee, type: 3}
       propertyPath: currentPlayerUnit
       value: 

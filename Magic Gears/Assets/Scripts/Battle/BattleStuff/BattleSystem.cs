@@ -50,6 +50,24 @@ public class BattleSystem : MonoBehaviour
         PlayerTurn();
     }
 
+    public void EndBattle()
+    {
+        if (state == BattleState.WON)
+        {
+            enemyAnimator.Dead();
+            playerAnimator.Win();
+        }
+        else if (state == BattleState.LOST)
+        {
+            playerAnimator.Lose();
+        }
+    }
+
+    public void PlayerTurn()
+    {
+        Debug.Log("Player turn!");
+        state = BattleState.PLAYERTURN;
+    }
     // IEnumerator DPSBasicAttack(){
     //     // Set enemy turn to prevent spam clicking
     //     state = BattleState.ENEMYTURN;
@@ -189,20 +207,7 @@ public class BattleSystem : MonoBehaviour
     //     }
     // }
 
-    public void EndBattle(){
-        if(state == BattleState.WON){
-            enemyAnimator.Dead();
-            playerAnimator.Win();
-        } else if (state == BattleState.LOST){
-            playerAnimator.Lose();
-        }
-    }
 
-    public void PlayerTurn()
-    {
-        Debug.Log("Player turn!");
-        state = BattleState.PLAYERTURN;
-    }
 
     // public void OnAtkOne()
     // {

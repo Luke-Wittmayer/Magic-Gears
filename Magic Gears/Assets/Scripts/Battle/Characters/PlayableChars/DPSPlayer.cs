@@ -13,7 +13,8 @@ public class DPSPlayer : Unit
     Offense: Use mana
     Ultimate: extra turn
     */
-    
+
+
     public override void Atk1() {
         if (battlesystem.state != BattleState.PLAYERTURN){
             Debug.Log("Error");

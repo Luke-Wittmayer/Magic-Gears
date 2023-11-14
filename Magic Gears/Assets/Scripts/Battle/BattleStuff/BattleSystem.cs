@@ -42,6 +42,7 @@ public class BattleSystem : MonoBehaviour
         playerAnimator = playerPrefab.GetComponent<PlayerAnimationController>();
         enemyAnimator = enemyPrefab.GetComponent<EnemyAnimationController>();
 
+        Time.timeScale = 1f;
         Unit.maxPlayerMana = 100;
         Unit.currentPlayerMana = 0;
         HUD.SetupHUD();
@@ -65,7 +66,7 @@ public class BattleSystem : MonoBehaviour
 
     public void PlayerTurn()
     {
-        Debug.Log("Player turn!");
+        HUD.Log.text = "Player turn!";
         state = BattleState.PLAYERTURN;
     }
     // IEnumerator DPSBasicAttack(){

@@ -24,7 +24,7 @@ public class Unit : MonoBehaviour
     public int manaCostUltimate;
 
     public BattleHUD HUD;
-    public ParticleSystem switchParticles;
+    public GameObject AttackButtons;
 
     public virtual void Atk1() {
 

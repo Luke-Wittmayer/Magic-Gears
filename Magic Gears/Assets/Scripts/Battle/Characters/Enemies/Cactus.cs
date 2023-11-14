@@ -72,7 +72,7 @@ public class Cactus : Enemy
     }
     public IEnumerator EnemyAttack1(){
         //Enemy basic attack gains 5 mana
-        Debug.Log("Enemy unit attacks!");
+        HUD.Log.text = "Cactus attacks!";
         yield return new WaitForSeconds(1f);
         enemyAnimator.EnemyBasicAttack();
         yield return new WaitForSeconds(.5f);
@@ -81,7 +81,8 @@ public class Cactus : Enemy
         HUD.SetEnemyMana();
         playerAnimator.Damaged();
         bool isDead = currentPlayerUnit.TakeDamage(damageBasic);
-        //HUD.SetPlayerHealth();
+        HUD.Log.text = "You take " + damageBasic + " damage!";
+        yield return new WaitForSeconds(2f);
 
         if(isDead){
             battlesystem.state = BattleState.LOST; 

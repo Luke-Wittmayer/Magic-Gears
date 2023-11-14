@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -34,7 +35,7 @@ public class DPSPlayer : Unit
         if (battlesystem.state != BattleState.PLAYERTURN){
             return;
         }
-        DPSStealManaAttack();        
+        StartCoroutine(DPSStealManaAttack());        
     }
     public override void Atk4() {
         if (battlesystem.state != BattleState.PLAYERTURN){
@@ -55,8 +56,10 @@ public class DPSPlayer : Unit
         //HUD.SetEnemyHealth();
         enemyAnimator.Damaged();
 
-        Debug.Log("The attack is successful on " + enemyUnit.unitName + "!");
+        HUD.Log.text = "The attack is successful on " + enemyUnit.unitName + "!\n";
+        HUD.Log.text += "You deal " + damageBasic + " damage and gain " + Math.Abs(manaCostBasic) + " mana!";
         Debug.Log(enemyUnit.unitName + " now has " + enemyUnit.currentHP + " remaining.");
+        yield return new WaitForSeconds(2f);
 
         if(isDead){
             battlesystem.state = BattleState.WON;
@@ -72,7 +75,7 @@ public class DPSPlayer : Unit
         }
     }
 
-    void DPSStealManaAttack(){
+    IEnumerator DPSStealManaAttack(){
         Debug.Log("In the function");
         // Set enemy turn to prevent spam clicking
         battlesystem.state = BattleState.ENEMYTURN;
@@ -86,8 +89,10 @@ public class DPSPlayer : Unit
         enemyAnimator.Damaged();
         //yield return new WaitForSeconds(0f);
 
-        Debug.Log("The attack is successful on " + enemyUnit.unitName + "!");
+        HUD.Log.text = "The attack is successful on " + enemyUnit.unitName + "!\n";
+        HUD.Log.text += "You deal " + damageBasic/2 + " damage and gain " + Math.Abs(manaCostDefense) + " mana!";
         Debug.Log(enemyUnit.unitName + " now has " + enemyUnit.currentHP + " remaining.");
+        yield return new WaitForSeconds(2f);
 
         if(isDead){
             battlesystem.state = BattleState.WON;
@@ -119,6 +124,10 @@ public class DPSPlayer : Unit
         HUD.SetPlayerMana();
         //HUD.SetEnemyHealth();
         enemyAnimator.Damaged();
+
+        HUD.Log.text = "The attack is successful on " + enemyUnit.unitName + "!\n";
+        HUD.Log.text += "You deal " + damageBasic*2 + " damage and spend " + manaCostOffense + " mana!";
+        yield return new WaitForSeconds(2f);
 
         Debug.Log("The attack is successful on " + enemyUnit.unitName + "!");
         Debug.Log(enemyUnit.unitName + " now has " + enemyUnit.currentHP + " remaining.");
@@ -154,6 +163,10 @@ public class DPSPlayer : Unit
         //HUD.SetEnemyHealth();
         enemyAnimator.Damaged();
 
+        HUD.Log.text = "The attack is successful on " + enemyUnit.unitName + "!\n";
+        HUD.Log.text += "You deal " + Math.Abs(damageBasic*2) + " damage and spend " + manaCostUltimate + " mana!\n";
+        
+
         Debug.Log("The attack is successful on " + enemyUnit.unitName + "!");
         Debug.Log(enemyUnit.unitName + " now has " + enemyUnit.currentHP + " remaining.");
 
@@ -163,6 +176,8 @@ public class DPSPlayer : Unit
             battlesystem.EndBattle();
         } else 
         {
+            HUD.Log.text += "You get an extra turn!";
+            yield return new WaitForSeconds(2f);
             battlesystem.PlayerTurn();
         }
     }

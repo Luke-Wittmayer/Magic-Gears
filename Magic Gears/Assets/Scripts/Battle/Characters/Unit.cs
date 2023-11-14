@@ -26,7 +26,9 @@ public class Unit : MonoBehaviour
     public BattleHUD HUD;
     public GameObject AttackButtons;
 
-    public virtual void Atk1() {
+    public bool playerIsSwallowed = false;
+
+public virtual void Atk1() {
 
     }
 
@@ -45,8 +47,15 @@ public class Unit : MonoBehaviour
     public virtual bool TakeDamage(int dmg){
         //Debug.Log(dmg);
         currentHP -= dmg;
+        if(currentHP > maxHP)
+        {
+            currentHP = maxHP;
+        }
+        if (currentHP < 0)
+        {
+            currentHP = 0;
+        }
         HUD.updateAllHealth();
-
         if(currentHP <= 0){
             return true;
         } else {

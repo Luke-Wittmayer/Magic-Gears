@@ -97,7 +97,13 @@ public class BattleHUD : MonoBehaviour
     }
 
     public void switchToDPS(Unit DPS) {
-        if(DPS == currentPlayerUnit) {
+        //For the chest enemy case. Prevent player from switching to this character if the character is swallowed
+        if (DPS.playerIsSwallowed)
+        {
+            Debug.Log("Cannot switch to a swallowed ally");
+            return;
+        }
+        if (DPS == currentPlayerUnit) {
             return;
         }
         else {
@@ -126,7 +132,13 @@ public class BattleHUD : MonoBehaviour
     }
 
     public void switchToHealer(Unit Healer) {
-        if(Healer == currentPlayerUnit || battle.state != BattleState.PLAYERTURN) {
+        //For the chest enemy case. Prevent player from switching to this character if the character is swallowed
+        if (Healer.playerIsSwallowed)
+        {
+            Debug.Log("Cannot switch to a swallowed ally");
+            return;
+        }
+        if (Healer == currentPlayerUnit || battle.state != BattleState.PLAYERTURN) {
             Debug.Log("No");
             return;
         }
@@ -137,6 +149,7 @@ public class BattleHUD : MonoBehaviour
         }
     }
     IEnumerator switchToHealerE(Unit Healer) {
+
         Debug.Log("Switching");
         switchParticles.Stop();
         if(!switchParticles.isPlaying) {
@@ -155,7 +168,13 @@ public class BattleHUD : MonoBehaviour
     }
 
     public void switchToTank(Unit Tank) {
-        if(Tank == currentPlayerUnit || battle.state != BattleState.PLAYERTURN) {
+        //For the chest enemy case. Prevent player from switching to this character if the character is swallowed
+        if (Tank.playerIsSwallowed)
+        {
+            Debug.Log("Cannot switch to a swallowed ally");
+            return;
+        }
+        if (Tank == currentPlayerUnit || battle.state != BattleState.PLAYERTURN) {
             Debug.Log("No");
             return;
         }
@@ -166,6 +185,7 @@ public class BattleHUD : MonoBehaviour
         }
     }
     IEnumerator switchToTankE(Unit Tank) {
+
         Debug.Log("Switching");
         switchParticles.Stop();
         if(!switchParticles.isPlaying) {

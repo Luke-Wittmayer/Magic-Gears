@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerAnimationController : MonoBehaviour
 {
+    public SimpleShoot gun;
     private const string BASIC_ATTACK = "BasicAttack";
     private const string MANA_STEAL = "StealManaAttack";
     private const string SPEND_MANA = "SpendManaAttack";
@@ -34,6 +35,7 @@ public class PlayerAnimationController : MonoBehaviour
             UltimateState -= 1;
         }
         animator.SetTrigger(BASIC_ATTACK);
+        gun.gunAnimator.SetTrigger("Fire");
     }
 
     public void ManaStealAttack() {
@@ -56,6 +58,8 @@ public class PlayerAnimationController : MonoBehaviour
             UltimateState -= 1;
         }
         animator.SetTrigger(SPEND_MANA);
+        gun.gunAnimator.SetTrigger("Fire");
+        gun.gunAnimator.SetTrigger("Fire");
     }
 
     public void UltimateAttack(){

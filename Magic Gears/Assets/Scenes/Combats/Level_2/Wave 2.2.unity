@@ -548,6 +548,7 @@ MonoBehaviour:
   manaCostUltimate: 0
   HUD: {fileID: 0}
   AttackButtons: {fileID: 1523751906}
+  playerIsSwallowed: 0
 --- !u!1 &50304601 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4530003306004163418, guid: a281aaaef0214dbbb7a0c5e5d4d370d1, type: 3}
@@ -580,6 +581,7 @@ MonoBehaviour:
   manaCostUltimate: 0
   HUD: {fileID: 0}
   AttackButtons: {fileID: 723941847}
+  playerIsSwallowed: 0
 --- !u!4 &61735129 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 481848, guid: fa07ca939fb86614e840203d85f23f08, type: 3}
@@ -3125,6 +3127,10 @@ PrefabInstance:
       propertyPath: currentPlayerUnit
       value: 
       objectReference: {fileID: 430790788}
+    - target: {fileID: -1880875062336761047, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
+      propertyPath: gun
+      value: 
+      objectReference: {fileID: 1510920922}
     - target: {fileID: 4041738798989974148, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
       propertyPath: m_Name
       value: DPS
@@ -3175,9 +3181,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 3226429172037485590, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 557834371}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3226429172037916726, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1510920919}
+    - targetCorrespondingSourceObject: {fileID: 3226429172037916726, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1510920922}
   m_SourcePrefab: {fileID: 100100000, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
+--- !u!4 &499368421 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3226429172037485590, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
+  m_PrefabInstance: {fileID: 499368420}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &501860498 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 224389055592128360, guid: 5131754af739541a7a443bd0498d5498, type: 3}
@@ -3656,6 +3676,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 553498469}
   m_CullTransparentMesh: 0
+--- !u!1 &557834370
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 557834371}
+  m_Layer: 0
+  m_Name: Barrel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &557834371
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 557834370}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.172, z: 0.533}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 499368421}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &563163003
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5825,6 +5876,7 @@ MonoBehaviour:
   manaCostUltimate: 0
   HUD: {fileID: 308197657}
   AttackButtons: {fileID: 0}
+  playerIsSwallowed: 0
   maxEnemyMana: 100
   currentEnemyMana: 30
   currentAtk: 0
@@ -9363,6 +9415,53 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 430254, guid: f21c48374d4fdc4489f7894214718503, type: 3}
   m_PrefabInstance: {fileID: 351682}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1510920918 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3226429172037916726, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
+  m_PrefabInstance: {fileID: 499368420}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1510920919
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1510920918}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 03d1fe4e93c9d4445b3a611df2ee5713, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1510920922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1510920918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6be84e4d7829855419c06b94e56bd135, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 0}
+  casingPrefab: {fileID: 4362657251999731927, guid: 4cb20e8abae957146a8b78e670d3fe74, type: 3}
+  muzzleFlashPrefab: {fileID: 1782395880954752, guid: 3dd9cf2e209c504448f1c4c6835675cf, type: 3}
+  gunAnimator: {fileID: 1510920919}
+  barrelLocation: {fileID: 557834371}
+  casingExitLocation: {fileID: 557834371}
+  destroyTimer: 2
+  shotPower: 500
+  ejectPower: 150
 --- !u!1 &1523751906
 GameObject:
   m_ObjectHideFlags: 0

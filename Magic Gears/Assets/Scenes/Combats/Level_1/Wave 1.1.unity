@@ -3370,6 +3370,37 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 224389055592128360, guid: 5131754af739541a7a443bd0498d5498, type: 3}
   m_PrefabInstance: {fileID: 1989812630}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &304660218
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 304660219}
+  m_Layer: 0
+  m_Name: Barrel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &304660219
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 304660218}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0, y: 0.172, z: 0.533}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 667181030}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &310940999
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6723,6 +6754,58 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8031339192871210686, guid: 3f9b178ccd3b86f4ebbfc1f5a2815e56, type: 3}
   m_PrefabInstance: {fileID: 648889921}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &667181029 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3226429172037916726, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
+  m_PrefabInstance: {fileID: 1762453812}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &667181030 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3226429172037485590, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
+  m_PrefabInstance: {fileID: 1762453812}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &667181033
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 667181029}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 107649059ea401b4e9c5c20f21e99a55, type: 3}
+  m_Controller: {fileID: 9100000, guid: 03d1fe4e93c9d4445b3a611df2ee5713, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &667181034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 667181029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6be84e4d7829855419c06b94e56bd135, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 0}
+  casingPrefab: {fileID: 4362657251999731927, guid: 4cb20e8abae957146a8b78e670d3fe74, type: 3}
+  muzzleFlashPrefab: {fileID: 1782395880954752, guid: 3dd9cf2e209c504448f1c4c6835675cf, type: 3}
+  gunAnimator: {fileID: 667181033}
+  barrelLocation: {fileID: 304660219}
+  casingExitLocation: {fileID: 304660219}
+  destroyTimer: 2
+  shotPower: 500
+  ejectPower: 150
 --- !u!1001 &668827589
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7400,6 +7483,7 @@ MonoBehaviour:
   manaCostUltimate: 0
   HUD: {fileID: 0}
   AttackButtons: {fileID: 1086736328}
+  playerIsSwallowed: 0
 --- !u!1001 &729165308
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15216,7 +15300,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7876269952242915196, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
       propertyPath: manaCostOffense
-      value: 60
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: -7876269952242915196, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
       propertyPath: switchParticles
@@ -15230,6 +15314,14 @@ PrefabInstance:
       propertyPath: currentPlayerUnit
       value: 
       objectReference: {fileID: 407912879}
+    - target: {fileID: -1880875062336761047, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
+      propertyPath: gun
+      value: 
+      objectReference: {fileID: 667181034}
+    - target: {fileID: -1880875062336761047, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4041738798989974148, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
       propertyPath: m_Name
       value: DPS
@@ -15280,8 +15372,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 3226429172037485590, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 304660219}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3226429172037916726, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 667181033}
+    - targetCorrespondingSourceObject: {fileID: 3226429172037916726, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 667181034}
   m_SourcePrefab: {fileID: 100100000, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
 --- !u!1001 &1763633187
 PrefabInstance:
@@ -18295,6 +18396,7 @@ MonoBehaviour:
   manaCostUltimate: 0
   HUD: {fileID: 0}
   AttackButtons: {fileID: 1751944040}
+  playerIsSwallowed: 0
 --- !u!1001 &2078987675
 PrefabInstance:
   m_ObjectHideFlags: 0

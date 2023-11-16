@@ -3579,7 +3579,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &320390897
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6597,6 +6597,9 @@ MonoBehaviour:
   enemyManaText: {fileID: 1404483136}
   enemyHealthText: {fileID: 1595234012}
   Log: {fileID: 380399008}
+  DPSButton: {fileID: 2900432429562494039}
+  HealerButton: {fileID: 1818153621}
+  TankButton: {fileID: 320390896}
 --- !u!224 &638197519
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15842,7 +15845,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1818153622
 RectTransform:
   m_ObjectHideFlags: 0
@@ -18844,7 +18847,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &3013312620047249587
 MonoBehaviour:
   m_ObjectHideFlags: 0

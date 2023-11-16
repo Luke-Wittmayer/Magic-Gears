@@ -22,7 +22,9 @@ public class BattleHUD : MonoBehaviour
     public TMP_Text enemyManaText;
     public TMP_Text enemyHealthText;
     public TMP_Text Log;
-    
+    public GameObject DPSButton;
+    public GameObject HealerButton;
+    public GameObject TankButton;
     
 
     
@@ -37,6 +39,13 @@ public class BattleHUD : MonoBehaviour
     }
     public void SetupHUD(){
         Log.text = "Begin Battle!";
+        if(storeLevel.level >= 1) {
+            DPSButton.SetActive(true);
+            HealerButton.SetActive(true);
+        }
+        if(storeLevel.level >= 2) {
+            TankButton.SetActive(true);
+        }
         updateAllValues();
     }
 

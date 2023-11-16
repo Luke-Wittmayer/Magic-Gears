@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Enemy : Unit
 {
-    public enum CurrentAtk {BASIC, DEFENSE, OFFENSE}
+    public enum CurrentAtk {BASIC, DEFENSE, OFFENSE, ULTIMATE}
     public int maxEnemyMana;
     public int currentEnemyMana;
+    public int prevMana;
 
     public CurrentAtk currentAtk;
 
@@ -15,7 +17,7 @@ public class Enemy : Unit
     }
 
     public virtual void chooseAttack() {
-
+        prevMana = currentEnemyMana;
     }
     public void StateMachine3(){
         if(currentAtk == CurrentAtk.BASIC) {
@@ -80,7 +82,59 @@ public class Enemy : Unit
         }
     }
 
-    public void StateMachine4(){}
+    public void StateMachine4(){
+        if(currentAtk == CurrentAtk.BASIC) {
+          //if mana < defense cost, stay basic
+          if(enemyUnit.currentEnemyMana < manaCostDefense) {
+
+          }
+          
+          //if mana > offense cost, go offense
+          else if(enemyUnit.currentEnemyMana >= manaCostOffense) {
+            currentAtk = CurrentAtk.OFFENSE;
+          }
+
+          //if enemy health < player health & mana > defense cost, go defense
+          else if(enemyUnit.currentHP < currentPlayerUnit.currentHP &&
+                  enemyUnit.currentEnemyMana >= manaCostDefense) {
+                    currentAtk = CurrentAtk.DEFENSE;
+          }
+        }
+
+        else if(currentAtk == CurrentAtk.DEFENSE) {
+            //if mana >= ultimate cost, go ultimate
+            if(currentEnemyMana >= manaCostUltimate) {
+              currentAtk = CurrentAtk.ULTIMATE;
+            }
+
+            //if mana >= prevMana & mana > defense cost, stay defense
+            else if(currentEnemyMana >= prevMana && currentEnemyMana >= manaCostDefense) {
+
+            }
+
+            //if mana < prevMana, go basic
+            else if(currentEnemyMana < prevMana) {
+              currentAtk = CurrentAtk.BASIC;
+            }
+        }
+
+        else if(currentAtk == CurrentAtk.OFFENSE) {
+            //if mana >= offense cost, stay offense
+            if(currentEnemyMana >= manaCostOffense) {
+
+            }
+
+            //if mana < offense cost, go basic
+            if(currentEnemyMana < manaCostOffense) {
+              currentAtk = CurrentAtk.BASIC;
+            }
+        }
+
+        else if(currentAtk == CurrentAtk.ULTIMATE) {
+            //always to basic after ultimate
+            currentAtk = CurrentAtk.BASIC;
+        }
+    }
 
     public void UpdateEnemyMana(int mana){
         currentEnemyMana -= mana;

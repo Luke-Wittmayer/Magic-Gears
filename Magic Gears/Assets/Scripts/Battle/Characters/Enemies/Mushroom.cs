@@ -162,23 +162,11 @@ public class Mushroom : Enemy
             poisonAttack = poisonAttack + poisonPlus;
         }
 
-        bool isDead = currentPlayerUnit.TakeDamage(damageBasic);
-        //HUD.SetPlayerHealth();
-
-        if (isDead)
-        {
-            battlesystem.state = BattleState.LOST;
-            Debug.Log("You lose!");
-            battlesystem.EndBattle();
-        }
-        else
-        {
-            battlesystem.state = BattleState.PLAYERTURN;
-            battlesystem.PlayerTurn();
-        }
         posionTurns = maxPoisonTurns;
-
         posionIsOn();
         healIsOn();
+        battlesystem.state = BattleState.PLAYERTURN;
+       battlesystem.PlayerTurn();
+
     }
 }

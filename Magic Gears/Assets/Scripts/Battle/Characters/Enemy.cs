@@ -141,6 +141,10 @@ public class Enemy : Unit
         if(currentEnemyMana < 0){
             currentEnemyMana = 0;
         }
+        if(currentEnemyMana > maxEnemyMana)
+        {
+            currentEnemyMana = maxEnemyMana;
+        }
     }
 
 

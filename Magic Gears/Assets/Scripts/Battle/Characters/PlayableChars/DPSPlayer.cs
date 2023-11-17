@@ -84,7 +84,7 @@ public class DPSPlayer : Unit
         UpdatePlayerMana(manaCostDefense);
         enemyUnit.UpdateEnemyMana(-manaCostDefense);
         bool isDead = enemyUnit.TakeDamage(this.damageBasic/2);
-        HUD.SetPlayerMana();
+        HUD.updateAllMana();
         //HUD.SetEnemyHealth();
         enemyAnimator.Damaged();
         //yield return new WaitForSeconds(0f);

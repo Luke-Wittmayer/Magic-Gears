@@ -17,7 +17,7 @@ public class SimpleShoot : MonoBehaviour
 
     [Header("Settings")]
     [Tooltip("Specify time to destory the casing object")] [SerializeField] private float destroyTimer = 2f;
-   // [Tooltip("Bullet Speed")] [SerializeField] private float shotPower = 500f;
+    [Tooltip("Bullet Speed")] [SerializeField] private float shotPower = 500f;
     [Tooltip("Casing Ejection Speed")] [SerializeField] private float ejectPower = 150f;
 
 
@@ -62,13 +62,13 @@ public class SimpleShoot : MonoBehaviour
             yield return new WaitForSeconds(0f); }
 
         // Create a bullet and add force on it in direction of the barrel
-       // Rigidbody rb = Instantiate(bulletPrefab, barrelLocation.position, barrelLocation.rotation).GetComponent<Rigidbody>();
-       // if (rb != null)
-       // {
-       //     Debug.Log("NOT NULL ");
-      //      rb.constraints = RigidbodyConstraints.None;
-     //       rb.AddForce(barrelLocation.forward * shotPower);
-   //     }
+       Rigidbody rb = Instantiate(bulletPrefab, barrelLocation.position, barrelLocation.rotation).GetComponent<Rigidbody>();
+       if (rb != null)
+       {
+           Debug.Log("NOT NULL ");
+           rb.constraints = RigidbodyConstraints.None;
+           rb.AddForce(barrelLocation.forward * shotPower);
+        }
 
 
     }

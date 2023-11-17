@@ -2869,6 +2869,37 @@ RectTransform:
   m_AnchoredPosition: {x: -50, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &250699748
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 250699749}
+  m_Layer: 0
+  m_Name: CaseExit
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &250699749
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 250699748}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0, y: 0.196, z: 0.27}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 667181030}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &255258879
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6800,12 +6831,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6be84e4d7829855419c06b94e56bd135, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 0}
+  bulletPrefab: {fileID: 6804990658058999119, guid: 65c9f6563c561ee4e8905d1e6a32548b, type: 3}
   casingPrefab: {fileID: 4362657251999731927, guid: 4cb20e8abae957146a8b78e670d3fe74, type: 3}
   muzzleFlashPrefab: {fileID: 1782395880954752, guid: 3dd9cf2e209c504448f1c4c6835675cf, type: 3}
   gunAnimator: {fileID: 667181033}
   barrelLocation: {fileID: 304660219}
-  casingExitLocation: {fileID: 304660219}
+  casingExitLocation: {fileID: 250699749}
   destroyTimer: 2
   shotPower: 500
   ejectPower: 150
@@ -15379,6 +15410,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3226429172037485590, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
       insertIndex: -1
       addedObject: {fileID: 304660219}
+    - targetCorrespondingSourceObject: {fileID: 3226429172037485590, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 250699749}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3226429172037916726, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
       insertIndex: -1
@@ -16622,7 +16656,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3108030142283472347, guid: 8b0684a9e27c54241a582604297eb3ee, type: 3}
       propertyPath: damageBig
-      value: 20
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 3108030142283472347, guid: 8b0684a9e27c54241a582604297eb3ee, type: 3}
       propertyPath: enemyUnit
@@ -16630,7 +16664,7 @@ PrefabInstance:
       objectReference: {fileID: 113162794}
     - target: {fileID: 3108030142283472347, guid: 8b0684a9e27c54241a582604297eb3ee, type: 3}
       propertyPath: damageBasic
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 3108030142283472347, guid: 8b0684a9e27c54241a582604297eb3ee, type: 3}
       propertyPath: battlesystem
@@ -16650,7 +16684,7 @@ PrefabInstance:
       objectReference: {fileID: 113162789}
     - target: {fileID: 3108030142283472347, guid: 8b0684a9e27c54241a582604297eb3ee, type: 3}
       propertyPath: manaCostBasic
-      value: -5
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 3108030142283472347, guid: 8b0684a9e27c54241a582604297eb3ee, type: 3}
       propertyPath: playerAnimator
@@ -16658,7 +16692,7 @@ PrefabInstance:
       objectReference: {fileID: 407912880}
     - target: {fileID: 3108030142283472347, guid: 8b0684a9e27c54241a582604297eb3ee, type: 3}
       propertyPath: manaCostDefense
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 3108030142283472347, guid: 8b0684a9e27c54241a582604297eb3ee, type: 3}
       propertyPath: manaCostOffense
@@ -16668,6 +16702,10 @@ PrefabInstance:
       propertyPath: currentPlayerUnit
       value: 
       objectReference: {fileID: 407912879}
+    - target: {fileID: 3108030142283472347, guid: 8b0684a9e27c54241a582604297eb3ee, type: 3}
+      propertyPath: playerIsSwallowed
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3503595480734920926, guid: 8b0684a9e27c54241a582604297eb3ee, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0.07233764

@@ -9935,6 +9935,9 @@ MonoBehaviour:
   enemyManaText: {fileID: 172359827}
   enemyHealthText: {fileID: 233900349}
   Log: {fileID: 1795487096}
+  DPSButton: {fileID: 0}
+  HealerButton: {fileID: 0}
+  TankButton: {fileID: 0}
 --- !u!224 &1121504946
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13585,26 +13588,27 @@ MonoBehaviour:
   enemyUnit: {fileID: 1469089123}
   currentPlayerUnit: {fileID: 523151218}
   unitName: Mushroom
-  damageBasic: 2
+  damageBasic: 10
   maxHP: 75
-  currentHP: 30
-  manaCostBasic: -6
-  manaCostDefense: 20
-  manaCostOffense: 20
+  currentHP: 75
+  manaCostBasic: -15
+  manaCostDefense: 25
+  manaCostOffense: 35
   manaCostUltimate: 0
   HUD: {fileID: 1121504945}
   AttackButtons: {fileID: 0}
   playerIsSwallowed: 0
-  maxEnemyMana: 25
-  currentEnemyMana: 25
+  maxEnemyMana: 100
+  currentEnemyMana: 0
+  prevMana: 0
   currentAtk: 0
   posionTurns: 0
   maxPoisonTurns: 3
-  poisonAttack: 50
+  poisonAttack: 10
   poisonPlus: 5
   healTurns: 0
   maxHealTurns: 2
-  healAmount: -30
+  healAmount: -20
   healPlus: -5
 --- !u!1001 &1470706476
 PrefabInstance:

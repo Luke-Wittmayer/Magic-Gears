@@ -5,13 +5,13 @@ using UnityEngine;
 public class PlayerAnimationController : MonoBehaviour
 {
     public SimpleShoot gun;
-    private const string BASIC_ATTACK = "BasicAttack";
-    private const string MANA_STEAL = "StealManaAttack";
-    private const string SPEND_MANA = "SpendManaAttack";
-    private const string DAMAGE = "GetHit";
-    private const string VICTORY = "Win";
-    private const string DEFEAT = "Dead";
-    private const string ULTIMATE = "UltimateAttack";
+    public const string BASIC_ATTACK = "BasicAttack";
+    public const string MANA_STEAL = "StealManaAttack";
+    public const string SPEND_MANA = "SpendManaAttack";
+    public const string DAMAGE = "GetHit";
+    public const string VICTORY = "Win";
+    public const string DEFEAT = "Dead";
+    public const string ULTIMATE = "UltimateAttack";
 
     //private const string ULT_STATE = "UltimateState";
     public int UltimateState = 0;
@@ -19,14 +19,14 @@ public class PlayerAnimationController : MonoBehaviour
     public GameObject rifle;
 
     [SerializeField] private GameObject player;
-    private Animator animator;
+    public Animator animator;
 
     private void Awake() {
         animator = GetComponent<Animator>();
         
     }
 
-    public void BasicAttack() {
+    public virtual void BasicAttack() {
         if(UltimateState == 0){
             pistol.SetActive(true);
             rifle.SetActive(false);

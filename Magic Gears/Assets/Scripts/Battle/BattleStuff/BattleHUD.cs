@@ -25,7 +25,9 @@ public class BattleHUD : MonoBehaviour
     public GameObject DPSButton;
     public GameObject HealerButton;
     public GameObject TankButton;
-    
+    public bool healTank;
+    public bool healDPS;
+    public int healAllAmount;
 
     
 
@@ -136,6 +138,14 @@ public class BattleHUD : MonoBehaviour
         currentPlayerUnit = DPS;
         DPS.gameObject.SetActive(true);
         DPS.AttackButtons.SetActive(true);
+        currentPlayerUnit.currentPlayerUnit = currentPlayerUnit;
+        enemyUnit.currentPlayerUnit = currentPlayerUnit;
+        if (healDPS)
+        {
+            currentPlayerUnit.TakeDamage(healAllAmount);
+            updateAllHealth();
+            healDPS = false; 
+        }
         updateAllValues();
         battle.state = BattleState.PLAYERTURN;
     }
@@ -172,6 +182,8 @@ public class BattleHUD : MonoBehaviour
         currentPlayerUnit = Healer;
         Healer.gameObject.SetActive(true);
         Healer.AttackButtons.SetActive(true);
+        currentPlayerUnit.currentPlayerUnit = currentPlayerUnit;
+        enemyUnit.currentPlayerUnit = currentPlayerUnit;
         updateAllValues();
         battle.state = BattleState.PLAYERTURN;
     }
@@ -208,6 +220,14 @@ public class BattleHUD : MonoBehaviour
         currentPlayerUnit = Tank;
         Tank.gameObject.SetActive(true);
         Tank.AttackButtons.SetActive(true);
+        currentPlayerUnit.currentPlayerUnit = currentPlayerUnit;
+        enemyUnit.currentPlayerUnit = currentPlayerUnit;
+        if (healTank)
+        {
+            currentPlayerUnit.TakeDamage(healAllAmount);
+            updateAllHealth();
+            healTank = false;
+        }
         updateAllValues();
         battle.state = BattleState.PLAYERTURN;
     }

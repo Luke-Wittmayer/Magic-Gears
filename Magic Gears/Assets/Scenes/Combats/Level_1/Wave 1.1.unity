@@ -6631,6 +6631,9 @@ MonoBehaviour:
   DPSButton: {fileID: 2900432429562494039}
   HealerButton: {fileID: 1818153621}
   TankButton: {fileID: 320390896}
+  healTank: 0
+  healDPS: 0
+  healAllAmount: 0
 --- !u!224 &638197519
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16664,7 +16667,7 @@ PrefabInstance:
       objectReference: {fileID: 113162794}
     - target: {fileID: 3108030142283472347, guid: 8b0684a9e27c54241a582604297eb3ee, type: 3}
       propertyPath: damageBasic
-      value: 100
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 3108030142283472347, guid: 8b0684a9e27c54241a582604297eb3ee, type: 3}
       propertyPath: battlesystem
@@ -16672,7 +16675,7 @@ PrefabInstance:
       objectReference: {fileID: 892611602}
     - target: {fileID: 3108030142283472347, guid: 8b0684a9e27c54241a582604297eb3ee, type: 3}
       propertyPath: maxEnemyMana
-      value: 20
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 3108030142283472347, guid: 8b0684a9e27c54241a582604297eb3ee, type: 3}
       propertyPath: reflectState
@@ -16684,7 +16687,7 @@ PrefabInstance:
       objectReference: {fileID: 113162789}
     - target: {fileID: 3108030142283472347, guid: 8b0684a9e27c54241a582604297eb3ee, type: 3}
       propertyPath: manaCostBasic
-      value: -10
+      value: -40
       objectReference: {fileID: 0}
     - target: {fileID: 3108030142283472347, guid: 8b0684a9e27c54241a582604297eb3ee, type: 3}
       propertyPath: playerAnimator
@@ -16692,11 +16695,11 @@ PrefabInstance:
       objectReference: {fileID: 407912880}
     - target: {fileID: 3108030142283472347, guid: 8b0684a9e27c54241a582604297eb3ee, type: 3}
       propertyPath: manaCostDefense
-      value: 15
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 3108030142283472347, guid: 8b0684a9e27c54241a582604297eb3ee, type: 3}
       propertyPath: manaCostOffense
-      value: 20
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 3108030142283472347, guid: 8b0684a9e27c54241a582604297eb3ee, type: 3}
       propertyPath: currentPlayerUnit

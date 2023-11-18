@@ -68,6 +68,7 @@ public class SimpleShoot : MonoBehaviour
            Debug.Log("NOT NULL ");
            rb.constraints = RigidbodyConstraints.None;
            rb.AddForce(barrelLocation.forward * shotPower);
+           Destroy(rb, 0.5f);
         }
 
 

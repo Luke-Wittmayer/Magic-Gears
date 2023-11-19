@@ -114,7 +114,7 @@ public class BattleHUD : MonoBehaviour
             Debug.Log("Cannot switch to a swallowed ally");
             return;
         }
-        if (DPS == currentPlayerUnit) {
+        if (DPS == currentPlayerUnit || battle.state != BattleState.PLAYERTURN) {
             return;
         }
         else {
@@ -140,6 +140,8 @@ public class BattleHUD : MonoBehaviour
         DPS.AttackButtons.SetActive(true);
         currentPlayerUnit.currentPlayerUnit = currentPlayerUnit;
         enemyUnit.currentPlayerUnit = currentPlayerUnit;
+        enemyUnit.playerAnimator = currentPlayerUnit.playerAnimator;
+        battle.playerAnimator = currentPlayerUnit.playerAnimator;
         if (healDPS)
         {
             currentPlayerUnit.TakeDamage(healAllAmount);
@@ -184,6 +186,8 @@ public class BattleHUD : MonoBehaviour
         Healer.AttackButtons.SetActive(true);
         currentPlayerUnit.currentPlayerUnit = currentPlayerUnit;
         enemyUnit.currentPlayerUnit = currentPlayerUnit;
+        enemyUnit.playerAnimator = currentPlayerUnit.playerAnimator;
+        battle.playerAnimator = currentPlayerUnit.playerAnimator;
         updateAllValues();
         battle.state = BattleState.PLAYERTURN;
     }
@@ -222,6 +226,8 @@ public class BattleHUD : MonoBehaviour
         Tank.AttackButtons.SetActive(true);
         currentPlayerUnit.currentPlayerUnit = currentPlayerUnit;
         enemyUnit.currentPlayerUnit = currentPlayerUnit;
+        enemyUnit.playerAnimator = currentPlayerUnit.playerAnimator;
+        battle.playerAnimator = currentPlayerUnit.playerAnimator;
         if (healTank)
         {
             currentPlayerUnit.TakeDamage(healAllAmount);

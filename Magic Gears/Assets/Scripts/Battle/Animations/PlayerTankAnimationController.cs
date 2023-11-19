@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerAlliesAnimationController : PlayerAnimationController
+public class PlayerTankAnimationController : PlayerAnimationController
 {
     public override void BasicAttack()
     {

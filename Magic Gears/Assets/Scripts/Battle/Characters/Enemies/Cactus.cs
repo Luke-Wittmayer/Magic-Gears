@@ -75,13 +75,13 @@ public class Cactus : Enemy
         HUD.Log.text = "Cactus attacks!";
         yield return new WaitForSeconds(1f);
         enemyAnimator.EnemyBasicAttack();
-        yield return new WaitForSeconds(.5f);
+        yield return new WaitForSeconds(0.5f);
         Debug.Log("Enemy gains " + manaCostBasic + "mana");
         UpdateEnemyMana(manaCostBasic);
         HUD.SetEnemyMana();
         playerAnimator.Damaged();
         bool isDead = currentPlayerUnit.TakeDamage(damageBasic);
-        HUD.Log.text = "You take " + damageBasic + " damage!";
+        HUD.Log.text = currentPlayerUnit.unitName+ " takes " + damageBasic + " damage!";
         yield return new WaitForSeconds(2f);
 
         if(isDead){
@@ -95,12 +95,13 @@ public class Cactus : Enemy
     }
 
     public IEnumerator EnemyAttack2(){
-        Debug.Log("Enemy unit reflects attack!");
-        yield return new WaitForSeconds(1f);
+        HUD.Log.text = "Cactus is ready to reflect any attack!";
+        yield return new WaitForSeconds(2f);
         enemyAnimator.EnemyBasicAttack();
         yield return new WaitForSeconds(.5f);
         UpdateEnemyMana(manaCostDefense);
         HUD.SetEnemyMana();
+
         reflectState = ReflectState.YES;
 
         battlesystem.state = BattleState.PLAYERTURN;
@@ -112,7 +113,7 @@ public class Cactus : Enemy
     public IEnumerator EnemyAttack3(){
         //Big damage
         //Enemy basic attack gains 5 mana
-        Debug.Log("Enemy unit attacks big!");
+        HUD.Log.text = "Cactus attack is big!";
         yield return new WaitForSeconds(1f);
         enemyAnimator.EnemyBasicAttack();
         yield return new WaitForSeconds(.5f);

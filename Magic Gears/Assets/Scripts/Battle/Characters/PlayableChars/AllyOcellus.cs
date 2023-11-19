@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -56,17 +57,14 @@ public class AllyOcellus : Unit
     public IEnumerator AllyAttack1()
     {
         battlesystem.state = BattleState.ENEMYTURN;
-        HUD.Log.text = "Lunk attacks!";
-        yield return new WaitForSeconds(1f);
+        HUD.Log.text = "The attack is successful on " + enemyUnit.unitName + "!\n";
+        HUD.Log.text += "Ocellus deal " + damageBasic + " damage and gain " + Math.Abs(manaCostBasic) + " mana!";
         playerAnimator.BasicAttack();
-        yield return new WaitForSeconds(.5f);
-        Debug.Log("AAAAAAAAAAAAAAAAAAAAAAAA");
         UpdatePlayerMana(manaCostBasic);
         HUD.SetPlayerMana();
+        yield return new WaitForSeconds(0.5f);
         enemyAnimator.Damaged();
         bool isDead = enemyUnit.TakeDamage(damageBasic);
-        HUD.Log.text = "Enemy take " + damageBasic + " damage!";
-
         yield return new WaitForSeconds(2f);
 
         if (isDead)
@@ -80,7 +78,7 @@ public class AllyOcellus : Unit
             battlesystem.state = BattleState.ENEMYTURN;
             enemyUnit.chooseAttack();
         }
-        healIsOn();
+        StartCoroutine(healIsOn());
     }
 
 
@@ -89,12 +87,11 @@ public class AllyOcellus : Unit
         //Debug.Log("The mushroom is healing for " + maxHealTurns + " turns");
         // Set enemy turn to prevent spam clicking
         battlesystem.state = BattleState.ENEMYTURN;
-        yield return new WaitForSeconds(1f);
         playerAnimator.BasicAttack();
-        yield return new WaitForSeconds(0.5f);
         // Debug.Log("Enemy loose " + manaCostDefense + "mana");
         UpdatePlayerMana(manaCostDefense);
         HUD.SetPlayerMana();
+
         //Mushroom called the offense attack while player was still poisioned, increase the poision damage
         if (healTurns <= 0)
         {
@@ -104,11 +101,13 @@ public class AllyOcellus : Unit
         {
             healTurns++;
         }
+        HUD.Log.text = "Ocellus made a spell to increase health and mana over time for " + healTurns + " turns!\n";
+        StartCoroutine( healIsOn());
+        yield return new WaitForSeconds(2f);
 
         battlesystem.state = BattleState.ENEMYTURN;
         enemyUnit.chooseAttack();
 
-        healIsOn();
     }
 
     public IEnumerator AllyAttack3()
@@ -117,17 +116,16 @@ public class AllyOcellus : Unit
         //Enemy basic attack gains 5 mana
         // Set enemy turn to prevent spam clicking
         battlesystem.state = BattleState.ENEMYTURN;
-        Debug.Log("Enemy unit steal attack is big!");
-        yield return new WaitForSeconds(1f);
         playerAnimator.BasicAttack();
-        yield return new WaitForSeconds(.5f);
         UpdatePlayerMana(manaCostOffense);
         HUD.SetPlayerMana();
+        yield return new WaitForSeconds(.5f);
         enemyAnimator.Damaged();
         bool isDead = enemyUnit.TakeDamage(offHP);
         bool increaseHP = currentPlayerUnit.TakeDamage(offHP * -1);
         //HUD.SetPlayerHealth();
-
+        HUD.Log.text = "Ocellus stole " + offHP + " heal points from the enemy!\n";
+        yield return new WaitForSeconds(2f);
         if (isDead)
         {
             battlesystem.state = BattleState.WON;
@@ -140,7 +138,7 @@ public class AllyOcellus : Unit
             enemyUnit.chooseAttack();
         }
 
-        healIsOn();
+        StartCoroutine(healIsOn());
     }
 
     public IEnumerator AllyAttack4()
@@ -148,9 +146,8 @@ public class AllyOcellus : Unit
         // Set enemy turn to prevent spam clicking
         battlesystem.state = BattleState.ENEMYTURN;
 
-        yield return new WaitForSeconds(1f);
         playerAnimator.BasicAttack();
-        yield return new WaitForSeconds(0.5f);
+
         UpdatePlayerMana(manaCostUltimate);
         HUD.SetPlayerMana();
         HUD.healDPS = true;
@@ -161,26 +158,33 @@ public class AllyOcellus : Unit
         Debug.Log("AFTER heal: " + currentPlayerUnit.currentHP + " health");
         HUD.SetPlayerHealth();
 
-
+        HUD.Log.text = "Ocellus has healed all party!\n";
+        yield return new WaitForSeconds(2f);
+        StartCoroutine(healIsOn());
         battlesystem.state = BattleState.ENEMYTURN;
         enemyUnit.chooseAttack();
 
 
-        healIsOn();
+
     }
 
-    public void healIsOn()
+    public IEnumerator healIsOn()
     {
         if (healTurns > 0)
         {
-            Debug.Log("BEFORE heal: " + currentPlayerUnit.currentHP + " health");
+            yield return new WaitForSeconds(2f);
             bool isDead = currentPlayerUnit.TakeDamage(healAmount);
             UpdatePlayerMana(defMana);
-            Debug.Log("AFTER heal: " + currentPlayerUnit.currentHP + " health");
             HUD.updateAllHealth();
             HUD.SetPlayerMana();
+            yield return new WaitForSeconds(2f);
+            HUD.Log.text = "Ocellus gained " + (healAmount*-1) + " heal!\n";
+            HUD.Log.text += "Ocellus gained " + (defMana*-1)+" mana!";
+            yield return new WaitForSeconds(2f);
+
             healTurns--;
 
+        yield return new WaitForSeconds(2f);
         }
     }
 }

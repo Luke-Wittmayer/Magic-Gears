@@ -6901,7 +6901,7 @@ MonoBehaviour:
   battlesystem: {fileID: 2139962022}
   enemyUnit: {fileID: 1722130965}
   currentPlayerUnit: {fileID: 964728451}
-  unitName: Healer
+  unitName: Ocellus
   damageBasic: 10
   maxHP: 100
   currentHP: 50
@@ -22165,6 +22165,10 @@ PrefabInstance:
     - target: {fileID: -7876269952242915196, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
       propertyPath: maxHP
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: -7876269952242915196, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
+      propertyPath: unitName
+      value: Harper
       objectReference: {fileID: 0}
     - target: {fileID: -7876269952242915196, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
       propertyPath: currentHP

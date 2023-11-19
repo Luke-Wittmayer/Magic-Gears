@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -79,26 +80,24 @@ public class AllyLunk : Unit
     {
         //Enemy basic attack gains 5 mana
         battlesystem.state = BattleState.ENEMYTURN;
-        HUD.Log.text = "Lunk attacks!";
-        yield return new WaitForSeconds(1f);
+
         playerAnimator.BasicAttack();
-        yield return new WaitForSeconds(.5f);
-        Debug.Log("AAAAAAAAAAAAAAAAAAAAAAAA");
         UpdatePlayerMana(manaCostBasic);
         HUD.SetPlayerMana();
+        yield return new WaitForSeconds(0.5f);
         enemyAnimator.Damaged();
+        HUD.Log.text = "The attack is successful on " + enemyUnit.unitName + "!\n";
         bool isDead;
         if (increaseDamage)
         {
+            HUD.Log.text += "Lunk deals " + ((int)(damageBasic * increaseAmount)) + " damage and gain " + Math.Abs(manaCostBasic) + " mana!";
             isDead = enemyUnit.TakeDamage((int)(damageBasic * increaseAmount));
-            HUD.Log.text = "Enemy take " + (int)(damageBasic * increaseAmount) + " damage!";
         }
         else
         {
+            HUD.Log.text += "Lunk deals " + damageBasic + " damage and gain " + Math.Abs(manaCostBasic) + " mana!";
             isDead = enemyUnit.TakeDamage(damageBasic);
-            HUD.Log.text = "Enemy take " + damageBasic + " damage!";
         }
-
         yield return new WaitForSeconds(2f);
 
         if (isDead)
@@ -121,14 +120,14 @@ public class AllyLunk : Unit
 
     public IEnumerator AllyAttack2()
     {
-        Debug.Log("BBBBBBBBBBBBBBBBBB");
-        Debug.Log("Enemy unit shields the attack!");
+
         battlesystem.state = BattleState.ENEMYTURN;
-        yield return new WaitForSeconds(1f);
         playerAnimator.BasicAttack();
-        yield return new WaitForSeconds(.5f);
         UpdatePlayerMana(manaCostDefense);
         HUD.SetPlayerMana();
+        yield return new WaitForSeconds(.5f);
+        HUD.Log.text = "Lunk will shield the next attack!\n";
+        yield return new WaitForSeconds(2f);
         shieldOn = true;
         battlesystem.state = BattleState.ENEMYTURN;
         enemyUnit.chooseAttack();
@@ -139,24 +138,28 @@ public class AllyLunk : Unit
     {
         //Big damage
         //Enemy basic attack gains 5 mana
-        Debug.Log("CCCCCCCCCCCCCCCCCCC");
         battlesystem.state = BattleState.ENEMYTURN;
-        Debug.Log("Enemy unit attacks big!");
-        yield return new WaitForSeconds(1f);
-        playerAnimator.BasicAttack();
-        yield return new WaitForSeconds(.5f);
         UpdatePlayerMana(manaCostOffense);
         HUD.SetPlayerMana();
+        playerAnimator.BasicAttack();
+        yield return new WaitForSeconds(.5f);
+
         enemyAnimator.Damaged();
         bool isDead;
         if (increaseDamage)
         {
             isDead = enemyUnit.TakeDamage((int)(offHP * increaseAmount));
+            HUD.Log.text = "Lunk deals " + ((int)(offHP * increaseAmount)) + " damage and next attack is " + increaseAmount + "x more damage!";
         }
         else
         {
             isDead = enemyUnit.TakeDamage(offHP);
+            HUD.Log.text = "Lunk deals " + offHP + " damage and next attack is " + increaseAmount + "x more damage!";
         }
+
+        yield return new WaitForSeconds(2f);
+
+
         //HUD.SetPlayerHealth();
 
         if (isDead)
@@ -177,14 +180,13 @@ public class AllyLunk : Unit
 
     public IEnumerator AllyAttack4()
     {
-        Debug.Log("DDDDDDDDDDDDDDDDDDDDDDD");
         battlesystem.state = BattleState.ENEMYTURN;
-        Debug.Log("Tank is inmune for 2 turns");
-        yield return new WaitForSeconds(1f);
         playerAnimator.BasicAttack();
-        yield return new WaitForSeconds(0.5f);
         UpdatePlayerMana(manaCostUltimate);
         HUD.SetPlayerMana();
+        yield return new WaitForSeconds(0.5f);
+        HUD.Log.text = "Lunk is immune of damage for 2 turns!";
+        yield return new WaitForSeconds(2f);
         ultimateOn = 2;
 
         battlesystem.state = BattleState.ENEMYTURN;

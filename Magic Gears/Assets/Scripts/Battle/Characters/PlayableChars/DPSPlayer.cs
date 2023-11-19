@@ -57,7 +57,7 @@ public class DPSPlayer : Unit
         enemyAnimator.Damaged();
 
         HUD.Log.text = "The attack is successful on " + enemyUnit.unitName + "!\n";
-        HUD.Log.text += "You deal " + damageBasic + " damage and gain " + Math.Abs(manaCostBasic) + " mana!";
+        HUD.Log.text += "Harper deals " + damageBasic + " damage and gain " + Math.Abs(manaCostBasic) + " mana!";
         Debug.Log(enemyUnit.unitName + " now has " + enemyUnit.currentHP + " remaining.");
         yield return new WaitForSeconds(2f);
 
@@ -90,7 +90,7 @@ public class DPSPlayer : Unit
         //yield return new WaitForSeconds(0f);
 
         HUD.Log.text = "The attack is successful on " + enemyUnit.unitName + "!\n";
-        HUD.Log.text += "You deal " + damageBasic/2 + " damage and gain " + Math.Abs(manaCostDefense) + " mana!";
+        HUD.Log.text += "Harper deals " + damageBasic/2 + " damage and gain " + Math.Abs(manaCostDefense) + " mana!";
         Debug.Log(enemyUnit.unitName + " now has " + enemyUnit.currentHP + " remaining.");
         yield return new WaitForSeconds(2f);
 
@@ -126,7 +126,7 @@ public class DPSPlayer : Unit
         enemyAnimator.Damaged();
 
         HUD.Log.text = "The attack is successful on " + enemyUnit.unitName + "!\n";
-        HUD.Log.text += "You deal " + damageBasic*2 + " damage and spend " + manaCostOffense + " mana!";
+        HUD.Log.text += "Harper deals " + damageBasic*2 + " damage and spend " + manaCostOffense + " mana!";
         yield return new WaitForSeconds(2f);
 
         Debug.Log("The attack is successful on " + enemyUnit.unitName + "!");
@@ -164,7 +164,7 @@ public class DPSPlayer : Unit
         enemyAnimator.Damaged();
 
         HUD.Log.text = "The attack is successful on " + enemyUnit.unitName + "!\n";
-        HUD.Log.text += "You deal " + Math.Abs(damageBasic*2) + " damage and spend " + manaCostUltimate + " mana!\n";
+        HUD.Log.text += "Harper deals " + Math.Abs(damageBasic*2) + " damage and spend " + manaCostUltimate + " mana!\n";
         
 
         Debug.Log("The attack is successful on " + enemyUnit.unitName + "!");
@@ -176,7 +176,7 @@ public class DPSPlayer : Unit
             battlesystem.EndBattle();
         } else 
         {
-            HUD.Log.text += "You get an extra turn!";
+            HUD.Log.text += "Harper gets an extra turn!";
             yield return new WaitForSeconds(2f);
             battlesystem.PlayerTurn();
         }

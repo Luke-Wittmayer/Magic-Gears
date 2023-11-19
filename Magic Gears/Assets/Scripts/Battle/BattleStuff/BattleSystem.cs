@@ -14,7 +14,7 @@ public class BattleSystem : MonoBehaviour
 
     public DPSPlayer playerUnit;
     public Unit enemyUnit;
-    private PlayerAnimationController playerAnimator;
+    public PlayerAnimationController playerAnimator;
     private EnemyAnimationController enemyAnimator;
 
     public BattleState state;

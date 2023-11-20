@@ -9038,12 +9038,12 @@ MonoBehaviour:
   enemyManaText: {fileID: 502957198}
   enemyHealthText: {fileID: 1928941814}
   Log: {fileID: 409406492}
-  DPSButton: {fileID: 0}
-  HealerButton: {fileID: 0}
-  TankButton: {fileID: 0}
+  DPSButton: {fileID: 1345544499}
+  HealerButton: {fileID: 521819077}
+  TankButton: {fileID: 2040985762}
   healTank: 0
   healDPS: 0
-  healAllAmount: -40
+  healAllAmount: -200
 --- !u!224 &1161213463
 RectTransform:
   m_ObjectHideFlags: 0

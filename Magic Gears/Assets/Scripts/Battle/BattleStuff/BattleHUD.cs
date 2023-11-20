@@ -145,7 +145,9 @@ public class BattleHUD : MonoBehaviour
         if (healDPS)
         {
             currentPlayerUnit.TakeDamage(healAllAmount);
+           // currentPlayerUnit.currentPlayerUnit = currentPlayerUnit;
             updateAllHealth();
+            SetPlayerHealth();
             healDPS = false; 
         }
         updateAllValues();
@@ -232,6 +234,7 @@ public class BattleHUD : MonoBehaviour
         {
             currentPlayerUnit.TakeDamage(healAllAmount);
             updateAllHealth();
+            SetPlayerHealth();
             healTank = false;
         }
         updateAllValues();

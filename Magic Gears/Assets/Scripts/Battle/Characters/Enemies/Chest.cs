@@ -131,6 +131,7 @@ public class Chest : Enemy
         HUD.SetEnemyMana();
         playerAnimator.Damaged();
         bool isDead = currentPlayerUnit.TakeDamage(swallowDmg);
+        HUD.updateAllValues();
         //HUD.SetPlayerHealth();
 
         if (isDead)

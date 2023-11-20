@@ -28,7 +28,7 @@ public class Enemy : Unit
 
             //if enemy health < 50% & mana check, do defense
             else if(enemyUnit.currentEnemyMana >= manaCostDefense &&
-                    enemyUnit.currentHP < currentPlayerUnit.currentHP) {
+                    enemyUnit.currentHP < enemyUnit.maxHP/2) {
                 //        Debug.Log("half of max heaklth is " + enemyUnit.maxHP/2.0f);
                 //        Debug.Log("Go Defense");
                         currentAtk = CurrentAtk.DEFENSE;

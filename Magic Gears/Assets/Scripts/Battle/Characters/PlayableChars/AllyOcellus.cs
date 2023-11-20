@@ -84,6 +84,11 @@ public class AllyOcellus : Unit
 
     public IEnumerator AllyAttack2()
     {
+        if (currentPlayerMana < manaCostDefense)
+        {
+            Debug.Log("Not enough mana!");
+            yield break;
+        }
         //Debug.Log("The mushroom is healing for " + maxHealTurns + " turns");
         // Set enemy turn to prevent spam clicking
         battlesystem.state = BattleState.ENEMYTURN;
@@ -115,6 +120,11 @@ public class AllyOcellus : Unit
         //Big damage
         //Enemy basic attack gains 5 mana
         // Set enemy turn to prevent spam clicking
+        if (currentPlayerMana < manaCostOffense)
+        {
+            Debug.Log("Not enough mana!");
+            yield break;
+        }
         battlesystem.state = BattleState.ENEMYTURN;
         playerAnimator.BasicAttack();
         UpdatePlayerMana(manaCostOffense);
@@ -144,6 +154,11 @@ public class AllyOcellus : Unit
     public IEnumerator AllyAttack4()
     {
         // Set enemy turn to prevent spam clicking
+        if (currentPlayerMana < manaCostUltimate)
+        {
+            Debug.Log("Not enough mana!");
+            yield break;
+        }
         battlesystem.state = BattleState.ENEMYTURN;
 
         playerAnimator.BasicAttack();

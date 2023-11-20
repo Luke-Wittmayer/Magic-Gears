@@ -120,7 +120,11 @@ public class AllyLunk : Unit
 
     public IEnumerator AllyAttack2()
     {
-
+        if (currentPlayerMana < manaCostDefense)
+        {
+            Debug.Log("Not enough mana!");
+            yield break;
+        }
         battlesystem.state = BattleState.ENEMYTURN;
         playerAnimator.BasicAttack();
         UpdatePlayerMana(manaCostDefense);
@@ -136,6 +140,11 @@ public class AllyLunk : Unit
 
     public IEnumerator AllyAttack3()
     {
+        if (currentPlayerMana < manaCostOffense)
+        {
+            Debug.Log("Not enough mana!");
+            yield break;
+        }
         //Big damage
         //Enemy basic attack gains 5 mana
         battlesystem.state = BattleState.ENEMYTURN;
@@ -180,6 +189,11 @@ public class AllyLunk : Unit
 
     public IEnumerator AllyAttack4()
     {
+        if (currentPlayerMana < manaCostUltimate)
+        {
+            Debug.Log("Not enough mana!");
+            yield break;
+        }
         battlesystem.state = BattleState.ENEMYTURN;
         playerAnimator.BasicAttack();
         UpdatePlayerMana(manaCostUltimate);

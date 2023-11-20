@@ -44,21 +44,18 @@ public class Turtle : Enemy
         if (reflectState == ReflectState.YES)
         {
             //reflected damage = damage taken
-            Debug.Log("Reflecting: " + enemyUnit.currentHP + " health");
+            Debug.Log("Reflecting: " + currentPlayerUnit.currentHP + " health");
             bool isDead = currentPlayerUnit.TakeDamage(dmg);
-            Debug.Log("Reflecting: " + enemyUnit.currentHP + " health");
+            Debug.Log("Reflecting: " + currentPlayerUnit.currentHP + " health");
             reflectState = ReflectState.NO;
 
-            if (isDead)
-            {
-                battlesystem.state = BattleState.LOST;
-                Debug.Log("You lose!");
-                battlesystem.EndBattle();
-                return false;
-            }
-            dmg = 0;
+            return isDead;
         }
+        else
+        {
+
           return base.TakeDamage(dmg);
+        }
         
 
     }
@@ -145,7 +142,7 @@ public class Turtle : Enemy
         HUD.SetEnemyMana();
         playerAnimator.Damaged();
         bool isDead = currentPlayerUnit.TakeDamage(damageBig);
-        bool selfDamage = enemyUnit.TakeDamage(damageToTurtle);
+        bool selfDamage = base.TakeDamage(damageToTurtle);
         //HUD.SetPlayerHealth();
 
         if (isDead)
@@ -154,13 +151,7 @@ public class Turtle : Enemy
             Debug.Log("You lose!");
             battlesystem.EndBattle();
         }
-        else
-        {
-            battlesystem.state = BattleState.PLAYERTURN;
-            battlesystem.PlayerTurn();
-        }
-
-        if (selfDamage)
+        else if (selfDamage)
         {
             battlesystem.state = BattleState.WON;
             Debug.Log("You Win!");

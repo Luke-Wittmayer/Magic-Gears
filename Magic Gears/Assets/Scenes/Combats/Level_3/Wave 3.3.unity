@@ -6904,20 +6904,20 @@ MonoBehaviour:
   unitName: Ocellus
   damageBasic: 10
   maxHP: 100
-  currentHP: 50
-  manaCostBasic: -10
-  manaCostDefense: 10
-  manaCostOffense: 20
+  currentHP: 100
+  manaCostBasic: -15
+  manaCostDefense: 20
+  manaCostOffense: 30
   manaCostUltimate: 100
   HUD: {fileID: 1019223603}
   AttackButtons: {fileID: 1088804638}
   playerIsSwallowed: 0
-  healAllAmount: -40
+  healAllAmount: -200
   offHP: 30
   healTurns: 0
   maxHealTurns: 3
-  healAmount: -7
-  defMana: -27
+  healAmount: -20
+  defMana: -20
 --- !u!114 &337729180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22106,25 +22106,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f4750616cba70046afc531e9e13d742, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerAnimator: {fileID: 0}
+  playerAnimator: {fileID: 952126909}
   enemyAnimator: {fileID: 1722130964}
   battlesystem: {fileID: 2139962022}
   enemyUnit: {fileID: 1722130965}
   currentPlayerUnit: {fileID: 964728451}
   unitName: Lunk
-  damageBasic: 20
-  maxHP: 100
-  currentHP: 50
-  manaCostBasic: -100
-  manaCostDefense: 15
-  manaCostOffense: 25
+  damageBasic: 10
+  maxHP: 130
+  currentHP: 130
+  manaCostBasic: -10
+  manaCostDefense: 10
+  manaCostOffense: 30
   manaCostUltimate: 100
   HUD: {fileID: 1019223603}
   AttackButtons: {fileID: 783684683}
   playerIsSwallowed: 0
-  defMana: -100
-  offHP: 25
-  shieldAmount: 5
+  defMana: -20
+  offHP: 50
+  shieldAmount: 15
   increaseAmount: 1.5
   ultimateOn: 0
 --- !u!95 &952126907 stripped
@@ -22172,7 +22172,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7876269952242915196, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
       propertyPath: currentHP
-      value: 1
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: -7876269952242915196, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
       propertyPath: enemyUnit
@@ -22180,7 +22180,7 @@ PrefabInstance:
       objectReference: {fileID: 1722130965}
     - target: {fileID: -7876269952242915196, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
       propertyPath: damageBasic
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: -7876269952242915196, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
       propertyPath: battlesystem
@@ -22196,11 +22196,11 @@ PrefabInstance:
       objectReference: {fileID: 1722130964}
     - target: {fileID: -7876269952242915196, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
       propertyPath: manaCostBasic
-      value: -15
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: -7876269952242915196, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
       propertyPath: manaCostDefense
-      value: -25
+      value: -15
       objectReference: {fileID: 0}
     - target: {fileID: -7876269952242915196, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
       propertyPath: manaCostOffense
@@ -23797,12 +23797,12 @@ MonoBehaviour:
   enemyManaText: {fileID: 111931698}
   enemyHealthText: {fileID: 404859437}
   Log: {fileID: 111860106}
-  DPSButton: {fileID: 0}
-  HealerButton: {fileID: 0}
-  TankButton: {fileID: 0}
+  DPSButton: {fileID: 11177950}
+  HealerButton: {fileID: 1088804638}
+  TankButton: {fileID: 783684683}
   healTank: 0
   healDPS: 0
-  healAllAmount: -40
+  healAllAmount: -200
 --- !u!1 &1039979749
 GameObject:
   m_ObjectHideFlags: 0
@@ -35872,12 +35872,12 @@ MonoBehaviour:
   enemyUnit: {fileID: 1722130965}
   currentPlayerUnit: {fileID: 964728451}
   unitName: Dragon
-  damageBasic: 10
-  maxHP: 100
-  currentHP: 100
-  manaCostBasic: 0
+  damageBasic: 20
+  maxHP: 200
+  currentHP: 200
+  manaCostBasic: -15
   manaCostDefense: 20
-  manaCostOffense: 101
+  manaCostOffense: 60
   manaCostUltimate: 100
   HUD: {fileID: 1019223603}
   AttackButtons: {fileID: 0}
@@ -35887,9 +35887,9 @@ MonoBehaviour:
   prevMana: 0
   currentAtk: 0
   healTurns: 0
-  maxHealTurns: 4
-  healAmount: -25
-  defMana: -21
+  maxHealTurns: 2
+  healAmount: -15
+  defMana: -25
   shieldAmount: 10
   charging: 0
 --- !u!1001 &1731299869

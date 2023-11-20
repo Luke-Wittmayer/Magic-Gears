@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -28,10 +30,10 @@ public class ButtonScript : MonoBehaviour {
             {
                 Debug.Log(Hit.collider.gameObject.name);
                 var id = Hit.colliderInstanceID;
+#if UNITY_EDITOR
                 var placeholder = EditorUtility.InstanceIDToObject(id);
-                Debug.Log("???");
-
                 Unit PH2 = placeholder as Unit;
+#endif
                 Debug.Log("222");
 
             }

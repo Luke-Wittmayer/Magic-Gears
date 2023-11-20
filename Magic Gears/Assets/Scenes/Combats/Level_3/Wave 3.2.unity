@@ -8749,19 +8749,19 @@ MonoBehaviour:
   enemyUnit: {fileID: 2042593801}
   currentPlayerUnit: {fileID: 1560583337}
   unitName: Lunk
-  damageBasic: 20
-  maxHP: 100
-  currentHP: 50
-  manaCostBasic: -100
-  manaCostDefense: 15
-  manaCostOffense: 25
+  damageBasic: 10
+  maxHP: 130
+  currentHP: 130
+  manaCostBasic: -10
+  manaCostDefense: 10
+  manaCostOffense: 20
   manaCostUltimate: 100
   HUD: {fileID: 2011665076}
   AttackButtons: {fileID: 307775786}
   playerIsSwallowed: 0
-  defMana: -100
-  offHP: 25
-  shieldAmount: 5
+  defMana: -20
+  offHP: 26
+  shieldAmount: 10
   increaseAmount: 1.5
   ultimateOn: 0
 --- !u!114 &659557303
@@ -18646,20 +18646,20 @@ MonoBehaviour:
   unitName: Ocellus
   damageBasic: 10
   maxHP: 100
-  currentHP: 50
-  manaCostBasic: -10
-  manaCostDefense: 10
+  currentHP: 100
+  manaCostBasic: -15
+  manaCostDefense: 20
   manaCostOffense: 20
   manaCostUltimate: 100
   HUD: {fileID: 2011665076}
   AttackButtons: {fileID: 1867892383}
   playerIsSwallowed: 0
-  healAllAmount: -40
-  offHP: 30
+  healAllAmount: -200
+  offHP: 25
   healTurns: 0
   maxHealTurns: 3
-  healAmount: -7
-  defMana: -27
+  healAmount: -10
+  defMana: -10
 --- !u!114 &1392472167
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20068,15 +20068,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7876269952242915196, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
       propertyPath: currentHP
-      value: 1
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: -7876269952242915196, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
       propertyPath: enemyUnit
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2042593801}
     - target: {fileID: -7876269952242915196, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
       propertyPath: damageBasic
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: -7876269952242915196, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
       propertyPath: battlesystem
@@ -20089,14 +20089,14 @@ PrefabInstance:
     - target: {fileID: -7876269952242915196, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
       propertyPath: enemyAnimator
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2042593800}
     - target: {fileID: -7876269952242915196, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
       propertyPath: manaCostBasic
-      value: -15
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: -7876269952242915196, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
       propertyPath: manaCostDefense
-      value: -25
+      value: -15
       objectReference: {fileID: 0}
     - target: {fileID: -7876269952242915196, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
       propertyPath: manaCostOffense
@@ -20108,7 +20108,7 @@ PrefabInstance:
       objectReference: {fileID: 2146601480}
     - target: {fileID: -7876269952242915196, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
       propertyPath: manaCostUltimate
-      value: 90
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: -7876269952242915196, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
       propertyPath: currentPlayerUnit
@@ -26672,12 +26672,12 @@ MonoBehaviour:
   enemyManaText: {fileID: 1449075313}
   enemyHealthText: {fileID: 922705891}
   Log: {fileID: 903066073}
-  DPSButton: {fileID: 0}
-  HealerButton: {fileID: 0}
-  TankButton: {fileID: 0}
+  DPSButton: {fileID: 1002284058}
+  HealerButton: {fileID: 1867892383}
+  TankButton: {fileID: 307775786}
   healTank: 0
   healDPS: 0
-  healAllAmount: -40
+  healAllAmount: -200
 --- !u!224 &2011665077
 RectTransform:
   m_ObjectHideFlags: 0
@@ -27388,16 +27388,16 @@ MonoBehaviour:
   unitName: Robot
   damageBasic: 30
   maxHP: 100
-  currentHP: 80
-  manaCostBasic: -15
-  manaCostDefense: 15
-  manaCostOffense: 15
+  currentHP: 100
+  manaCostBasic: -30
+  manaCostDefense: 30
+  manaCostOffense: 30
   manaCostUltimate: 0
   HUD: {fileID: 2011665076}
   AttackButtons: {fileID: 0}
   playerIsSwallowed: 0
   maxEnemyMana: 100
-  currentEnemyMana: 15
+  currentEnemyMana: 0
   prevMana: 0
   currentAtk: 0
 --- !u!1 &2051965295

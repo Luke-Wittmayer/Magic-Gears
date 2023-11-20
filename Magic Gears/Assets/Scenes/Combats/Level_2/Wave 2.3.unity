@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 2846d04f5f5b6814fa6bec498886d883, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -8656,16 +8656,16 @@ MonoBehaviour:
   currentHP: 130
   manaCostBasic: -30
   manaCostDefense: 25
-  manaCostOffense: 50
-  manaCostUltimate: 100
+  manaCostOffense: 40
+  manaCostUltimate: 50
   HUD: {fileID: 917484449}
   AttackButtons: {fileID: 0}
   playerIsSwallowed: 0
-  maxEnemyMana: 100
+  maxEnemyMana: 50
   currentEnemyMana: 0
   prevMana: 0
   currentAtk: 0
-  defMana: -30
+  defMana: -35
   offHP: 30
   shieldAmount: 5
   increaseAmount: 1.5

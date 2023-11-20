@@ -793,7 +793,7 @@ PrefabInstance:
     - target: {fileID: 114048767772505138, guid: 4d60074dd110e4fdda7cd238bb49b116, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 39c1513ca462f4ef386ac93785823137, type: 3}
+      objectReference: {fileID: 21300000, guid: 707bab926b59de84bb68462d6e4aba0f, type: 3}
     - target: {fileID: 114373188955762032, guid: 4d60074dd110e4fdda7cd238bb49b116, type: 3}
       propertyPath: m_Color.b
       value: 0.8207547
@@ -861,6 +861,14 @@ PrefabInstance:
     - target: {fileID: 114980254223989366, guid: 4d60074dd110e4fdda7cd238bb49b116, type: 3}
       propertyPath: m_Color.r
       value: 0.23184033
+      objectReference: {fileID: 0}
+    - target: {fileID: 224293662585446736, guid: 4d60074dd110e4fdda7cd238bb49b116, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 70.0696
+      objectReference: {fileID: 0}
+    - target: {fileID: 224293662585446736, guid: 4d60074dd110e4fdda7cd238bb49b116, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 70.07
       objectReference: {fileID: 0}
     - target: {fileID: 224460312967798606, guid: 4d60074dd110e4fdda7cd238bb49b116, type: 3}
       propertyPath: m_Pivot.x
@@ -26672,9 +26680,9 @@ MonoBehaviour:
   enemyManaText: {fileID: 1449075313}
   enemyHealthText: {fileID: 922705891}
   Log: {fileID: 903066073}
-  DPSButton: {fileID: 1002284058}
-  HealerButton: {fileID: 1867892383}
-  TankButton: {fileID: 307775786}
+  DPSButton: {fileID: 2038836927}
+  HealerButton: {fileID: 1839492504}
+  TankButton: {fileID: 1710692215}
   healTank: 0
   healDPS: 0
   healAllAmount: -200

@@ -41,12 +41,21 @@ public class BattleHUD : MonoBehaviour
     }
     public void SetupHUD(){
         Log.text = "Begin Battle!";
+        Debug.Log(storeLevel.level);
         if(storeLevel.level >= 1) {
             DPSButton.SetActive(true);
             HealerButton.SetActive(true);
         }
+        else {
+            DPSButton.SetActive(false);
+            HealerButton.SetActive(false);
+            TankButton.SetActive(false);
+        }
         if(storeLevel.level >= 2) {
             TankButton.SetActive(true);
+        }
+        else {
+            TankButton.SetActive(false);
         }
         updateAllValues();
     }

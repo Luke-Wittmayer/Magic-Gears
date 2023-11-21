@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.Collections.LowLevel.Unsafe;
 using UnityEngine;
 
 public class AttackTexts : MonoBehaviour
@@ -53,12 +54,16 @@ public class AttackTexts : MonoBehaviour
         + Math.Abs(Lunk.manaCostBasic) + " mana" ;
     }
     public void LunkAtkText2() {
-        
+        text.text = "Increase Damage!\nDeal " + Math.Abs(Lunk.offHP) + " damage and increases Lunk's next attack by " 
+        + Lunk.increaseAmount + "x. Use " + Lunk.manaCostOffense + " mana";
+
     }
     public void LunkAtkText3() {
-        text.text = "Shield next attack!";
+        text.text = "Shield next attack!\nReduce next attack on Lunk to " + Lunk.shieldAmount + " damage and gain "
+        + Math.Abs(Lunk.defMana) + " mana if hit on his next turn";
     }
     public void LunkAtkText4() {
-        
+        text.text = "Ultimate Shield!\nNegate all damage to Lunk for his next 2 turns\nUse "
+        + Lunk.manaCostUltimate + " mana"; 
     }
 }

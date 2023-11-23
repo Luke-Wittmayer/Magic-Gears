@@ -147,7 +147,7 @@ public class Lunk : Enemy
     {
         Debug.Log("Enemy unit shields the attack!");
         yield return new WaitForSeconds(1f);
-        enemyAnimator.EnemyBasicAttack();
+        enemyAnimator.EnemyDefensiveAttack();
         yield return new WaitForSeconds(.5f);
         UpdateEnemyMana(manaCostDefense);
         HUD.SetEnemyMana();
@@ -163,7 +163,7 @@ public class Lunk : Enemy
         //Enemy basic attack gains 5 mana
         Debug.Log("Enemy unit attacks big!");
         yield return new WaitForSeconds(1f);
-        enemyAnimator.EnemyBasicAttack();
+        enemyAnimator.EnemyOffensiveAttack();
         yield return new WaitForSeconds(.5f);
         UpdateEnemyMana(manaCostOffense);
         HUD.SetEnemyMana();
@@ -199,7 +199,7 @@ public class Lunk : Enemy
     {
         Debug.Log("Tank is inmune for 2 turns");
         yield return new WaitForSeconds(1f);
-        enemyAnimator.EnemyBasicAttack();
+        enemyAnimator.EnemyUltimateAttack();
         yield return new WaitForSeconds(0.5f);
         UpdateEnemyMana(manaCostUltimate);
         HUD.SetEnemyMana();

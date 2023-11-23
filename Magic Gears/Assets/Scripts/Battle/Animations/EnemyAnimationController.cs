@@ -7,6 +7,9 @@ public class EnemyAnimationController : MonoBehaviour
     private const string DAMAGED = "GetHit";
     private const string BASIC_ATTACK = "BasicAttack";
     private const string DEAD = "Dead";
+    private const string OFF = "Of";
+    private const string DEF = "Def";
+    private const string ULT = "Ult";
     [SerializeField] private GameObject Enemy;
     private Animator animator;
 
@@ -17,6 +20,21 @@ public class EnemyAnimationController : MonoBehaviour
 
     public void EnemyBasicAttack() {
         animator.SetTrigger(BASIC_ATTACK);
+    }
+
+    public void EnemyOffensiveAttack()
+    {
+        animator.SetTrigger(OFF);
+    }
+
+    public void EnemyDefensiveAttack()
+    {
+        animator.SetTrigger(DEF);
+    }
+
+    public void EnemyUltimateAttack()
+    {
+        animator.SetTrigger(ULT) ;
     }
 
     public void Damaged(){

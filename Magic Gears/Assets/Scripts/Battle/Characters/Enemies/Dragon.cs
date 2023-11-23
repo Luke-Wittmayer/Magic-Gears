@@ -145,7 +145,7 @@ public class Dragon : Enemy
     {
             Debug.Log("Enemy unit shields the attack!");
             yield return new WaitForSeconds(1f);
-            enemyAnimator.EnemyBasicAttack();
+            enemyAnimator.EnemyDefensiveAttack();
             UpdateEnemyMana(manaCostDefense);
             HUD.SetEnemyMana();
             yield return new WaitForSeconds(.5f);
@@ -171,7 +171,7 @@ public class Dragon : Enemy
             //Enemy basic attack gains 5 mana
             HUD.Log.text = "Cactus attacks!";
             yield return new WaitForSeconds(1f);
-            enemyAnimator.EnemyBasicAttack();
+            enemyAnimator.EnemyOffensiveAttack();
             yield return new WaitForSeconds(.5f);
             Debug.Log("Enemy used " + manaCostOffense + "mana");
             UpdateEnemyMana(manaCostOffense);
@@ -207,7 +207,7 @@ public class Dragon : Enemy
         //Enemy basic attack gains 5 mana
         HUD.Log.text = "Lunk attacks!";
         yield return new WaitForSeconds(1f);
-        enemyAnimator.EnemyBasicAttack();
+        enemyAnimator.EnemyDefensiveAttack();
         yield return new WaitForSeconds(.5f);
         charging = true;
         Debug.Log("Enemy is charging");
@@ -254,7 +254,7 @@ public class Dragon : Enemy
             HUD.SetEnemyMana();
             playerAnimator.Damaged();
             bool isDead;
-        enemyAnimator.EnemyBasicAttack();
+        enemyAnimator.EnemyUltimateAttack();
         isDead = currentPlayerUnit.TakeDamage(9999);
             HUD.Log.text = "You take 9999 damage!";
 

@@ -118,7 +118,7 @@ public class Turtle : Enemy
     {
         Debug.Log("Enemy unit reflects attack!");
         yield return new WaitForSeconds(1f);
-        enemyAnimator.EnemyBasicAttack();
+        enemyAnimator.EnemyDefensiveAttack();
         yield return new WaitForSeconds(.5f);
         UpdateEnemyMana(manaCostDefense);
         HUD.SetEnemyMana();
@@ -136,7 +136,7 @@ public class Turtle : Enemy
         //Enemy basic attack gains 5 mana
         Debug.Log("Enemy unit attacks big!");
         yield return new WaitForSeconds(1f);
-        enemyAnimator.EnemyBasicAttack();
+        enemyAnimator.EnemyOffensiveAttack();
         yield return new WaitForSeconds(.5f);
         UpdateEnemyMana(manaCostOffense);
         HUD.SetEnemyMana();

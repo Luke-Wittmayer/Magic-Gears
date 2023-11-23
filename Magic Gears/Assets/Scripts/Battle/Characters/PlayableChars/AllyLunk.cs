@@ -126,7 +126,7 @@ public class AllyLunk : Unit
             yield break;
         }
         battlesystem.state = BattleState.ENEMYTURN;
-        playerAnimator.BasicAttack();
+        playerAnimator.DefensiveAttack();
         UpdatePlayerMana(manaCostDefense);
         HUD.SetPlayerMana();
         yield return new WaitForSeconds(.5f);
@@ -150,7 +150,7 @@ public class AllyLunk : Unit
         battlesystem.state = BattleState.ENEMYTURN;
         UpdatePlayerMana(manaCostOffense);
         HUD.SetPlayerMana();
-        playerAnimator.BasicAttack();
+        playerAnimator.OffensiveAttack();
         yield return new WaitForSeconds(.5f);
 
         enemyAnimator.Damaged();
@@ -195,7 +195,7 @@ public class AllyLunk : Unit
             yield break;
         }
         battlesystem.state = BattleState.ENEMYTURN;
-        playerAnimator.BasicAttack();
+        playerAnimator.UltimateAttack();
         UpdatePlayerMana(manaCostUltimate);
         HUD.SetPlayerMana();
         yield return new WaitForSeconds(0.5f);

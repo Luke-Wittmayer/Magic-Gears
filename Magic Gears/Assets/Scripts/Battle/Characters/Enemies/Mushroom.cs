@@ -128,7 +128,7 @@ public class Mushroom : Enemy
     {
         //Debug.Log("The mushroom is healing for " + maxHealTurns + " turns");
         yield return new WaitForSeconds(1f);
-        enemyAnimator.EnemyBasicAttack();
+        enemyAnimator.EnemyDefensiveAttack();
         yield return new WaitForSeconds(0.5f);
       // Debug.Log("Enemy loose " + manaCostDefense + "mana");
         UpdateEnemyMana(manaCostDefense);
@@ -150,7 +150,7 @@ public class Mushroom : Enemy
     {
        Debug.Log("The mushroom has posioned you for " + maxPoisonTurns + " turns");
         yield return new WaitForSeconds(1f);
-        enemyAnimator.EnemyBasicAttack();
+        enemyAnimator.EnemyOffensiveAttack();
         yield return new WaitForSeconds(0.5f);
        Debug.Log("Enemy loose " + manaCostOffense + "mana");
         UpdateEnemyMana(manaCostOffense);

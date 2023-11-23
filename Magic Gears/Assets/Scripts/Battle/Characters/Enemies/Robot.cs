@@ -82,7 +82,7 @@ public class Robot : Enemy
         //Enemy basic attack gains 5 mana
         HUD.Log.text = "Cactus attacks!";
         yield return new WaitForSeconds(1f);
-        enemyAnimator.EnemyBasicAttack();
+        enemyAnimator.EnemyDefensiveAttack();
         yield return new WaitForSeconds(.5f);
         Debug.Log("Enemy used " + manaCostDefense + "mana");
         UpdateEnemyMana(manaCostDefense);
@@ -103,7 +103,7 @@ public class Robot : Enemy
         //Enemy basic attack gains 5 mana
         HUD.Log.text = "Cactus attacks!";
         yield return new WaitForSeconds(1f);
-        enemyAnimator.EnemyBasicAttack();
+        enemyAnimator.EnemyOffensiveAttack();
         yield return new WaitForSeconds(.5f);
         Debug.Log("Enemy used " + manaCostOffense + "mana");
         UpdateEnemyMana(manaCostOffense);

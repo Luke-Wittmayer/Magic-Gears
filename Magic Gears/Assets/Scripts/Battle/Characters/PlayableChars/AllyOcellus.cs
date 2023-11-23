@@ -92,7 +92,7 @@ public class AllyOcellus : Unit
         //Debug.Log("The mushroom is healing for " + maxHealTurns + " turns");
         // Set enemy turn to prevent spam clicking
         battlesystem.state = BattleState.ENEMYTURN;
-        playerAnimator.BasicAttack();
+        playerAnimator.DefensiveAttack();
         // Debug.Log("Enemy loose " + manaCostDefense + "mana");
         UpdatePlayerMana(manaCostDefense);
         HUD.SetPlayerMana();
@@ -126,7 +126,7 @@ public class AllyOcellus : Unit
             yield break;
         }
         battlesystem.state = BattleState.ENEMYTURN;
-        playerAnimator.BasicAttack();
+        playerAnimator.OffensiveAttack();
         UpdatePlayerMana(manaCostOffense);
         HUD.SetPlayerMana();
         yield return new WaitForSeconds(.5f);
@@ -161,7 +161,7 @@ public class AllyOcellus : Unit
         }
         battlesystem.state = BattleState.ENEMYTURN;
 
-        playerAnimator.BasicAttack();
+        playerAnimator.UltimateAttack();
 
         UpdatePlayerMana(manaCostUltimate);
         HUD.SetPlayerMana();

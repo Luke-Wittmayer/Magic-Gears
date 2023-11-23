@@ -97,7 +97,7 @@ public class Cactus : Enemy
     public IEnumerator EnemyAttack2(){
         HUD.Log.text = "Cactus is ready to reflect any attack!";
         yield return new WaitForSeconds(2f);
-        enemyAnimator.EnemyBasicAttack();
+        enemyAnimator.EnemyDefensiveAttack();
         yield return new WaitForSeconds(.5f);
         UpdateEnemyMana(manaCostDefense);
         HUD.SetEnemyMana();
@@ -115,7 +115,7 @@ public class Cactus : Enemy
         //Enemy basic attack gains 5 mana
         HUD.Log.text = "Cactus attack is big!";
         yield return new WaitForSeconds(1f);
-        enemyAnimator.EnemyBasicAttack();
+        enemyAnimator.EnemyOffensiveAttack();
         yield return new WaitForSeconds(.5f);
         UpdateEnemyMana(manaCostOffense);
         HUD.SetEnemyMana();

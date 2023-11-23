@@ -62,7 +62,7 @@ public class PlayerAnimationController : MonoBehaviour
         gun.gunAnimator.SetTrigger("Fire");
     }
 
-    public void UltimateAttack(){
+    public virtual void UltimateAttack(){
         pistol.SetActive(false);
         rifle.SetActive(true);
         UltimateState = 2;
@@ -79,6 +79,16 @@ public class PlayerAnimationController : MonoBehaviour
     }
     public void Lose(){
         animator.SetTrigger(DEFEAT);
+    }
+
+
+    public virtual void OffensiveAttack()
+    {
+        return;
+    }
+    public virtual void DefensiveAttack()
+    {
+        return;
     }
 }
 

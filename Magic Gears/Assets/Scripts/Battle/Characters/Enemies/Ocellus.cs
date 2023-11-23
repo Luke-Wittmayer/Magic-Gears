@@ -112,7 +112,7 @@ public class Ocellus : Enemy
     {
         //Debug.Log("The mushroom is healing for " + maxHealTurns + " turns");
         yield return new WaitForSeconds(1f);
-        enemyAnimator.EnemyBasicAttack();
+        enemyAnimator.EnemyDefensiveAttack();
         yield return new WaitForSeconds(0.5f);
         // Debug.Log("Enemy loose " + manaCostDefense + "mana");
         UpdateEnemyMana(manaCostDefense);
@@ -140,7 +140,7 @@ public class Ocellus : Enemy
         //Enemy basic attack gains 5 mana
         Debug.Log("Enemy unit steal attack is big!");
         yield return new WaitForSeconds(1f);
-        enemyAnimator.EnemyBasicAttack();
+        enemyAnimator.EnemyOffensiveAttack();
         yield return new WaitForSeconds(.5f);
         UpdateEnemyMana(manaCostOffense);
         HUD.SetEnemyMana();
@@ -168,7 +168,7 @@ public class Ocellus : Enemy
     {
         Debug.Log("The mushroom has posioned you forever");
         yield return new WaitForSeconds(1f);
-        enemyAnimator.EnemyBasicAttack();
+        enemyAnimator.EnemyUltimateAttack();
         yield return new WaitForSeconds(0.5f);
         UpdateEnemyMana(manaCostUltimate);
         HUD.SetEnemyMana();

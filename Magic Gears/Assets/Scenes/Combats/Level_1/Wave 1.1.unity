@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44805712, g: 0.49806666, b: 0.57552564, a: 1}
+  m_IndirectSpecularColor: {r: 0.44805646, g: 0.49806583, b: 0.5755247, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3703,7 +3703,7 @@ PrefabInstance:
     - target: {fileID: 114604369937241004, guid: 5131754af739541a7a443bd0498d5498, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1322983821}
     - target: {fileID: 114604369937241004, guid: 5131754af739541a7a443bd0498d5498, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -9223,7 +9223,7 @@ PrefabInstance:
     - target: {fileID: 114604369937241004, guid: 5131754af739541a7a443bd0498d5498, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1322983821}
     - target: {fileID: 114604369937241004, guid: 5131754af739541a7a443bd0498d5498, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -12723,7 +12723,7 @@ PrefabInstance:
     - target: {fileID: 114604369937241004, guid: 5131754af739541a7a443bd0498d5498, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1322983821}
     - target: {fileID: 114604369937241004, guid: 5131754af739541a7a443bd0498d5498, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -14612,7 +14612,7 @@ PrefabInstance:
     - target: {fileID: 114604369937241004, guid: 5131754af739541a7a443bd0498d5498, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1322983821}
     - target: {fileID: 114604369937241004, guid: 5131754af739541a7a443bd0498d5498, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2

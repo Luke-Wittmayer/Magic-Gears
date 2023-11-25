@@ -15,7 +15,6 @@ public class DPSPlayer : Unit
     Ultimate: extra turn
     */
 
-
     public override void Atk1() {
         if (battlesystem.state != BattleState.PLAYERTURN){
             Debug.Log("Error");
@@ -52,6 +51,7 @@ public class DPSPlayer : Unit
         UpdatePlayerMana(manaCostBasic);
         HUD.SetPlayerMana();
         yield return new WaitForSeconds(.5f);
+        audioSource.PlayOneShot(atk1Audio);
         bool isDead = enemyUnit.TakeDamage(this.damageBasic);
         //HUD.SetEnemyHealth();
         enemyAnimator.Damaged();
@@ -81,6 +81,7 @@ public class DPSPlayer : Unit
         battlesystem.state = BattleState.ENEMYTURN;
         // Damage the enemy
         playerAnimator.ManaStealAttack();
+        audioSource.PlayOneShot(atk3Audio);
         UpdatePlayerMana(manaCostDefense);
         enemyUnit.UpdateEnemyMana(-manaCostDefense);
         bool isDead = enemyUnit.TakeDamage(this.damageBasic/2);
@@ -120,6 +121,7 @@ public class DPSPlayer : Unit
         bool isDead = enemyUnit.TakeDamage(this.damageBasic*2);
         playerAnimator.SpendManaAttack();
         yield return new WaitForSeconds(.5f);
+        audioSource.PlayOneShot(atk2Audio);
         UpdatePlayerMana(manaCostOffense);
         HUD.SetPlayerMana();
         //HUD.SetEnemyHealth();
@@ -158,6 +160,7 @@ public class DPSPlayer : Unit
         bool isDead = enemyUnit.TakeDamage(this.damageBasic*2);
         playerAnimator.UltimateAttack();
         yield return new WaitForSeconds(.5f);
+        audioSource.PlayOneShot(ultAudio);
         UpdatePlayerMana(manaCostUltimate);
         HUD.SetPlayerMana();
         //HUD.SetEnemyHealth();

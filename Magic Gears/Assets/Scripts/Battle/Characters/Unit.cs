@@ -26,6 +26,12 @@ public class Unit : MonoBehaviour
     public BattleHUD HUD;
     public GameObject AttackButtons;
 
+    public AudioSource audioSource;
+    public AudioClip atk1Audio;
+    public AudioClip atk2Audio;
+    public AudioClip atk3Audio;
+    public AudioClip ultAudio;
+
     public bool playerIsSwallowed = false;
 
 public virtual void Atk1() {

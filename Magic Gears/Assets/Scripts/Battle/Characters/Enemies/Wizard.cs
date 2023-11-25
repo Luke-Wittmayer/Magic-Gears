@@ -135,7 +135,7 @@ public class Wizard : Enemy
 
     public IEnumerator EnemyAttack3()
     {
-        HUD.Log.text = "Wizard found " + currentPlayerUnit.unitName+ + " biggest fear and nightmared them for " + maxNightmareTurns + " turns!";
+        HUD.Log.text = "Wizard found " + currentPlayerUnit.unitName + " biggest fear and nightmared them for " + maxNightmareTurns + " turns!";
         yield return new WaitForSeconds(2f);
         enemyAnimator.EnemyOffensiveAttack();
         yield return new WaitForSeconds(0.5f);

@@ -72,7 +72,7 @@ public class Cactus : Enemy
     }
     public IEnumerator EnemyAttack1(){
         //Enemy basic attack gains 5 mana
-        HUD.Log.text = "Cactus attacks!";
+        HUD.Log.text = "Cactus attacks wanting some meat!";
         yield return new WaitForSeconds(1f);
         enemyAnimator.EnemyBasicAttack();
         yield return new WaitForSeconds(0.5f);
@@ -85,6 +85,7 @@ public class Cactus : Enemy
         yield return new WaitForSeconds(2f);
 
         if(isDead){
+            HUD.Log.text = "Game over!";
             battlesystem.state = BattleState.LOST; 
             Debug.Log("You lose!");
             battlesystem.EndBattle();
@@ -113,17 +114,20 @@ public class Cactus : Enemy
     public IEnumerator EnemyAttack3(){
         //Big damage
         //Enemy basic attack gains 5 mana
-        HUD.Log.text = "Cactus attack is big!";
-        yield return new WaitForSeconds(1f);
+        HUD.Log.text = "Cactus wants to eat quickly, so his attack is big!";
+        yield return new WaitForSeconds(2f);
         enemyAnimator.EnemyOffensiveAttack();
         yield return new WaitForSeconds(.5f);
         UpdateEnemyMana(manaCostOffense);
         HUD.SetEnemyMana();
         playerAnimator.Damaged();
         bool isDead = currentPlayerUnit.TakeDamage(damageBig);
+        HUD.Log.text = currentPlayerUnit.unitName + " takes " + damageBig + " damage!";
+        yield return new WaitForSeconds(2f);
         //HUD.SetPlayerHealth();
 
-        if(isDead){
+        if (isDead){
+            HUD.Log.text = "Game over!";
             battlesystem.state = BattleState.LOST; 
             Debug.Log("You lose!");
             battlesystem.EndBattle();
@@ -132,5 +136,4 @@ public class Cactus : Enemy
             battlesystem.PlayerTurn();
         }
     }
-
 }

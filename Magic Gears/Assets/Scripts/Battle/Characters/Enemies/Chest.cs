@@ -75,7 +75,7 @@ public class Chest : Enemy
     public IEnumerator EnemyAttack1()
     {
         //Enemy basic attack gains 5 mana
-        HUD.Log.text = "Cactus attacks!";
+        HUD.Log.text = "Chest bites upset!";
         yield return new WaitForSeconds(1f);
         enemyAnimator.EnemyBasicAttack();
         yield return new WaitForSeconds(.5f);
@@ -84,7 +84,7 @@ public class Chest : Enemy
         HUD.SetEnemyMana();
         playerAnimator.Damaged();
         bool isDead = currentPlayerUnit.TakeDamage(damageBasic);
-        HUD.Log.text = "You take " + damageBasic + " damage!";
+        HUD.Log.text = currentPlayerUnit.unitName+ " takes " + damageBasic + " damage!";
         yield return new WaitForSeconds(2f);
 
         if (isDead)
@@ -99,12 +99,12 @@ public class Chest : Enemy
             battlesystem.PlayerTurn();
         }
 
-        checkSwallow();
+        StartCoroutine(checkSwallow());
     }
 
     public IEnumerator EnemyAttack2()
     {
-        Debug.Log("Enemy unit reflects attack!");
+        HUD.Log.text = "Chest will recive only half of damage for "+halfDamageMaxTurns + " turns!";
         yield return new WaitForSeconds(1f);
         enemyAnimator.EnemyDefensiveAttack();
         yield return new WaitForSeconds(.5f);
@@ -116,20 +116,23 @@ public class Chest : Enemy
         battlesystem.state = BattleState.PLAYERTURN;
         battlesystem.PlayerTurn();
 
-        checkSwallow();
+        StartCoroutine(checkSwallow());
     }
 
     public IEnumerator EnemyAttack3()
     {
         //Big damage
         //Enemy basic attack gains 5 mana
-       // Debug.Log("Enemy unit attacks big!");
+        HUD.Log.text = "Chest got hungry and swallowed " + currentPlayerUnit.unitName + " for " + swallowMaxTurns +" turns!";
         yield return new WaitForSeconds(1f);
         enemyAnimator.EnemyOffensiveAttack();
         yield return new WaitForSeconds(.5f);
+        HUD.Log.text = currentPlayerUnit.unitName + " recieved " + swallowDmg + " damage";
+        playerAnimator.Damaged();
+        yield return new WaitForSeconds(2f);
         UpdateEnemyMana(manaCostOffense);
         HUD.SetEnemyMana();
-        playerAnimator.Damaged();
+
         bool isDead = currentPlayerUnit.TakeDamage(swallowDmg);
         HUD.updateAllValues();
         //HUD.SetPlayerHealth();
@@ -195,10 +198,10 @@ public class Chest : Enemy
 
             battlesystem.PlayerTurn();
         }
-        checkSwallow();
+        StartCoroutine(checkSwallow());
     }
 
-    public void checkSwallow()
+    public IEnumerator checkSwallow()
     {
         //DPS Swallow turn is over, put her back on combat. It should never swtich 2 allies at the same time.
         battlesystem.state = BattleState.PLAYERTURN;
@@ -208,6 +211,9 @@ public class Chest : Enemy
             {
                 DPS.playerIsSwallowed = false;
                 HUD.switchToDPS(DPS);
+                HUD.Log.text = "Chest did not like Harper's taste and spit her back!";
+                yield return new WaitForSeconds(2f);
+                HUD.Log.text = "Player turn!";
             }
             swallowTurnsDPS--;
         }
@@ -217,6 +223,9 @@ public class Chest : Enemy
             {
                 healer.playerIsSwallowed = false;
                 HUD.switchToHealer(healer);
+                HUD.Log.text = "Chest did not like Ocellus's taste and spit him back!";
+                yield return new WaitForSeconds(2f);
+                HUD.Log.text = "Player turn!";
             }
             swallowTurnsHealer--;
         }
@@ -227,6 +236,9 @@ public class Chest : Enemy
             {
                 tank.playerIsSwallowed = false;
                 HUD.switchToTank(tank);
+                HUD.Log.text = "Chest did not like Lunk's taste and spit him back!";
+                yield return new WaitForSeconds(2f);
+                HUD.Log.text = "Player turn!";
             }
             swallowTurnsTank--;
 

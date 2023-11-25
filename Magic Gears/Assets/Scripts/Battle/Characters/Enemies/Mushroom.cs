@@ -34,37 +34,46 @@ public class Mushroom : Enemy
     }
 
     //Player is still poisioned. Take damage
-    public void posionIsOn()
+    public IEnumerator posionIsOn()
     {
         if (posionTurns > 0)
         {
-
-            Debug.Log("BEFORE Poisioned: " + currentPlayerUnit.currentHP + " health");
             bool isDead = currentPlayerUnit.TakeDamage(poisonAttack);
-            Debug.Log("AFTER Poisioned: " + currentPlayerUnit.currentHP + " health");
+            HUD.Log.text = currentPlayerUnit.unitName + " takes " + poisonAttack + " damage from poison!";
+            playerAnimator.Damaged();
+            yield return new WaitForSeconds(2f);
+      //      Debug.Log("BEFORE Poisioned: " + currentPlayerUnit.currentHP + " health");
+      //      Debug.Log("AFTER Poisioned: " + currentPlayerUnit.currentHP + " health");
+            HUD.Log.text = "Player turn!";
             if (isDead)
             {
+                HUD.Log.text = "Game over!";
                 battlesystem.state = BattleState.LOST;
                 Debug.Log("You lose!");
                 battlesystem.EndBattle();
             }
             posionTurns--;
-            playerAnimator.Damaged();
+
         }
+        yield return new WaitForSeconds(0f);
     }
 
     //Mushroom still have the defense move active. Increase health
-    public void healIsOn()
+    public IEnumerator healIsOn()
     {
         if (healTurns > 0)
         {
+            HUD.Log.text = "Happy mushroom gains " + (-1*healAmount) + " health points!";
+            yield return new WaitForSeconds(1f);
             Debug.Log("BEFORE heal: " + enemyUnit.currentHP + " health");
+            HUD.Log.text = "Player turn!";
             bool isDead = enemyUnit.TakeDamage(healAmount);
             Debug.Log("AFTER heal: " + enemyUnit.currentHP + " health");
             HUD.updateAllHealth();
             healTurns--;
 
         }
+        yield return new WaitForSeconds(0f);
     }
 
     public override void Atk1()
@@ -99,6 +108,7 @@ public class Mushroom : Enemy
     public IEnumerator EnemyAttack1()
     {
         Debug.Log("Enemy unit attacks!");
+        HUD.Log.text = "Happy mushroom attacks joyfully!";
         yield return new WaitForSeconds(1f);
         enemyAnimator.EnemyBasicAttack();
         yield return new WaitForSeconds(0.5f);
@@ -108,8 +118,11 @@ public class Mushroom : Enemy
         playerAnimator.Damaged();
         bool isDead = currentPlayerUnit.TakeDamage(damageBasic);
         //HUD.SetPlayerHealth();
+        HUD.Log.text = currentPlayerUnit.unitName + " takes " + damageBasic + " damage!";
+        yield return new WaitForSeconds(2f);
         if (isDead)
         {
+            HUD.Log.text = "Game over!";
             battlesystem.state = BattleState.LOST;
             Debug.Log("You lose!");
             battlesystem.EndBattle();
@@ -120,14 +133,15 @@ public class Mushroom : Enemy
             battlesystem.PlayerTurn();
         }
 
-        healIsOn();
-        posionIsOn();
+        StartCoroutine( healIsOn());
+        StartCoroutine(posionIsOn());
     }
 
     public IEnumerator EnemyAttack2()
     {
         //Debug.Log("The mushroom is healing for " + maxHealTurns + " turns");
-        yield return new WaitForSeconds(1f);
+        HUD.Log.text = "Happy mushroom uses his root to gain health amd keep his mood!";
+        yield return new WaitForSeconds(2f);
         enemyAnimator.EnemyDefensiveAttack();
         yield return new WaitForSeconds(0.5f);
       // Debug.Log("Enemy loose " + manaCostDefense + "mana");
@@ -142,14 +156,15 @@ public class Mushroom : Enemy
         battlesystem.state = BattleState.PLAYERTURN;
         battlesystem.PlayerTurn();
 
-        posionIsOn();
-        healIsOn();
+        StartCoroutine(healIsOn());
+        StartCoroutine(posionIsOn());
     }
 
     public IEnumerator EnemyAttack3()
     {
-       Debug.Log("The mushroom has posioned you for " + maxPoisonTurns + " turns");
-        yield return new WaitForSeconds(1f);
+        HUD.Log.text = "Happy mushroom posioned" + currentPlayerUnit.unitName + " for " + maxPoisonTurns + " turns to relax!";
+        Debug.Log("The mushroom has posioned you for " + maxPoisonTurns + " turns");
+        yield return new WaitForSeconds(2f);
         enemyAnimator.EnemyOffensiveAttack();
         yield return new WaitForSeconds(0.5f);
        Debug.Log("Enemy loose " + manaCostOffense + "mana");
@@ -163,8 +178,8 @@ public class Mushroom : Enemy
         }
 
         posionTurns = maxPoisonTurns;
-        posionIsOn();
-        healIsOn();
+        StartCoroutine(healIsOn());
+        StartCoroutine(posionIsOn());
         battlesystem.state = BattleState.PLAYERTURN;
        battlesystem.PlayerTurn();
 

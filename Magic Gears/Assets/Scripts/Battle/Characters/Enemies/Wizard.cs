@@ -66,7 +66,7 @@ public class Wizard : Enemy
 
     public IEnumerator EnemyAttack1()
     {
-        Debug.Log("Enemy unit attacks!");
+        HUD.Log.text = "Wizard attacks with magic!";
         yield return new WaitForSeconds(1f);
         enemyAnimator.EnemyBasicAttack();
         yield return new WaitForSeconds(0.5f);
@@ -75,9 +75,12 @@ public class Wizard : Enemy
         HUD.SetEnemyMana();
         playerAnimator.Damaged();
         bool isDead = currentPlayerUnit.TakeDamage(damageBasic);
+        HUD.Log.text = currentPlayerUnit.unitName + " takes " + damageBasic + " damage!";
+        yield return new WaitForSeconds(2f);
         //HUD.SetPlayerHealth();
         if (isDead)
         {
+            HUD.Log.text = "Game over";
             battlesystem.state = BattleState.LOST;
             Debug.Log("You lose!");
             battlesystem.EndBattle();
@@ -87,13 +90,14 @@ public class Wizard : Enemy
             battlesystem.state = BattleState.PLAYERTURN;
             battlesystem.PlayerTurn();
         }
-        checkManaToReturn();
-        nigthmareIsOn();
+        StartCoroutine(checkManaToReturn());
+        StartCoroutine(nigthmareIsOn());
     }
 
     public IEnumerator EnemyAttack2()
     {
         //Debug.Log("The mushroom is healing for " + maxHealTurns + " turns");
+        HUD.Log.text = "Wizard took all " + currentPlayerUnit.unitName + "'s mana!";
         yield return new WaitForSeconds(1f);
         enemyAnimator.EnemyDefensiveAttack();
         yield return new WaitForSeconds(0.5f);
@@ -104,6 +108,8 @@ public class Wizard : Enemy
         Debug.Log("BEFORE DEFENSE: " + Unit.currentPlayerMana + " health");
         //Consume half of the mana of the player. (Made as a bool because that's what the function returns)
         bool consumeHP = TakeDamage(Unit.currentPlayerMana * -1 / 2);
+        HUD.Log.text = "Wizard drank half of " + currentPlayerUnit.unitName + "'s mana!";
+        yield return new WaitForSeconds(2f);
         Debug.Log("AFTER DEFENSE: " + Unit.currentPlayerMana + " health");
 
 
@@ -123,13 +129,14 @@ public class Wizard : Enemy
 
         battlesystem.state = BattleState.PLAYERTURN;
         battlesystem.PlayerTurn();
-        checkManaToReturn();
-        nigthmareIsOn();
+        StartCoroutine(checkManaToReturn());
+        StartCoroutine(nigthmareIsOn());
     }
 
     public IEnumerator EnemyAttack3()
     {
-        yield return new WaitForSeconds(1f);
+        HUD.Log.text = "Wizard found " + currentPlayerUnit.unitName+ + " biggest fear and nightmared them for " + maxNightmareTurns + " turns!";
+        yield return new WaitForSeconds(2f);
         enemyAnimator.EnemyOffensiveAttack();
         yield return new WaitForSeconds(0.5f);
         Debug.Log("Enemy loose " + manaCostOffense + "mana");
@@ -150,37 +157,48 @@ public class Wizard : Enemy
         Debug.Log("The wizard has nightmare you for " + nightmareTurns + " turns");
 
         //NightmareIsOn is the function that will decrease the turns left and damage the player.
-        nigthmareIsOn();
-        checkManaToReturn();
+        StartCoroutine(nigthmareIsOn());
+        StartCoroutine(checkManaToReturn());
 
     }
 
     //Player is still Nightmared. Take damage
-    public void nigthmareIsOn()
+    public IEnumerator nigthmareIsOn()
     {
         if (nightmareTurns > 0)
         {
-
+            HUD.Log.text = currentPlayerUnit.unitName + " cannot attack due to nightmares!";
+            yield return new WaitForSeconds(2f);
+            playerAnimator.Damaged();
+            HUD.Log.text = currentPlayerUnit.unitName + " got scared and recieved " + nightmareDamage + " from nightmares!";
+            yield return new WaitForSeconds(2f);
             Debug.Log("BEFORE Nightmare: " + currentPlayerUnit.currentHP + " health");
             bool isDead = currentPlayerUnit.TakeDamage(nightmareDamage);
             Debug.Log("AFTER Nightmare: " + currentPlayerUnit.currentHP + " health");
             if (isDead)
             {
+                HUD.Log.text = "Game over";
                 battlesystem.state = BattleState.LOST;
                 Debug.Log("You lose!");
                 battlesystem.EndBattle();
             }
             nightmareTurns--;
-            playerAnimator.Damaged();
+
             battlesystem.state = BattleState.ENEMYTURN;
             enemyUnit.chooseAttack();
         }
     }
 
-    public void checkManaToReturn()
+    public IEnumerator checkManaToReturn()
     {
         if(returnManaTurn == 0)
         {
+            HUD.Log.text = "Wizard felt pity for " + currentPlayerUnit.unitName + " and returned the other half of the mana!";
+            yield return new WaitForSeconds(2f);
+            if(nightmareTurns <= 0)
+            {
+                HUD.Log.text = "Player turn!";
+            }
             UpdatePlayerMana(manaConsumed*-1);
             HUD.SetPlayerMana();
             returnManaTurn = 999; //Set to a high number since it will be returned back to 1 when the defensive attack is acalled again.

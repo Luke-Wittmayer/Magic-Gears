@@ -52,20 +52,21 @@ public class Robot : Enemy
     public IEnumerator EnemyAttack1()
     {
         //Enemy basic attack gains 5 mana
-        HUD.Log.text = "Cactus attacks!";
+        HUD.Log.text = "Robot attacks!";
         yield return new WaitForSeconds(1f);
         enemyAnimator.EnemyBasicAttack();
-        yield return new WaitForSeconds(.5f);
+        yield return new WaitForSeconds(0.5f);
         Debug.Log("Enemy gains " + manaCostBasic + "mana");
         UpdateEnemyMana(manaCostBasic);
         HUD.SetEnemyMana();
         playerAnimator.Damaged();
         bool isDead = currentPlayerUnit.TakeDamage(damageBasic);
-        HUD.Log.text = "You take " + damageBasic + " damage!";
+        HUD.Log.text = currentPlayerUnit.unitName + " takes " + damageBasic + " damage!";
         yield return new WaitForSeconds(2f);
 
         if (isDead)
         {
+            HUD.Log.text = "Game over!";
             battlesystem.state = BattleState.LOST;
             Debug.Log("You lose!");
             battlesystem.EndBattle();
@@ -80,8 +81,8 @@ public class Robot : Enemy
     public IEnumerator EnemyAttack2()
     {
         //Enemy basic attack gains 5 mana
-        HUD.Log.text = "Cactus attacks!";
-        yield return new WaitForSeconds(1f);
+        HUD.Log.text = "Something looks odd on Robot's attack!";
+        yield return new WaitForSeconds(1.5f);
         enemyAnimator.EnemyDefensiveAttack();
         yield return new WaitForSeconds(.5f);
         Debug.Log("Enemy used " + manaCostDefense + "mana");
@@ -89,7 +90,7 @@ public class Robot : Enemy
         HUD.SetEnemyMana();
         playerAnimator.Damaged();
 
-        HUD.Log.text = "Enemy takes " + Unit.currentPlayerMana + " health points from your mana!";
+        HUD.Log.text = "Robot takes " + Unit.currentPlayerMana + " health points from " + currentPlayerUnit.unitName + "'s mana!";
         bool gainHealth = TakeDamage(Unit.currentPlayerMana * -1);
         yield return new WaitForSeconds(2f);
 
@@ -101,7 +102,7 @@ public class Robot : Enemy
     public IEnumerator EnemyAttack3()
     {
         //Enemy basic attack gains 5 mana
-        HUD.Log.text = "Cactus attacks!";
+        HUD.Log.text = "Robot is out of control!";
         yield return new WaitForSeconds(1f);
         enemyAnimator.EnemyOffensiveAttack();
         yield return new WaitForSeconds(.5f);
@@ -110,13 +111,14 @@ public class Robot : Enemy
         HUD.SetEnemyMana();
         playerAnimator.Damaged();
 
-        HUD.Log.text = "Enemy makes " + Unit.currentPlayerMana + " of damage";
+        HUD.Log.text = "Robot makes " + Unit.currentPlayerMana + " of damage";
         yield return new WaitForSeconds(2f);
         bool isDead = currentPlayerUnit.TakeDamage(Unit.currentPlayerMana);
         //HUD.SetPlayerHealth();
 
         if (isDead)
         {
+            HUD.Log.text = "Game over!";
             battlesystem.state = BattleState.LOST;
             Debug.Log("You lose!");
             battlesystem.EndBattle();

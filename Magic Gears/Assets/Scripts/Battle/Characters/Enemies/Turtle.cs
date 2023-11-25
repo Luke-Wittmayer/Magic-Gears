@@ -43,9 +43,12 @@ public class Turtle : Enemy
         //reflect damage
         if (reflectState == ReflectState.YES)
         {
+            HUD.Log.text = "But the turtle has reflected the attack!";
+            playerAnimator.Damaged();
             //reflected damage = damage taken
             Debug.Log("Reflecting: " + currentPlayerUnit.currentHP + " health");
             bool isDead = currentPlayerUnit.TakeDamage(dmg);
+
             Debug.Log("Reflecting: " + currentPlayerUnit.currentHP + " health");
             reflectState = ReflectState.NO;
 
@@ -89,20 +92,21 @@ public class Turtle : Enemy
     }
     public IEnumerator EnemyAttack1()
     {
-        //Enemy basic attack gains 5 mana
-        Debug.Log("Enemy unit attacks!");
+        HUD.Log.text = "Turtle spikes an attack!";
         yield return new WaitForSeconds(1f);
         enemyAnimator.EnemyBasicAttack();
-        yield return new WaitForSeconds(.5f);
+        yield return new WaitForSeconds(0.5f);
         Debug.Log("Enemy gains " + manaCostBasic + "mana");
         UpdateEnemyMana(manaCostBasic);
         HUD.SetEnemyMana();
         playerAnimator.Damaged();
         bool isDead = currentPlayerUnit.TakeDamage(damageBasic);
         //HUD.SetPlayerHealth();
-
+        HUD.Log.text = currentPlayerUnit.unitName + " takes " + damageBasic + " damage!";
+        yield return new WaitForSeconds(2f);
         if (isDead)
         {
+            HUD.Log.text = "Game over!";
             battlesystem.state = BattleState.LOST;
             Debug.Log("You lose!");
             battlesystem.EndBattle();
@@ -116,8 +120,8 @@ public class Turtle : Enemy
 
     public IEnumerator EnemyAttack2()
     {
-        Debug.Log("Enemy unit reflects attack!");
-        yield return new WaitForSeconds(1f);
+        HUD.Log.text = "Turtle became passive and is ready to reflect any attacl!";
+        yield return new WaitForSeconds(1.5f);
         enemyAnimator.EnemyDefensiveAttack();
         yield return new WaitForSeconds(.5f);
         UpdateEnemyMana(manaCostDefense);
@@ -134,7 +138,7 @@ public class Turtle : Enemy
     {
         //Big damage
         //Enemy basic attack gains 5 mana
-        Debug.Log("Enemy unit attacks big!");
+        HUD.Log.text = "Turtle is out of control!";
         yield return new WaitForSeconds(1f);
         enemyAnimator.EnemyOffensiveAttack();
         yield return new WaitForSeconds(.5f);
@@ -142,17 +146,24 @@ public class Turtle : Enemy
         HUD.SetEnemyMana();
         playerAnimator.Damaged();
         bool isDead = currentPlayerUnit.TakeDamage(damageBig);
+        HUD.Log.text = currentPlayerUnit.unitName + " takes " + damageBig + " damage!";
+        yield return new WaitForSeconds(2f);
         bool selfDamage = base.TakeDamage(damageToTurtle);
+        HUD.Log.text = "Turtle's attack was so big that he recieved " + damageToTurtle + " damage as well!";
+        enemyAnimator.Damaged();
+        yield return new WaitForSeconds(2f);
         //HUD.SetPlayerHealth();
 
         if (isDead)
         {
+            HUD.Log.text = "Game over!";
             battlesystem.state = BattleState.LOST;
             Debug.Log("You lose!");
             battlesystem.EndBattle();
         }
         else if (selfDamage)
         {
+
             battlesystem.state = BattleState.WON;
             Debug.Log("You Win!");
             battlesystem.EndBattle();
@@ -163,5 +174,4 @@ public class Turtle : Enemy
             battlesystem.PlayerTurn();
         }
     }
-
 }

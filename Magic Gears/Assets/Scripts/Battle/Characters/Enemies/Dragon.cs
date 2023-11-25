@@ -108,7 +108,7 @@ public class Dragon : Enemy
     {
 
             //Enemy basic attack gains 5 mana
-            HUD.Log.text = "Lunk attacks!";
+            HUD.Log.text = "Dragon attacks!";
             yield return new WaitForSeconds(1f);
             enemyAnimator.EnemyBasicAttack();
             yield return new WaitForSeconds(.5f);
@@ -118,12 +118,10 @@ public class Dragon : Enemy
             playerAnimator.Damaged();
             bool isDead;
             isDead = currentPlayerUnit.TakeDamage(damageBasic);
-            HUD.Log.text = "You take " + damageBasic + " damage!";
+        HUD.Log.text = currentPlayerUnit.unitName + " takes " + damageBasic + " damage!";
+        yield return new WaitForSeconds(2f);
 
-
-            yield return new WaitForSeconds(2f);
-
-            if (isDead)
+        if (isDead)
             {
                 battlesystem.state = BattleState.LOST;
                 Debug.Log("You lose!");
@@ -143,12 +141,11 @@ public class Dragon : Enemy
 
     public IEnumerator EnemyAttack2()
     {
-            Debug.Log("Enemy unit shields the attack!");
-            yield return new WaitForSeconds(1f);
+        HUD.Log.text = "Dragon shields the attack and something else...!";
             enemyAnimator.EnemyDefensiveAttack();
+            yield return new WaitForSeconds(2f);
             UpdateEnemyMana(manaCostDefense);
             HUD.SetEnemyMana();
-            yield return new WaitForSeconds(.5f);
 
             if (healTurns <= 0)
             {
@@ -169,7 +166,7 @@ public class Dragon : Enemy
     public IEnumerator EnemyAttack3()
     {
             //Enemy basic attack gains 5 mana
-            HUD.Log.text = "Cactus attacks!";
+            HUD.Log.text = "Dragon wants some mana!";
             yield return new WaitForSeconds(1f);
             enemyAnimator.EnemyOffensiveAttack();
             yield return new WaitForSeconds(.5f);
@@ -184,7 +181,7 @@ public class Dragon : Enemy
 
             UpdatePlayerMana(Unit.currentPlayerMana);
             HUD.SetPlayerMana();
-            HUD.Log.text = "Enemy makes " + Unit.currentPlayerMana + " of damage";
+            HUD.Log.text = "Dragon stole " + currentPlayerUnit.unitName + "'s mana and converted it to damage";
             yield return new WaitForSeconds(2f);
 
             if (isDead)
@@ -205,9 +202,9 @@ public class Dragon : Enemy
     public IEnumerator EnemyAttack4()
     {
         //Enemy basic attack gains 5 mana
-        HUD.Log.text = "Lunk attacks!";
-        yield return new WaitForSeconds(1f);
+        HUD.Log.text = "Dragon is charging for something never seen before!";
         enemyAnimator.EnemyDefensiveAttack();
+        yield return new WaitForSeconds(1.5f);
         yield return new WaitForSeconds(.5f);
         charging = true;
         Debug.Log("Enemy is charging");
@@ -249,26 +246,31 @@ public class Dragon : Enemy
 
     public IEnumerator checkCharge()
     {
-        Debug.Log("Enemy finished charging");
-            UpdateEnemyMana(manaCostUltimate);
+        HUD.Log.text = "Dragon is done charging!";
+        yield return new WaitForSeconds(1f);
+        UpdateEnemyMana(manaCostUltimate);
             HUD.SetEnemyMana();
-            playerAnimator.Damaged();
             bool isDead;
         enemyAnimator.EnemyUltimateAttack();
+        yield return new WaitForSeconds(0.5f);
+        playerAnimator.Damaged();
         isDead = currentPlayerUnit.TakeDamage(9999);
-            HUD.Log.text = "You take 9999 damage!";
+            HUD.Log.text = currentPlayerUnit.unitName + " takes 9999 damage!";
 
             yield return new WaitForSeconds(2f);
 
             if (isDead)
             {
+            HUD.Log.text = "Game over!";
                 battlesystem.state = BattleState.LOST;
                 Debug.Log("You lose!");
                 battlesystem.EndBattle();
             }
             else
             {
-                battlesystem.state = BattleState.PLAYERTURN;
+            HUD.Log.text = "But Lunk resisted the attack!";
+            yield return new WaitForSeconds(1f);
+            battlesystem.state = BattleState.PLAYERTURN;
                 battlesystem.PlayerTurn();
             }
             shieldOn = false;

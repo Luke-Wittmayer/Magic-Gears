@@ -79,7 +79,7 @@ public class Ocellus : Enemy
     public IEnumerator EnemyAttack1()
     {
         //Enemy basic attack gains 5 mana
-        HUD.Log.text = "Cactus attacks!";
+        HUD.Log.text = "Ocellus attacks elegantly!";
         yield return new WaitForSeconds(1f);
         enemyAnimator.EnemyBasicAttack();
         yield return new WaitForSeconds(.5f);
@@ -88,11 +88,12 @@ public class Ocellus : Enemy
         HUD.SetEnemyMana();
         playerAnimator.Damaged();
         bool isDead = currentPlayerUnit.TakeDamage(damageBasic);
-        HUD.Log.text = "You take " + damageBasic + " damage!";
+        HUD.Log.text = currentPlayerUnit.unitName + " takes " + damageBasic + " damage!";
         yield return new WaitForSeconds(2f);
 
         if (isDead)
         {
+            HUD.Log.text = "Game over!";
             battlesystem.state = BattleState.LOST;
             Debug.Log("You lose!");
             battlesystem.EndBattle();
@@ -103,15 +104,15 @@ public class Ocellus : Enemy
             battlesystem.PlayerTurn();
         }
 
-        posionIsOn();
-        healIsOn();
+        StartCoroutine(healIsOn());
+        StartCoroutine(posionIsOn());
     }
 
 
     public IEnumerator EnemyAttack2()
     {
-        //Debug.Log("The mushroom is healing for " + maxHealTurns + " turns");
-        yield return new WaitForSeconds(1f);
+        HUD.Log.text ="Ocellus is looking ahead to gain health and mana for " + maxHealTurns + " turns!";
+        yield return new WaitForSeconds(2f);
         enemyAnimator.EnemyDefensiveAttack();
         yield return new WaitForSeconds(0.5f);
         // Debug.Log("Enemy loose " + manaCostDefense + "mana");
@@ -130,16 +131,16 @@ public class Ocellus : Enemy
         battlesystem.state = BattleState.PLAYERTURN;
         battlesystem.PlayerTurn();
 
-        posionIsOn();
-        healIsOn();
+        StartCoroutine(healIsOn());
+        StartCoroutine(posionIsOn());
     }
 
     public IEnumerator EnemyAttack3()
     {
         //Big damage
         //Enemy basic attack gains 5 mana
-        Debug.Log("Enemy unit steal attack is big!");
-        yield return new WaitForSeconds(1f);
+        HUD.Log.text = "Ocellus borrowed " + offHP +" health point from " + currentPlayerUnit.unitName + "!";
+        yield return new WaitForSeconds(2f);
         enemyAnimator.EnemyOffensiveAttack();
         yield return new WaitForSeconds(.5f);
         UpdateEnemyMana(manaCostOffense);
@@ -151,6 +152,7 @@ public class Ocellus : Enemy
 
         if (isDead)
         {
+            HUD.Log.text = "Game over!";
             battlesystem.state = BattleState.LOST;
             Debug.Log("You lose!");
             battlesystem.EndBattle();
@@ -160,14 +162,14 @@ public class Ocellus : Enemy
             battlesystem.state = BattleState.PLAYERTURN;
             battlesystem.PlayerTurn();
         }
-        posionIsOn();
-        healIsOn();
+        StartCoroutine(healIsOn());
+        StartCoroutine(posionIsOn());
     }
 
     public IEnumerator EnemyAttack4()
     {
-        Debug.Log("The mushroom has posioned you forever");
-        yield return new WaitForSeconds(1f);
+        HUD.Log.text = "Ocellus poisioned" + currentPlayerUnit.unitName + " for being annoying the rest of combat!";
+        yield return new WaitForSeconds(1.5f);
         enemyAnimator.EnemyUltimateAttack();
         yield return new WaitForSeconds(0.5f);
         UpdateEnemyMana(manaCostUltimate);
@@ -184,40 +186,48 @@ public class Ocellus : Enemy
         battlesystem.PlayerTurn();
         poisoned = true;
 
-        posionIsOn();
-        healIsOn();
+        StartCoroutine(healIsOn());
+        StartCoroutine(posionIsOn());
     }
 
-    public void posionIsOn()
+    public IEnumerator posionIsOn()
     {
         if (poisoned)
         {
 
-            Debug.Log("BEFORE Poisioned: " + currentPlayerUnit.currentHP + " health");
+     //       Debug.Log("BEFORE Poisioned: " + currentPlayerUnit.currentHP + " health");
             bool isDead = currentPlayerUnit.TakeDamage(poisonDamage);
-            Debug.Log("AFTER Poisioned: " + currentPlayerUnit.currentHP + " health");
+   //         Debug.Log("AFTER Poisioned: " + currentPlayerUnit.currentHP + " health");
+            HUD.Log.text = currentPlayerUnit.unitName + " takes " + poisonDamage + " damage from poison!";
+            playerAnimator.Damaged();
+            yield return new WaitForSeconds(2f);
+            HUD.Log.text = "Player turn!";
             if (isDead)
             {
+                HUD.Log.text = "Game over!";
                 battlesystem.state = BattleState.LOST;
                 Debug.Log("You lose!");
                 battlesystem.EndBattle();
             }
-            playerAnimator.Damaged();
         }
     }
 
-    public void healIsOn()
+    public IEnumerator healIsOn()
     {
         if (healTurns > 0)
         {
+            HUD.Log.text = "Ocellus gains " + (-1 * healAmount) + " of health points and " + (-1*defMana) + " of mana!";
+            yield return new WaitForSeconds(2f);
             Debug.Log("BEFORE heal: " + enemyUnit.currentHP + " health");
             bool isDead = enemyUnit.TakeDamage(healAmount);
             UpdateEnemyMana(defMana);
             Debug.Log("AFTER heal: " + enemyUnit.currentHP + " health");
+            HUD.Log.text = "Player turn!";
             HUD.updateAllHealth();
             HUD.SetEnemyMana();
             healTurns--;
 
         }
+        yield return new WaitForSeconds(0f);
     }
 }

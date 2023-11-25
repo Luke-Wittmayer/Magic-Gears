@@ -103,7 +103,7 @@ public class Lunk : Enemy
     public IEnumerator EnemyAttack1()
     {
         //Enemy basic attack gains 5 mana
-        HUD.Log.text = "Lunk attacks!";
+        HUD.Log.text = "Lunk attacks slowly but strongly!";
         yield return new WaitForSeconds(1f);
         enemyAnimator.EnemyBasicAttack();
         yield return new WaitForSeconds(.5f);
@@ -115,12 +115,12 @@ public class Lunk : Enemy
         if (increaseDamage)
         {
             isDead = currentPlayerUnit.TakeDamage((int)(damageBasic* increaseAmount));
-            HUD.Log.text = "You take " + (int)(damageBasic * increaseAmount) + " damage!";
+            HUD.Log.text = currentPlayerUnit.unitName+ " takes " + (int)(damageBasic * increaseAmount) + " damage!";
         }
         else
         {
             isDead = currentPlayerUnit.TakeDamage(damageBasic);
-            HUD.Log.text = "You take " + damageBasic + " damage!";
+            HUD.Log.text = currentPlayerUnit.unitName + " takes " + damageBasic + " damage!";
         }
 
         yield return new WaitForSeconds(2f);
@@ -145,7 +145,7 @@ public class Lunk : Enemy
 
     public IEnumerator EnemyAttack2()
     {
-        Debug.Log("Enemy unit shields the attack!");
+        HUD.Log.text = "Lunk will shield next attack!";
         yield return new WaitForSeconds(1f);
         enemyAnimator.EnemyDefensiveAttack();
         yield return new WaitForSeconds(.5f);
@@ -161,7 +161,7 @@ public class Lunk : Enemy
     {
         //Big damage
         //Enemy basic attack gains 5 mana
-        Debug.Log("Enemy unit attacks big!");
+        HUD.Log.text = "Lunk's attack is hard as metal!";
         yield return new WaitForSeconds(1f);
         enemyAnimator.EnemyOffensiveAttack();
         yield return new WaitForSeconds(.5f);
@@ -169,16 +169,23 @@ public class Lunk : Enemy
         HUD.SetEnemyMana();
         playerAnimator.Damaged();
         bool isDead;
+
         if (increaseDamage)
         {
             isDead = currentPlayerUnit.TakeDamage((int)(offHP * increaseAmount));
+            HUD.Log.text = currentPlayerUnit.unitName + " takes " + (int)(offHP * increaseAmount) + " damage!";
         }
         else
         {
             isDead = currentPlayerUnit.TakeDamage(offHP);
+            HUD.Log.text = currentPlayerUnit.unitName + " takes " + offHP + " damage!";
         }
         //HUD.SetPlayerHealth();
 
+        yield return new WaitForSeconds(2f);
+
+        HUD.Log.text = "Lunk is upset and his attack increased for next turn!";
+        yield return new WaitForSeconds(2f);
         if (isDead)
         {
             battlesystem.state = BattleState.LOST;
@@ -197,8 +204,8 @@ public class Lunk : Enemy
 
     public IEnumerator EnemyAttack4()
     {
-        Debug.Log("Tank is inmune for 2 turns");
-        yield return new WaitForSeconds(1f);
+        HUD.Log.text = "Lunk decided to be inmune of damage for 2 turns";
+        yield return new WaitForSeconds(2f);
         enemyAnimator.EnemyUltimateAttack();
         yield return new WaitForSeconds(0.5f);
         UpdateEnemyMana(manaCostUltimate);

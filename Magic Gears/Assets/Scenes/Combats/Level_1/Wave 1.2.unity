@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: e8d301df5be7bc24c9f72155033d0ed9, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -9006,6 +9006,8 @@ MonoBehaviour:
   audioSource: {fileID: 0}
   atk1Audio: {fileID: 0}
   atk2Audio: {fileID: 0}
+  atk3Audio: {fileID: 0}
+  ultAudio: {fileID: 0}
   playerIsSwallowed: 0
   defMana: -100
   offHP: 25
@@ -12564,6 +12566,8 @@ MonoBehaviour:
   audioSource: {fileID: 0}
   atk1Audio: {fileID: 0}
   atk2Audio: {fileID: 0}
+  atk3Audio: {fileID: 0}
+  ultAudio: {fileID: 0}
   playerIsSwallowed: 0
   maxEnemyMana: 100
   currentEnemyMana: 0
@@ -16644,6 +16648,8 @@ MonoBehaviour:
   audioSource: {fileID: 0}
   atk1Audio: {fileID: 0}
   atk2Audio: {fileID: 0}
+  atk3Audio: {fileID: 0}
+  ultAudio: {fileID: 0}
   playerIsSwallowed: 0
   healAllAmount: -40
   offHP: 30
@@ -19179,7 +19185,7 @@ Transform:
   m_GameObject: {fileID: 2020227535}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0.14}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

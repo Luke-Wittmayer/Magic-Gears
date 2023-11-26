@@ -34,12 +34,11 @@ public class Cactus : Enemy
         //reflect damage
         if(reflectState == ReflectState.YES) {
             //reflected damage = damage taken
-            Debug.Log("Reflecting: " + currentPlayerUnit.currentHP + " health");
             bool isDead = currentPlayerUnit.TakeDamage(dmg);
-            Debug.Log("Reflecting: " + currentPlayerUnit.currentHP + " health");
             reflectState = ReflectState.NO;
-
-            if(isDead){
+            playerAnimator.Damaged();
+            if (isDead){
+                HUD.Log.text = "Game over!";
                 battlesystem.state = BattleState.LOST; 
                 Debug.Log("You lose!");
                 battlesystem.EndBattle();
@@ -97,9 +96,8 @@ public class Cactus : Enemy
 
     public IEnumerator EnemyAttack2(){
         HUD.Log.text = "Cactus is ready to reflect any attack!";
-        yield return new WaitForSeconds(2f);
         enemyAnimator.EnemyDefensiveAttack();
-        yield return new WaitForSeconds(.5f);
+        yield return new WaitForSeconds(2f);
         UpdateEnemyMana(manaCostDefense);
         HUD.SetEnemyMana();
 

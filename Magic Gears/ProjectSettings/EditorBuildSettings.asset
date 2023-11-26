@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu/Main Menu.unity
     guid: 49588bca5bb6ce94d8d84bdeb999859d
   - enabled: 1
+    path: Assets/Scenes/Dialogues/Intro.unity
+    guid: c0490f58f59ec9b48adafc8f670e5845
+  - enabled: 1
     path: Assets/Scenes/Hub/Hub.unity
     guid: 070f31db63ab6d54682f3318ff2eedd6
   - enabled: 0

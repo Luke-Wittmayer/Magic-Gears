@@ -48,6 +48,11 @@ public class LevelConversation : MonoBehaviour
         {
             SceneManager.LoadScene("Wave 1.1");
         }
+        else if (teleportTo == 0)
+        {
+            storeLevel.level = 0;
+            SceneManager.LoadScene("Hub");
+        }
         else if (teleportTo == 2)
         {
             SceneManager.LoadScene("Wave 1.2");

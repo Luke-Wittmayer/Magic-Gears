@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44805646, g: 0.49806583, b: 0.5755247, a: 1}
+  m_IndirectSpecularColor: {r: 0.44805712, g: 0.49806666, b: 0.57552564, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: c4436333f0088904c8168ea30dd29e08, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -4077,6 +4077,11 @@ MonoBehaviour:
   manaCostUltimate: 100
   HUD: {fileID: 301124169}
   AttackButtons: {fileID: 57236509}
+  audioSource: {fileID: 0}
+  atk1Audio: {fileID: 0}
+  atk2Audio: {fileID: 0}
+  atk3Audio: {fileID: 0}
+  ultAudio: {fileID: 0}
   playerIsSwallowed: 0
   defMana: -100
   offHP: 25
@@ -9195,6 +9200,11 @@ MonoBehaviour:
   manaCostUltimate: 100
   HUD: {fileID: 301124169}
   AttackButtons: {fileID: 2029146872}
+  audioSource: {fileID: 0}
+  atk1Audio: {fileID: 0}
+  atk2Audio: {fileID: 0}
+  atk3Audio: {fileID: 0}
+  ultAudio: {fileID: 0}
   playerIsSwallowed: 0
   healAllAmount: -40
   offHP: 30
@@ -9476,6 +9486,11 @@ MonoBehaviour:
   manaCostUltimate: 80
   HUD: {fileID: 301124169}
   AttackButtons: {fileID: 0}
+  audioSource: {fileID: 0}
+  atk1Audio: {fileID: 0}
+  atk2Audio: {fileID: 0}
+  atk3Audio: {fileID: 0}
+  ultAudio: {fileID: 0}
   playerIsSwallowed: 0
   maxEnemyMana: 100
   currentEnemyMana: 0
@@ -14967,7 +14982,7 @@ Transform:
   m_GameObject: {fileID: 1699582121}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0.192}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

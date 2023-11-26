@@ -9026,6 +9026,11 @@ MonoBehaviour:
   manaCostUltimate: 100
   HUD: {fileID: 2011665076}
   AttackButtons: {fileID: 307775786}
+  audioSource: {fileID: 0}
+  atk1Audio: {fileID: 0}
+  atk2Audio: {fileID: 0}
+  atk3Audio: {fileID: 0}
+  ultAudio: {fileID: 0}
   playerIsSwallowed: 0
   defMana: -20
   offHP: 26
@@ -19429,6 +19434,11 @@ MonoBehaviour:
   manaCostUltimate: 100
   HUD: {fileID: 2011665076}
   AttackButtons: {fileID: 1867892383}
+  audioSource: {fileID: 0}
+  atk1Audio: {fileID: 0}
+  atk2Audio: {fileID: 0}
+  atk3Audio: {fileID: 0}
+  ultAudio: {fileID: 0}
   playerIsSwallowed: 0
   healAllAmount: -200
   offHP: 25
@@ -22944,7 +22954,7 @@ Transform:
   m_GameObject: {fileID: 1680078098}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.204, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -28432,6 +28442,11 @@ MonoBehaviour:
   manaCostUltimate: 0
   HUD: {fileID: 2011665076}
   AttackButtons: {fileID: 0}
+  audioSource: {fileID: 0}
+  atk1Audio: {fileID: 0}
+  atk2Audio: {fileID: 0}
+  atk3Audio: {fileID: 0}
+  ultAudio: {fileID: 0}
   playerIsSwallowed: 0
   maxEnemyMana: 100
   currentEnemyMana: 0

@@ -57,11 +57,10 @@ public class DPSPlayer : Unit
         enemyAnimator.Damaged();
 
         HUD.Log.text = "The attack is successful on " + enemyUnit.unitName + "!\n";
-        HUD.Log.text += "Harper deals " + damageBasic + " damage and gain " + Math.Abs(manaCostBasic) + " mana!";
+        HUD.Log.text += "Harper deals " + damageBasic + " damage and gains " + Math.Abs(manaCostBasic) + " mana!";
         Debug.Log(enemyUnit.unitName + " now has " + enemyUnit.currentHP + " remaining.");
         yield return new WaitForSeconds(2f);
-
-        if(isDead){
+        if (isDead){
             battlesystem.state = BattleState.WON;
             Debug.Log("You win!");
             battlesystem.EndBattle();

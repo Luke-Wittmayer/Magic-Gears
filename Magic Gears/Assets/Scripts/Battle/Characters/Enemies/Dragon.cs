@@ -15,10 +15,13 @@ public class Dragon : Enemy
 
     public bool charging = false;
 
+    public ParticleSystem Ultimate;
+    public ParticleSystem Shield;
+
 
     public override void chooseAttack()
     {
-        base.StateMachine4();
+        //base.StateMachine4();
         if (charging)
         {
             if (battlesystem.state != BattleState.ENEMYTURN)
@@ -146,7 +149,7 @@ public class Dragon : Enemy
             yield return new WaitForSeconds(2f);
             UpdateEnemyMana(manaCostDefense);
             HUD.SetEnemyMana();
-
+            Shield.Play();
             if (healTurns <= 0)
             {
                 healTurns = maxHealTurns;
@@ -204,6 +207,7 @@ public class Dragon : Enemy
         //Enemy basic attack gains 5 mana
         HUD.Log.text = "Dragon is charging for something never seen before!";
         enemyAnimator.EnemyDefensiveAttack();
+        Ultimate.Play();
         yield return new WaitForSeconds(1.5f);
         yield return new WaitForSeconds(.5f);
         charging = true;
@@ -240,6 +244,9 @@ public class Dragon : Enemy
                 healTurns--;
             }
 
+            if(healTurns == 0) {
+                Shield.Stop();
+            }
 
         }
     }
@@ -254,6 +261,7 @@ public class Dragon : Enemy
         enemyAnimator.EnemyUltimateAttack();
         yield return new WaitForSeconds(0.5f);
         playerAnimator.Damaged();
+        Ultimate.Stop();
         isDead = currentPlayerUnit.TakeDamage(9999);
             HUD.Log.text = currentPlayerUnit.unitName + " takes 9999 damage!";
 

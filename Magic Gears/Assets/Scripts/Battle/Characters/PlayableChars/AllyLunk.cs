@@ -210,11 +210,13 @@ public class AllyLunk : Unit
         UpdatePlayerMana(manaCostUltimate);
         HUD.SetPlayerMana();
         yield return new WaitForSeconds(0.5f);
-        ultShield.Play();
         HUD.Log.text = "Lunk is immune of damage for 2 turns!";
         yield return new WaitForSeconds(2f);
         ultimateOn = 2;
-
+        if(regShield.isPlaying) {
+            regShield.Stop();
+        }
+        ultShield.Play();
         battlesystem.state = BattleState.ENEMYTURN;
         enemyUnit.chooseAttack();
         shieldOn = false;

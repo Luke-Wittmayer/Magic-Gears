@@ -16,6 +16,7 @@ public class Wizard : Enemy
 
     private int manaConsumed;
     private int returnManaTurn;
+    public ParticleSystem Nightmares;
 
     public override void chooseAttack()
     {
@@ -135,7 +136,7 @@ public class Wizard : Enemy
 
     public IEnumerator EnemyAttack3()
     {
-        HUD.Log.text = "Wizard found " + currentPlayerUnit.unitName + " biggest fear and nightmared them for " + maxNightmareTurns + " turns!";
+        HUD.Log.text = "Wizard found " + currentPlayerUnit.unitName + "'s biggest fear and nightmared them for " + maxNightmareTurns + " turns!";
         yield return new WaitForSeconds(2f);
         enemyAnimator.EnemyOffensiveAttack();
         yield return new WaitForSeconds(0.5f);
@@ -143,7 +144,7 @@ public class Wizard : Enemy
         UpdateEnemyMana(manaCostOffense);
         HUD.SetEnemyMana();
         playerAnimator.Damaged();
-
+        Nightmares.Play();
         if (nightmareTurns > 0)
         {
             //Wizard called the offense attack while player was still nightmare mode, increase by one turn the nigthmares
@@ -183,7 +184,9 @@ public class Wizard : Enemy
                 battlesystem.EndBattle();
             }
             nightmareTurns--;
-
+            if(nightmareTurns == 0) {
+                Nightmares.Stop();
+            }
             battlesystem.state = BattleState.ENEMYTURN;
             enemyUnit.chooseAttack();
         }

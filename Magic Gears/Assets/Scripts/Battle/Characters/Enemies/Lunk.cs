@@ -14,11 +14,15 @@ public class Lunk : Enemy
     public float increaseAmount;
     private int  ultimateOn = 0;
 
+    public ParticleSystem regShield;
+    public ParticleSystem extraDmg;
+    public ParticleSystem ultShield;
+
 
 
     public override void chooseAttack()
     {
-        base.StateMachine4();
+        //base.StateMachine4();
 
         if (currentAtk == CurrentAtk.BASIC)
         {
@@ -45,12 +49,16 @@ public class Lunk : Enemy
         Debug.Log("Ultimate on is:" + ultimateOn);
         if (ultimateOn > 0)
         {
+            if(ultimateOn == 1) {
+                ultShield.Stop();
+            }
             return base.TakeDamage(0);
         }
        else  if (shieldOn)
         {
             UpdateEnemyMana(defMana);
             HUD.SetEnemyMana();
+            regShield.Stop();
             return base.TakeDamage(shieldAmount);
         }
         else
@@ -116,6 +124,7 @@ public class Lunk : Enemy
         {
             isDead = currentPlayerUnit.TakeDamage((int)(damageBasic* increaseAmount));
             HUD.Log.text = currentPlayerUnit.unitName+ " takes " + (int)(damageBasic * increaseAmount) + " damage!";
+            extraDmg.Stop();
         }
         else
         {
@@ -151,6 +160,7 @@ public class Lunk : Enemy
         yield return new WaitForSeconds(.5f);
         UpdateEnemyMana(manaCostDefense);
         HUD.SetEnemyMana();
+        regShield.Play();
         shieldOn = true;
         battlesystem.state = BattleState.PLAYERTURN;
         battlesystem.PlayerTurn();
@@ -169,7 +179,7 @@ public class Lunk : Enemy
         HUD.SetEnemyMana();
         playerAnimator.Damaged();
         bool isDead;
-
+        extraDmg.Play();
         if (increaseDamage)
         {
             isDead = currentPlayerUnit.TakeDamage((int)(offHP * increaseAmount));
@@ -211,7 +221,10 @@ public class Lunk : Enemy
         UpdateEnemyMana(manaCostUltimate);
         HUD.SetEnemyMana();
         ultimateOn = 2;
-
+        if(regShield.isPlaying) {
+            regShield.Stop();
+        }
+        ultShield.Play();
         battlesystem.state = BattleState.PLAYERTURN;
         battlesystem.PlayerTurn();
         shieldOn = false;

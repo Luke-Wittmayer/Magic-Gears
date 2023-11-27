@@ -188,6 +188,7 @@ public class BattleHUD : MonoBehaviour
             switchParticles.Play();
             Debug.Log("Particle");
         }
+        
         yield return new WaitForSeconds(1.6f);
         //add animation
         currentPlayerUnit.gameObject.SetActive(false);

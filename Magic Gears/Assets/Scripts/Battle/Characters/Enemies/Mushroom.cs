@@ -15,6 +15,9 @@ public class Mushroom : Enemy
     public int healAmount; //NOTE MUST BE NEGATIVE NUMBER
     public int healPlus;
 
+    public ParticleSystem poisonCloud;
+    public ParticleSystem healCloud;
+
     public override void chooseAttack()
     {
         base.StateMachine3();
@@ -53,7 +56,9 @@ public class Mushroom : Enemy
                 battlesystem.EndBattle();
             }
             posionTurns--;
-
+            if(posionTurns == 0) {
+                poisonCloud.Stop();
+            }
         }
         yield return new WaitForSeconds(0f);
     }
@@ -71,6 +76,9 @@ public class Mushroom : Enemy
             Debug.Log("AFTER heal: " + enemyUnit.currentHP + " health");
             HUD.updateAllHealth();
             healTurns--;
+            if(healTurns == 0) {
+                healCloud.Stop();
+            }
 
         }
         yield return new WaitForSeconds(0f);
@@ -140,7 +148,7 @@ public class Mushroom : Enemy
     public IEnumerator EnemyAttack2()
     {
         //Debug.Log("The mushroom is healing for " + maxHealTurns + " turns");
-        HUD.Log.text = "Happy mushroom uses his root to gain health amd keep his mood!";
+        HUD.Log.text = "Happy mushroom uses his root to gain health and keep his mood!";
         yield return new WaitForSeconds(2f);
         enemyAnimator.EnemyDefensiveAttack();
         yield return new WaitForSeconds(0.5f);
@@ -152,17 +160,18 @@ public class Mushroom : Enemy
         {
             healAmount = healAmount + healPlus;
         }
+        healCloud.Play();
         healTurns = maxHealTurns;
         battlesystem.state = BattleState.PLAYERTURN;
         battlesystem.PlayerTurn();
-
+        
         StartCoroutine(healIsOn());
         StartCoroutine(posionIsOn());
     }
 
     public IEnumerator EnemyAttack3()
     {
-        HUD.Log.text = "Happy mushroom posioned" + currentPlayerUnit.unitName + " for " + maxPoisonTurns + " turns to relax!";
+        HUD.Log.text = "Happy mushroom posioned " + currentPlayerUnit.unitName + " for " + maxPoisonTurns + " turns to relax!";
         Debug.Log("The mushroom has posioned you for " + maxPoisonTurns + " turns");
         yield return new WaitForSeconds(2f);
         enemyAnimator.EnemyOffensiveAttack();
@@ -171,12 +180,13 @@ public class Mushroom : Enemy
         UpdateEnemyMana(manaCostOffense);
         HUD.SetEnemyMana();
         playerAnimator.Damaged();
+
         //Mushroom called the offense attack while player was still poisioned, increase the poision damage
         if (posionTurns > 0)
         {
             poisonAttack = poisonAttack + poisonPlus;
         }
-
+        poisonCloud.Play();
         posionTurns = maxPoisonTurns;
         StartCoroutine(healIsOn());
         StartCoroutine(posionIsOn());

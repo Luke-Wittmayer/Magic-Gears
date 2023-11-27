@@ -14,6 +14,9 @@ public class Ocellus : Enemy
     public int healAmount; //NOTE MUST BE NEGATIVE NUMBER
     public int defMana; //PROBABLY THIS ONE TOO
 
+    public ParticleSystem healing;
+    public ParticleSystem poison;
+
     public override void chooseAttack()
     {
         base.StateMachine4();
@@ -127,7 +130,7 @@ public class Ocellus : Enemy
         {
             healTurns++;
         }
-
+        healing.Play();
         battlesystem.state = BattleState.PLAYERTURN;
         battlesystem.PlayerTurn();
 
@@ -168,7 +171,7 @@ public class Ocellus : Enemy
 
     public IEnumerator EnemyAttack4()
     {
-        HUD.Log.text = "Ocellus poisioned" + currentPlayerUnit.unitName + " for being annoying the rest of combat!";
+        HUD.Log.text = "Ocellus poisioned " + currentPlayerUnit.unitName + " for being annoying the rest of combat!";
         yield return new WaitForSeconds(1.5f);
         enemyAnimator.EnemyUltimateAttack();
         yield return new WaitForSeconds(0.5f);
@@ -181,7 +184,7 @@ public class Ocellus : Enemy
             //Stack the posion
             poisonDamage = poisonDamage + poisonDamage;
         }
-
+        poison.Play();
         battlesystem.state = BattleState.PLAYERTURN;
         battlesystem.PlayerTurn();
         poisoned = true;
@@ -226,7 +229,9 @@ public class Ocellus : Enemy
             HUD.updateAllHealth();
             HUD.SetEnemyMana();
             healTurns--;
-
+            if(healTurns == 0) {
+                healing.Stop();
+            }
         }
         yield return new WaitForSeconds(0f);
     }

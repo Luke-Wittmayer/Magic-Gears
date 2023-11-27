@@ -16,6 +16,7 @@ public class AllyLunk : Unit
     public int ultimateOn = 0;
 
     public ParticleSystem regShield;
+    public ParticleSystem extraDmg;
     public ParticleSystem ultShield;
 
     public override bool TakeDamage(int dmg)
@@ -99,6 +100,7 @@ public class AllyLunk : Unit
         {
             HUD.Log.text += "Lunk deals " + ((int)(damageBasic * increaseAmount)) + " damage and gain " + Math.Abs(manaCostBasic) + " mana!";
             isDead = enemyUnit.TakeDamage((int)(damageBasic * increaseAmount));
+            extraDmg.Stop();
         }
         else
         {
@@ -163,6 +165,7 @@ public class AllyLunk : Unit
 
         enemyAnimator.Damaged();
         bool isDead;
+        extraDmg.Play();
         if (increaseDamage)
         {
             isDead = enemyUnit.TakeDamage((int)(offHP * increaseAmount));

@@ -15,6 +15,8 @@ public class AllyOcellus : Unit
     public int healAmount; //NOTE MUST BE NEGATIVE NUMBER
     public int defMana; //PROBABLY THIS ONE TOO
 
+    public ParticleSystem healing;
+
     public override void Atk1()
     {
         if (battlesystem.state != BattleState.PLAYERTURN)
@@ -106,6 +108,7 @@ public class AllyOcellus : Unit
         {
             healTurns++;
         }
+        healing.Play();
         HUD.Log.text = "Ocellus made a spell to increase health and mana over time for " + healTurns + " turns!\n";
         StartCoroutine( healIsOn());
         yield return new WaitForSeconds(2f);
@@ -198,6 +201,10 @@ public class AllyOcellus : Unit
             yield return new WaitForSeconds(2f);
 
             healTurns--;
+
+            if(healTurns == 0) {
+                healing.Stop();
+            }
 
         yield return new WaitForSeconds(2f);
         }

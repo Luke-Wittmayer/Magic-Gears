@@ -15,18 +15,25 @@ public class AllyLunk : Unit
     public float increaseAmount;
     public int ultimateOn = 0;
 
+    public ParticleSystem regShield;
+    public ParticleSystem ultShield;
+
     public override bool TakeDamage(int dmg)
     {
         Debug.Log("Shield on is:" + shieldOn);
         Debug.Log("Ultimate on is:" + ultimateOn);
         if (ultimateOn > 0)
         {
+            if(ultimateOn == 1) {
+                ultShield.Stop();
+            }
             return base.TakeDamage(0);
         }
         else if (shieldOn)
         {
             UpdatePlayerMana(defMana);
             HUD.SetPlayerMana();
+            regShield.Stop();
             return base.TakeDamage(shieldAmount);
         }
         else
@@ -130,6 +137,7 @@ public class AllyLunk : Unit
         UpdatePlayerMana(manaCostDefense);
         HUD.SetPlayerMana();
         yield return new WaitForSeconds(.5f);
+        regShield.Play();
         HUD.Log.text = "Lunk will shield the next attack!\n";
         yield return new WaitForSeconds(2f);
         shieldOn = true;
@@ -199,6 +207,7 @@ public class AllyLunk : Unit
         UpdatePlayerMana(manaCostUltimate);
         HUD.SetPlayerMana();
         yield return new WaitForSeconds(0.5f);
+        ultShield.Play();
         HUD.Log.text = "Lunk is immune of damage for 2 turns!";
         yield return new WaitForSeconds(2f);
         ultimateOn = 2;

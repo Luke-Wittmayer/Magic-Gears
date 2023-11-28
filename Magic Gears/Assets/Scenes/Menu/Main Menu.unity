@@ -1040,11 +1040,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114454817066778268, guid: 69ea09427741a4e1d8ea022be9b1106e, type: 3}
       propertyPath: m_MaxValue
-      value: 0
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 114454817066778268, guid: 69ea09427741a4e1d8ea022be9b1106e, type: 3}
       propertyPath: m_MinValue
-      value: -80
+      value: -45
       objectReference: {fileID: 0}
     - target: {fileID: 114454817066778268, guid: 69ea09427741a4e1d8ea022be9b1106e, type: 3}
       propertyPath: m_Navigation.m_Mode
@@ -1635,6 +1635,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AudioMixer: {fileID: 24100000, guid: a0e829a646434724ca28948dd58d16b2, type: 2}
+  Menu: {fileID: 0}
 --- !u!1001 &898682938
 PrefabInstance:
   m_ObjectHideFlags: 0

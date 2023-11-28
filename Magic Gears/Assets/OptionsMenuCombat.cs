@@ -1,11 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.Audio;
 
-public class OptionsMenu : MonoBehaviour
+public class OptionsMenuCombat : MonoBehaviour
 {
     public AudioMixer AudioMixer;
     public static bool IsPaused = false;
@@ -25,15 +23,19 @@ public class OptionsMenu : MonoBehaviour
         AudioMixer.SetFloat("Volume", volume);
     }
 
-    void Resume() {
+    public void Resume() {
         Menu.SetActive(false);
         Time.timeScale = 1f;
         IsPaused = false;
     }
-    void Pause() {
-        Cursor.visible = true;
+    public void Pause() {
         Menu.SetActive(true);
         Time.timeScale = 0f;
         IsPaused = true;
+    }
+
+    public void QuitGame() {
+        Debug.Log("Quitting...");
+        Application.Quit();
     }
 }

@@ -85,6 +85,7 @@ public class Ocellus : Enemy
         HUD.Log.text = "Ocellus attacks elegantly!";
         yield return new WaitForSeconds(1f);
         enemyAnimator.EnemyBasicAttack();
+        audioSource.PlayOneShot(atk1Audio);
         yield return new WaitForSeconds(.5f);
         Debug.Log("Enemy gains " + manaCostBasic + "mana");
         UpdateEnemyMana(manaCostBasic);
@@ -117,6 +118,7 @@ public class Ocellus : Enemy
         HUD.Log.text ="Ocellus is looking ahead to gain health and mana for " + maxHealTurns + " turns!";
         yield return new WaitForSeconds(2f);
         enemyAnimator.EnemyDefensiveAttack();
+        audioSource.PlayOneShot(atk2Audio);
         yield return new WaitForSeconds(0.5f);
         // Debug.Log("Enemy loose " + manaCostDefense + "mana");
         UpdateEnemyMana(manaCostDefense);
@@ -145,6 +147,7 @@ public class Ocellus : Enemy
         HUD.Log.text = "Ocellus borrowed " + offHP +" health point from " + currentPlayerUnit.unitName + "!";
         yield return new WaitForSeconds(2f);
         enemyAnimator.EnemyOffensiveAttack();
+        audioSource.PlayOneShot(atk3Audio);
         yield return new WaitForSeconds(.5f);
         UpdateEnemyMana(manaCostOffense);
         HUD.SetEnemyMana();
@@ -174,6 +177,7 @@ public class Ocellus : Enemy
         HUD.Log.text = "Ocellus poisioned " + currentPlayerUnit.unitName + " for being annoying the rest of combat!";
         yield return new WaitForSeconds(1.5f);
         enemyAnimator.EnemyUltimateAttack();
+        audioSource.PlayOneShot(ultAudio);
         yield return new WaitForSeconds(0.5f);
         UpdateEnemyMana(manaCostUltimate);
         HUD.SetEnemyMana();

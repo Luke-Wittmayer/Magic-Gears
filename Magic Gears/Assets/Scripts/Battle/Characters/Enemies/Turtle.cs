@@ -95,6 +95,7 @@ public class Turtle : Enemy
         HUD.Log.text = "Turtle spikes an attack!";
         yield return new WaitForSeconds(1f);
         enemyAnimator.EnemyBasicAttack();
+        audioSource.PlayOneShot(atk1Audio);
         yield return new WaitForSeconds(0.5f);
         Debug.Log("Enemy gains " + manaCostBasic + "mana");
         UpdateEnemyMana(manaCostBasic);
@@ -123,6 +124,7 @@ public class Turtle : Enemy
         HUD.Log.text = "Turtle became passive and is ready to reflect any attacl!";
         yield return new WaitForSeconds(1.5f);
         enemyAnimator.EnemyDefensiveAttack();
+        audioSource.PlayOneShot(atk2Audio);
         yield return new WaitForSeconds(.5f);
         UpdateEnemyMana(manaCostDefense);
         HUD.SetEnemyMana();
@@ -141,6 +143,7 @@ public class Turtle : Enemy
         HUD.Log.text = "Turtle is out of control!";
         yield return new WaitForSeconds(1f);
         enemyAnimator.EnemyOffensiveAttack();
+        audioSource.PlayOneShot(atk3Audio);
         yield return new WaitForSeconds(.5f);
         UpdateEnemyMana(manaCostOffense);
         HUD.SetEnemyMana();

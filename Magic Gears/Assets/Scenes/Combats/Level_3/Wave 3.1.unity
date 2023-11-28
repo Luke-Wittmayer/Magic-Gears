@@ -14900,8 +14900,8 @@ MonoBehaviour:
   AttackButtons: {fileID: 349201184}
   audioSource: {fileID: 835244024}
   atk1Audio: {fileID: 8300000, guid: b1b9c1f0ea1fcae439ed1a4d44ff05fd, type: 3}
-  atk2Audio: {fileID: 8300000, guid: ab297b593498a6e47ba84de770477cbe, type: 3}
-  atk3Audio: {fileID: 8300000, guid: c48a972d3d024c2408a3331750786a29, type: 3}
+  atk2Audio: {fileID: 8300000, guid: c48a972d3d024c2408a3331750786a29, type: 3}
+  atk3Audio: {fileID: 8300000, guid: ab297b593498a6e47ba84de770477cbe, type: 3}
   ultAudio: {fileID: 8300000, guid: c48a972d3d024c2408a3331750786a29, type: 3}
   playerIsSwallowed: 0
   healAllAmount: -200

@@ -22,7 +22,7 @@ public class Lunk : Enemy
 
     public override void chooseAttack()
     {
-        //base.StateMachine4();
+        base.StateMachine4();
 
         if (currentAtk == CurrentAtk.BASIC)
         {
@@ -114,6 +114,8 @@ public class Lunk : Enemy
         HUD.Log.text = "Lunk attacks slowly but strongly!";
         yield return new WaitForSeconds(1f);
         enemyAnimator.EnemyBasicAttack();
+        yield return new WaitForSeconds(1f);
+        audioSource.PlayOneShot(atk1Audio);
         yield return new WaitForSeconds(.5f);
         Debug.Log("Enemy gains " + manaCostBasic + "mana");
         UpdateEnemyMana(manaCostBasic);
@@ -157,6 +159,7 @@ public class Lunk : Enemy
         HUD.Log.text = "Lunk will shield next attack!";
         yield return new WaitForSeconds(1f);
         enemyAnimator.EnemyDefensiveAttack();
+        audioSource.PlayOneShot(atk2Audio);
         yield return new WaitForSeconds(.5f);
         UpdateEnemyMana(manaCostDefense);
         HUD.SetEnemyMana();
@@ -174,6 +177,7 @@ public class Lunk : Enemy
         HUD.Log.text = "Lunk's attack is hard as metal!";
         yield return new WaitForSeconds(1f);
         enemyAnimator.EnemyOffensiveAttack();
+        audioSource.PlayOneShot(atk3Audio);
         yield return new WaitForSeconds(.5f);
         UpdateEnemyMana(manaCostOffense);
         HUD.SetEnemyMana();
@@ -217,6 +221,7 @@ public class Lunk : Enemy
         HUD.Log.text = "Lunk decided to be inmune of damage for 2 turns";
         yield return new WaitForSeconds(2f);
         enemyAnimator.EnemyUltimateAttack();
+        audioSource.PlayOneShot(ultAudio);
         yield return new WaitForSeconds(0.5f);
         UpdateEnemyMana(manaCostUltimate);
         HUD.SetEnemyMana();

@@ -62,6 +62,7 @@ public class AllyOcellus : Unit
         HUD.Log.text = "The attack is successful on " + enemyUnit.unitName + "!\n";
         HUD.Log.text += "Ocellus deal " + damageBasic + " damage and gain " + Math.Abs(manaCostBasic) + " mana!";
         playerAnimator.BasicAttack();
+        audioSource.PlayOneShot(atk1Audio);
         UpdatePlayerMana(manaCostBasic);
         HUD.SetPlayerMana();
         yield return new WaitForSeconds(0.5f);
@@ -95,6 +96,7 @@ public class AllyOcellus : Unit
         // Set enemy turn to prevent spam clicking
         battlesystem.state = BattleState.ENEMYTURN;
         playerAnimator.DefensiveAttack();
+        audioSource.PlayOneShot(atk2Audio);
         // Debug.Log("Enemy loose " + manaCostDefense + "mana");
         UpdatePlayerMana(manaCostDefense);
         HUD.SetPlayerMana();
@@ -130,6 +132,7 @@ public class AllyOcellus : Unit
         }
         battlesystem.state = BattleState.ENEMYTURN;
         playerAnimator.OffensiveAttack();
+        audioSource.PlayOneShot(atk3Audio);
         UpdatePlayerMana(manaCostOffense);
         HUD.SetPlayerMana();
         yield return new WaitForSeconds(.5f);
@@ -165,6 +168,7 @@ public class AllyOcellus : Unit
         battlesystem.state = BattleState.ENEMYTURN;
 
         playerAnimator.UltimateAttack();
+        audioSource.PlayOneShot(ultAudio);
 
         UpdatePlayerMana(manaCostUltimate);
         HUD.SetPlayerMana();

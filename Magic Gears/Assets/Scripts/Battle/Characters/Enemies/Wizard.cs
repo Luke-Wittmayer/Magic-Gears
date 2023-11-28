@@ -70,6 +70,7 @@ public class Wizard : Enemy
         HUD.Log.text = "Wizard attacks with magic!";
         yield return new WaitForSeconds(1f);
         enemyAnimator.EnemyBasicAttack();
+        audioSource.PlayOneShot(atk1Audio);
         yield return new WaitForSeconds(0.5f);
         Debug.Log("Enemy gains " + manaCostBasic + "mana");
         UpdateEnemyMana(manaCostBasic);
@@ -101,6 +102,7 @@ public class Wizard : Enemy
         HUD.Log.text = "Wizard took all " + currentPlayerUnit.unitName + "'s mana!";
         yield return new WaitForSeconds(1f);
         enemyAnimator.EnemyDefensiveAttack();
+        audioSource.PlayOneShot(atk2Audio);
         yield return new WaitForSeconds(0.5f);
         // Debug.Log("Enemy loose " + manaCostDefense + "mana");
         UpdateEnemyMana(manaCostDefense);
@@ -139,6 +141,7 @@ public class Wizard : Enemy
         HUD.Log.text = "Wizard found " + currentPlayerUnit.unitName + "'s biggest fear and nightmared them for " + maxNightmareTurns + " turns!";
         yield return new WaitForSeconds(2f);
         enemyAnimator.EnemyOffensiveAttack();
+        audioSource.PlayOneShot(atk3Audio);
         yield return new WaitForSeconds(0.5f);
         Debug.Log("Enemy loose " + manaCostOffense + "mana");
         UpdateEnemyMana(manaCostOffense);

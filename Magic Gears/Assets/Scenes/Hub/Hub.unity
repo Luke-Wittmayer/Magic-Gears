@@ -8658,7 +8658,7 @@ MonoBehaviour:
   smoothTime: 0.05
   cameraTransform: {fileID: 1805550651}
   direction: {x: 0, y: 0, z: 0}
-  levelCompleted: 0
+  levelCompleted: 1
 --- !u!1001 &322547157
 PrefabInstance:
   m_ObjectHideFlags: 0

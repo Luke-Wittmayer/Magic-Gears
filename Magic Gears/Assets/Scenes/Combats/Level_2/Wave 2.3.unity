@@ -16091,12 +16091,12 @@ MonoBehaviour:
   currentPlayerUnit: {fileID: 170624174}
   unitName: Lunk
   damageBasic: 20
-  maxHP: 130
-  currentHP: 130
+  maxHP: 150
+  currentHP: 150
   manaCostBasic: -30
   manaCostDefense: 25
-  manaCostOffense: 40
-  manaCostUltimate: 50
+  manaCostOffense: 36
+  manaCostUltimate: 75
   HUD: {fileID: 917484449}
   AttackButtons: {fileID: 0}
   audioSource: {fileID: 1513522806}
@@ -16105,12 +16105,12 @@ MonoBehaviour:
   atk3Audio: {fileID: 8300000, guid: 21c4a490b24ba2045bc815f7626a40ef, type: 3}
   ultAudio: {fileID: 8300000, guid: 1d74880bed4586644a16a79a2d9dc8af, type: 3}
   playerIsSwallowed: 0
-  maxEnemyMana: 50
+  maxEnemyMana: 75
   currentEnemyMana: 0
   prevMana: 0
   currentAtk: 0
-  defMana: -35
-  offHP: 30
+  defMana: -60
+  offHP: 25
   shieldAmount: 5
   increaseAmount: 1.5
   regShield: {fileID: 1822499219}
@@ -16324,7 +16324,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7876269952242915196, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
       propertyPath: manaCostOffense
-      value: 60
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -7876269952242915196, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
       propertyPath: switchParticles
@@ -16332,7 +16332,7 @@ PrefabInstance:
       objectReference: {fileID: 1828239290}
     - target: {fileID: -7876269952242915196, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
       propertyPath: manaCostUltimate
-      value: 90
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: -7876269952242915196, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
       propertyPath: currentPlayerUnit

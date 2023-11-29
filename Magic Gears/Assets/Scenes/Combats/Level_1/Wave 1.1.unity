@@ -4771,7 +4771,7 @@ PrefabInstance:
       objectReference: {fileID: 1219446195}
     - target: {fileID: -7876269952242915196, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
       propertyPath: damageBasic
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: -7876269952242915196, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
       propertyPath: battlesystem
@@ -4787,7 +4787,7 @@ PrefabInstance:
       objectReference: {fileID: 113162789}
     - target: {fileID: -7876269952242915196, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
       propertyPath: manaCostBasic
-      value: -15
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: -7876269952242915196, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
       propertyPath: playerAnimator
@@ -4795,11 +4795,11 @@ PrefabInstance:
       objectReference: {fileID: 1322983822}
     - target: {fileID: -7876269952242915196, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
       propertyPath: manaCostDefense
-      value: -25
+      value: -15
       objectReference: {fileID: 0}
     - target: {fileID: -7876269952242915196, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
       propertyPath: manaCostOffense
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: -7876269952242915196, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
       propertyPath: switchParticles
@@ -4807,7 +4807,7 @@ PrefabInstance:
       objectReference: {fileID: 517071521}
     - target: {fileID: -7876269952242915196, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
       propertyPath: manaCostUltimate
-      value: 90
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: -7876269952242915196, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
       propertyPath: currentPlayerUnit
@@ -4823,7 +4823,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4041738798989974148, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6554057633414463649, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
       propertyPath: m_LocalPosition.x
@@ -25158,7 +25158,7 @@ PrefabInstance:
       objectReference: {fileID: 533441612}
     - target: {fileID: 3108030142283472347, guid: 8b0684a9e27c54241a582604297eb3ee, type: 3}
       propertyPath: maxHP
-      value: 50
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 3108030142283472347, guid: 8b0684a9e27c54241a582604297eb3ee, type: 3}
       propertyPath: damage
@@ -25170,7 +25170,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3108030142283472347, guid: 8b0684a9e27c54241a582604297eb3ee, type: 3}
       propertyPath: currentHP
-      value: 50
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 3108030142283472347, guid: 8b0684a9e27c54241a582604297eb3ee, type: 3}
       propertyPath: damageBig
@@ -25214,11 +25214,11 @@ PrefabInstance:
       objectReference: {fileID: 1322983822}
     - target: {fileID: 3108030142283472347, guid: 8b0684a9e27c54241a582604297eb3ee, type: 3}
       propertyPath: manaCostDefense
-      value: 40
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 3108030142283472347, guid: 8b0684a9e27c54241a582604297eb3ee, type: 3}
       propertyPath: manaCostOffense
-      value: 50
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 3108030142283472347, guid: 8b0684a9e27c54241a582604297eb3ee, type: 3}
       propertyPath: currentPlayerUnit

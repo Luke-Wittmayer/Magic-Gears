@@ -84,8 +84,13 @@ public class Enemy : Unit
 
     public void StateMachine4(){
         if(currentAtk == CurrentAtk.BASIC) {
-          //if mana < defense cost, stay basic
-          if(enemyUnit.currentEnemyMana < manaCostDefense) {
+            //if mana >= ultimate cost, go ultimate
+            if (currentEnemyMana >= manaCostUltimate)
+            {
+                currentAtk = CurrentAtk.ULTIMATE;
+            }
+            //if mana < defense cost, stay basic
+           else  if (enemyUnit.currentEnemyMana < manaCostDefense) {
 
           }
           

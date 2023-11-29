@@ -18636,11 +18636,11 @@ MonoBehaviour:
   currentPlayerUnit: {fileID: 2028023881}
   unitName: Mushroom
   damageBasic: 10
-  maxHP: 75
-  currentHP: 75
-  manaCostBasic: -15
+  maxHP: 120
+  currentHP: 120
+  manaCostBasic: -25
   manaCostDefense: 25
-  manaCostOffense: 35
+  manaCostOffense: 20
   manaCostUltimate: 0
   HUD: {fileID: 1161213462}
   AttackButtons: {fileID: 0}
@@ -18656,7 +18656,7 @@ MonoBehaviour:
   currentAtk: 0
   posionTurns: 0
   maxPoisonTurns: 3
-  poisonAttack: 10
+  poisonAttack: 5
   poisonPlus: 5
   healTurns: 0
   maxHealTurns: 2
@@ -26291,7 +26291,7 @@ PrefabInstance:
       objectReference: {fileID: 1491392979}
     - target: {fileID: -7876269952242915196, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
       propertyPath: damageBasic
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: -7876269952242915196, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
       propertyPath: battlesystem
@@ -26307,7 +26307,7 @@ PrefabInstance:
       objectReference: {fileID: 1469089122}
     - target: {fileID: -7876269952242915196, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
       propertyPath: manaCostBasic
-      value: -15
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: -7876269952242915196, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
       propertyPath: playerAnimator
@@ -26315,11 +26315,11 @@ PrefabInstance:
       objectReference: {fileID: 2028023882}
     - target: {fileID: -7876269952242915196, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
       propertyPath: manaCostDefense
-      value: -25
+      value: -15
       objectReference: {fileID: 0}
     - target: {fileID: -7876269952242915196, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
       propertyPath: manaCostOffense
-      value: 60
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -7876269952242915196, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
       propertyPath: switchParticles
@@ -26327,7 +26327,7 @@ PrefabInstance:
       objectReference: {fileID: 1762907165}
     - target: {fileID: -7876269952242915196, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
       propertyPath: manaCostUltimate
-      value: 90
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: -7876269952242915196, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
       propertyPath: currentPlayerUnit

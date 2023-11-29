@@ -10551,13 +10551,13 @@ MonoBehaviour:
   enemyUnit: {fileID: 982900280}
   currentPlayerUnit: {fileID: 2123133280}
   unitName: Ocellus
-  damageBasic: 10
-  maxHP: 100
-  currentHP: 100
-  manaCostBasic: -20
-  manaCostDefense: 30
-  manaCostOffense: 40
-  manaCostUltimate: 80
+  damageBasic: 15
+  maxHP: 98
+  currentHP: 98
+  manaCostBasic: -25
+  manaCostDefense: 20
+  manaCostOffense: 30
+  manaCostUltimate: 100
   HUD: {fileID: 301124169}
   AttackButtons: {fileID: 0}
   audioSource: {fileID: 1027424811}
@@ -10571,11 +10571,11 @@ MonoBehaviour:
   prevMana: 0
   currentAtk: 0
   poisonDamage: 20
-  offHP: 15
+  offHP: 10
   healTurns: 0
   maxHealTurns: 2
-  healAmount: -10
-  defMana: -20
+  healAmount: -13
+  defMana: -34
   healing: {fileID: 1682250105}
   poison: {fileID: 244573746}
 --- !u!114 &982900281
@@ -17972,7 +17972,7 @@ PrefabInstance:
       objectReference: {fileID: 595391657}
     - target: {fileID: -7876269952242915196, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
       propertyPath: damageBasic
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: -7876269952242915196, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
       propertyPath: battlesystem
@@ -17988,7 +17988,7 @@ PrefabInstance:
       objectReference: {fileID: 982900281}
     - target: {fileID: -7876269952242915196, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
       propertyPath: manaCostBasic
-      value: -15
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: -7876269952242915196, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
       propertyPath: playerAnimator
@@ -17996,11 +17996,11 @@ PrefabInstance:
       objectReference: {fileID: 2123133282}
     - target: {fileID: -7876269952242915196, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
       propertyPath: manaCostDefense
-      value: -25
+      value: -15
       objectReference: {fileID: 0}
     - target: {fileID: -7876269952242915196, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
       propertyPath: manaCostOffense
-      value: 60
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -7876269952242915196, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
       propertyPath: switchParticles
@@ -18008,7 +18008,7 @@ PrefabInstance:
       objectReference: {fileID: 45596340}
     - target: {fileID: -7876269952242915196, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
       propertyPath: manaCostUltimate
-      value: 90
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: -7876269952242915196, guid: d3129d13f1fb3484090e7e7cb3e59708, type: 3}
       propertyPath: currentPlayerUnit

@@ -49,16 +49,12 @@ public class Lunk : Enemy
         Debug.Log("Ultimate on is:" + ultimateOn);
         if (ultimateOn > 0)
         {
-            if(ultimateOn == 1) {
-                ultShield.Stop();
-            }
             return base.TakeDamage(0);
         }
        else  if (shieldOn)
         {
             UpdateEnemyMana(defMana);
             HUD.SetEnemyMana();
-            regShield.Stop();
             return base.TakeDamage(shieldAmount);
         }
         else
@@ -149,8 +145,14 @@ public class Lunk : Enemy
         }
 
         shieldOn = false;
+        if(regShield.isPlaying) {
+            regShield.Stop();
+        }
         increaseDamage = false;
         ultimateOn--;
+        if(ultimateOn == 0 && ultShield.isPlaying) {
+            ultShield.Stop();
+        }
     }
 
 
@@ -168,6 +170,9 @@ public class Lunk : Enemy
         battlesystem.state = BattleState.PLAYERTURN;
         battlesystem.PlayerTurn();
         ultimateOn--;
+        if(ultimateOn == 0 && ultShield.isPlaying) {
+            ultShield.Stop();
+        }
     }
 
     public IEnumerator EnemyAttack3()
@@ -212,8 +217,14 @@ public class Lunk : Enemy
             battlesystem.PlayerTurn();
         }
         shieldOn = false;
+        if(regShield.isPlaying) {
+            regShield.Stop();
+        }
         increaseDamage = true;
         ultimateOn--;
+        if(ultimateOn == 0 && ultShield.isPlaying) {
+            ultShield.Stop();
+        }
     }
 
     public IEnumerator EnemyAttack4()
@@ -233,6 +244,9 @@ public class Lunk : Enemy
         battlesystem.state = BattleState.PLAYERTURN;
         battlesystem.PlayerTurn();
         shieldOn = false;
+        if(regShield.isPlaying) {
+            regShield.Stop();
+        }
 
     }
 

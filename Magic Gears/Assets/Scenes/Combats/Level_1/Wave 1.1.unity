@@ -25169,6 +25169,18 @@ PrefabInstance:
       value: Cactus
       objectReference: {fileID: 0}
     - target: {fileID: 3108030142283472347, guid: 8b0684a9e27c54241a582604297eb3ee, type: 3}
+      propertyPath: atk1Audio
+      value: 
+      objectReference: {fileID: 8300000, guid: 56703418e3aed4c47a5f6622816b8e41, type: 3}
+    - target: {fileID: 3108030142283472347, guid: 8b0684a9e27c54241a582604297eb3ee, type: 3}
+      propertyPath: atk2Audio
+      value: 
+      objectReference: {fileID: 8300000, guid: cfce0cea076109f478783201b2a9f57f, type: 3}
+    - target: {fileID: 3108030142283472347, guid: 8b0684a9e27c54241a582604297eb3ee, type: 3}
+      propertyPath: atk3Audio
+      value: 
+      objectReference: {fileID: 8300000, guid: 566d2ea6240b489479a6e9fd608c2621, type: 3}
+    - target: {fileID: 3108030142283472347, guid: 8b0684a9e27c54241a582604297eb3ee, type: 3}
       propertyPath: currentHP
       value: 100
       objectReference: {fileID: 0}

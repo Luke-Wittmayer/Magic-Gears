@@ -14756,9 +14756,9 @@ MonoBehaviour:
   HUD: {fileID: 405956252}
   AttackButtons: {fileID: 0}
   audioSource: {fileID: 0}
-  atk1Audio: {fileID: 0}
-  atk2Audio: {fileID: 0}
-  atk3Audio: {fileID: 0}
+  atk1Audio: {fileID: 8300000, guid: 2b21ef916f6943c439b71a7c74568878, type: 3}
+  atk2Audio: {fileID: 8300000, guid: 1d74880bed4586644a16a79a2d9dc8af, type: 3}
+  atk3Audio: {fileID: 8300000, guid: c91fcf414acc0344cb03b13996f1bf3b, type: 3}
   ultAudio: {fileID: 0}
   playerIsSwallowed: 0
   maxEnemyMana: 100

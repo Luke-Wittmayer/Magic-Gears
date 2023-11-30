@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 
 public class OptionsMenuCombat : MonoBehaviour
 {
@@ -32,6 +33,10 @@ public class OptionsMenuCombat : MonoBehaviour
         Menu.SetActive(true);
         Time.timeScale = 0f;
         IsPaused = true;
+    }
+
+    public void ReturnToMenu() {
+        SceneManager.LoadScene(0);
     }
 
     public void QuitGame() {

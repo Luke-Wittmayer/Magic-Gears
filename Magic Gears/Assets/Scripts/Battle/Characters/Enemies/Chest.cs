@@ -78,6 +78,7 @@ public class Chest : Enemy
         HUD.Log.text = "Chest bites upset!";
         yield return new WaitForSeconds(1f);
         enemyAnimator.EnemyBasicAttack();
+        audioSource.PlayOneShot(atk1Audio);
         yield return new WaitForSeconds(.5f);
         Debug.Log("Enemy gains " + manaCostBasic + "mana");
         UpdateEnemyMana(manaCostBasic);
@@ -107,6 +108,7 @@ public class Chest : Enemy
         HUD.Log.text = "Chest will recive only half of damage for "+halfDamageMaxTurns + " turns!";
         yield return new WaitForSeconds(1f);
         enemyAnimator.EnemyDefensiveAttack();
+        audioSource.PlayOneShot(atk2Audio);
         yield return new WaitForSeconds(.5f);
         UpdateEnemyMana(manaCostDefense);
         HUD.SetEnemyMana();
@@ -126,6 +128,7 @@ public class Chest : Enemy
         HUD.Log.text = "Chest got hungry and swallowed " + currentPlayerUnit.unitName + " for " + swallowMaxTurns +" turns!";
         yield return new WaitForSeconds(1f);
         enemyAnimator.EnemyOffensiveAttack();
+        audioSource.PlayOneShot(atk3Audio);
         yield return new WaitForSeconds(.5f);
         HUD.Log.text = currentPlayerUnit.unitName + " recieved " + swallowDmg + " damage";
         playerAnimator.Damaged();

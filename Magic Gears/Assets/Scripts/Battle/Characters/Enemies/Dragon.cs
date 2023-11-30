@@ -21,7 +21,7 @@ public class Dragon : Enemy
 
     public override void chooseAttack()
     {
-        //base.StateMachine4();
+        base.StateMachine4();
         if (charging)
         {
             if (battlesystem.state != BattleState.ENEMYTURN)
@@ -114,6 +114,7 @@ public class Dragon : Enemy
             HUD.Log.text = "Dragon attacks!";
             yield return new WaitForSeconds(1f);
             enemyAnimator.EnemyBasicAttack();
+            audioSource.PlayOneShot(atk1Audio);
             yield return new WaitForSeconds(.5f);
             Debug.Log("Enemy gains " + manaCostBasic + "mana");
             UpdateEnemyMana(manaCostBasic);
@@ -146,6 +147,7 @@ public class Dragon : Enemy
     {
         HUD.Log.text = "Dragon shields the attack and something else...!";
             enemyAnimator.EnemyDefensiveAttack();
+            audioSource.PlayOneShot(atk2Audio);
             yield return new WaitForSeconds(2f);
             UpdateEnemyMana(manaCostDefense);
             HUD.SetEnemyMana();
@@ -172,6 +174,7 @@ public class Dragon : Enemy
             HUD.Log.text = "Dragon wants some mana!";
             yield return new WaitForSeconds(1f);
             enemyAnimator.EnemyOffensiveAttack();
+            audioSource.PlayOneShot(atk3Audio);
             yield return new WaitForSeconds(.5f);
             Debug.Log("Enemy used " + manaCostOffense + "mana");
             UpdateEnemyMana(manaCostOffense);
@@ -207,6 +210,7 @@ public class Dragon : Enemy
         //Enemy basic attack gains 5 mana
         HUD.Log.text = "Dragon is charging for something never seen before!";
         enemyAnimator.EnemyDefensiveAttack();
+        audioSource.PlayOneShot(ultAudio);
         Ultimate.Play();
         yield return new WaitForSeconds(1.5f);
         yield return new WaitForSeconds(.5f);
@@ -259,6 +263,7 @@ public class Dragon : Enemy
             HUD.SetEnemyMana();
             bool isDead;
         enemyAnimator.EnemyUltimateAttack();
+        audioSource.PlayOneShot(ultAudio);
         yield return new WaitForSeconds(0.5f);
         playerAnimator.Damaged();
         Ultimate.Stop();

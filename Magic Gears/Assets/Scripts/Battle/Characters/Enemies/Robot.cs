@@ -55,6 +55,7 @@ public class Robot : Enemy
         HUD.Log.text = "Robot attacks!";
         yield return new WaitForSeconds(1f);
         enemyAnimator.EnemyBasicAttack();
+        audioSource.PlayOneShot(atk1Audio);
         yield return new WaitForSeconds(0.5f);
         Debug.Log("Enemy gains " + manaCostBasic + "mana");
         UpdateEnemyMana(manaCostBasic);
@@ -84,6 +85,7 @@ public class Robot : Enemy
         HUD.Log.text = "Something looks odd on Robot's attack!";
         yield return new WaitForSeconds(1.5f);
         enemyAnimator.EnemyDefensiveAttack();
+        audioSource.PlayOneShot(atk2Audio);
         yield return new WaitForSeconds(.5f);
         Debug.Log("Enemy used " + manaCostDefense + "mana");
         UpdateEnemyMana(manaCostDefense);
@@ -105,6 +107,7 @@ public class Robot : Enemy
         HUD.Log.text = "Robot is out of control!";
         yield return new WaitForSeconds(1f);
         enemyAnimator.EnemyOffensiveAttack();
+        audioSource.PlayOneShot(atk3Audio);
         yield return new WaitForSeconds(.5f);
         Debug.Log("Enemy used " + manaCostOffense + "mana");
         UpdateEnemyMana(manaCostOffense);

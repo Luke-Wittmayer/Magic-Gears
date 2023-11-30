@@ -74,6 +74,7 @@ public class Cactus : Enemy
         HUD.Log.text = "Cactus attacks wanting some meat!";
         yield return new WaitForSeconds(1f);
         enemyAnimator.EnemyBasicAttack();
+        audioSource.PlayOneShot(atk1Audio);
         yield return new WaitForSeconds(0.5f);
         Debug.Log("Enemy gains " + manaCostBasic + "mana");
         UpdateEnemyMana(manaCostBasic);
@@ -97,6 +98,7 @@ public class Cactus : Enemy
     public IEnumerator EnemyAttack2(){
         HUD.Log.text = "Cactus is ready to reflect any attack!";
         enemyAnimator.EnemyDefensiveAttack();
+        audioSource.PlayOneShot(atk2Audio);
         yield return new WaitForSeconds(2f);
         UpdateEnemyMana(manaCostDefense);
         HUD.SetEnemyMana();
@@ -114,6 +116,7 @@ public class Cactus : Enemy
         //Enemy basic attack gains 5 mana
         HUD.Log.text = "Cactus wants to eat quickly, so his attack is big!";
         yield return new WaitForSeconds(2f);
+        audioSource.PlayOneShot(atk3Audio);
         enemyAnimator.EnemyOffensiveAttack();
         yield return new WaitForSeconds(.5f);
         UpdateEnemyMana(manaCostOffense);

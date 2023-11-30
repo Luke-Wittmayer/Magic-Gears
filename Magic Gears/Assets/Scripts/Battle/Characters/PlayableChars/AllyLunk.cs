@@ -86,6 +86,8 @@ public class AllyLunk : Unit
         battlesystem.state = BattleState.ENEMYTURN;
 
         playerAnimator.BasicAttack();
+        yield return new WaitForSeconds(1f);
+        audioSource.PlayOneShot(atk1Audio);
         UpdatePlayerMana(manaCostBasic);
         HUD.SetPlayerMana();
         yield return new WaitForSeconds(0.5f);
@@ -138,6 +140,7 @@ public class AllyLunk : Unit
         }
         battlesystem.state = BattleState.ENEMYTURN;
         playerAnimator.DefensiveAttack();
+        audioSource.PlayOneShot(atk2Audio);
         UpdatePlayerMana(manaCostDefense);
         HUD.SetPlayerMana();
         yield return new WaitForSeconds(.5f);
@@ -166,6 +169,7 @@ public class AllyLunk : Unit
         UpdatePlayerMana(manaCostOffense);
         HUD.SetPlayerMana();
         playerAnimator.OffensiveAttack();
+        audioSource.PlayOneShot(atk3Audio);
         yield return new WaitForSeconds(.5f);
 
         enemyAnimator.Damaged();
@@ -218,6 +222,7 @@ public class AllyLunk : Unit
         }
         battlesystem.state = BattleState.ENEMYTURN;
         playerAnimator.UltimateAttack();
+        audioSource.PlayOneShot(ultAudio);
         UpdatePlayerMana(manaCostUltimate);
         HUD.SetPlayerMana();
         yield return new WaitForSeconds(0.5f);

@@ -118,6 +118,7 @@ public class Mushroom : Enemy
         Debug.Log("Enemy unit attacks!");
         HUD.Log.text = "Happy mushroom attacks joyfully!";
         yield return new WaitForSeconds(1f);
+        audioSource.PlayOneShot(atk1Audio);
         enemyAnimator.EnemyBasicAttack();
         yield return new WaitForSeconds(0.5f);
         Debug.Log("Enemy gains " + manaCostBasic + "mana");
@@ -150,6 +151,7 @@ public class Mushroom : Enemy
         //Debug.Log("The mushroom is healing for " + maxHealTurns + " turns");
         HUD.Log.text = "Happy mushroom uses his root to gain health and keep his mood!";
         yield return new WaitForSeconds(2f);
+        audioSource.PlayOneShot(atk2Audio);
         enemyAnimator.EnemyDefensiveAttack();
         yield return new WaitForSeconds(0.5f);
       // Debug.Log("Enemy loose " + manaCostDefense + "mana");
@@ -174,6 +176,7 @@ public class Mushroom : Enemy
         HUD.Log.text = "Happy mushroom posioned " + currentPlayerUnit.unitName + " for " + maxPoisonTurns + " turns to relax!";
         Debug.Log("The mushroom has posioned you for " + maxPoisonTurns + " turns");
         yield return new WaitForSeconds(2f);
+        audioSource.PlayOneShot(atk3Audio);
         enemyAnimator.EnemyOffensiveAttack();
         yield return new WaitForSeconds(0.5f);
        Debug.Log("Enemy loose " + manaCostOffense + "mana");

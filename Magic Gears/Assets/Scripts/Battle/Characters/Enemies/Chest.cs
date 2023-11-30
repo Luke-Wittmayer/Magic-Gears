@@ -200,8 +200,8 @@ public class Chest : Enemy
 
 
             battlesystem.PlayerTurn();
+            StartCoroutine(checkSwallow());
         }
-        StartCoroutine(checkSwallow());
     }
 
     public IEnumerator checkSwallow()

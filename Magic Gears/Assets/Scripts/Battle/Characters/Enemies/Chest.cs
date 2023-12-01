@@ -98,9 +98,10 @@ public class Chest : Enemy
         {
             battlesystem.state = BattleState.PLAYERTURN;
             battlesystem.PlayerTurn();
+            StartCoroutine(checkSwallow());
         }
 
-        StartCoroutine(checkSwallow());
+
     }
 
     public IEnumerator EnemyAttack2()

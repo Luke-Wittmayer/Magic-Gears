@@ -60,7 +60,7 @@ public class AttackTexts : MonoBehaviour
     }
     public void LunkAtkText3() {
         text.text = "Shield next attack!\nReduce next attack on Lunk to " + Lunk.shieldAmount + " damage and gain "
-        + Math.Abs(Lunk.defMana) + " mana if hit on his next turn";
+        + Math.Abs(Lunk.defMana) + " mana if hit on his next turn. Use " + Lunk.manaCostDefense + " mana";
     }
     public void LunkAtkText4() {
         text.text = "Ultimate Shield!\nNegate all damage to Lunk for his next 2 turns\nUse "

@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 1245
+  controlID: 1203
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -220,7 +220,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 1246
+  controlID: 1204
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -245,7 +245,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 1247
+  controlID: 1205
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -309,9 +309,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: f8c60000
-      m_LastClickedID: 50936
-      m_ExpandedIDs: d882ffff76dfffff8ee1ffffc6ecffff9cf1ffffc2faffffec8800001e8a0000
+      m_SelectedIDs: 988700005a8500001e820000
+      m_LastClickedID: 33310
+      m_ExpandedIDs: 66efffff46f5ffff54f5ffff56f5ffff16fbffff48810000f8830000f0880000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1134,7 +1134,7 @@ MonoBehaviour:
   - {fileID: 18}
   - {fileID: 19}
   m_Selected: 0
-  m_LastSelected: 3
+  m_LastSelected: 4
 --- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1180,7 +1180,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes/Menu
+    - Assets/Scripts/Battle/Characters/PlayableChars/Attack Texts
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -1188,17 +1188,17 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scenes/Menu
+  - Assets/Scripts/Battle/Characters/PlayableChars/Attack Texts
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\jmg19s\OneDrive - Knights - University of Central Florida\Documents\Game
     Design\Magic Gears Repo\Magic-Gears\Magic Gears
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 94}
-    m_SelectedIDs: a8860000
-    m_LastClickedID: 34472
-    m_ExpandedIDs: 00000000fe85000000860000028600000486000006860000088600000a8600000c8600000e86000010860000128600001486000016860000188600001a8600001c8600006286000000ca9a3b
+    scrollPos: {x: 0, y: 222}
+    m_SelectedIDs: 509c0000
+    m_LastClickedID: 40016
+    m_ExpandedIDs: 000000005a9b00005c9b00005e9b0000609b0000629b0000649b0000669b0000689b00006a9b00006c9b00006e9b0000709b0000729b0000749b0000769b0000789b0000e69b000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1226,7 +1226,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000fe85000000860000028600000486000006860000088600000a8600000c8600000e86000010860000128600001486000016860000188600001a8600001c86000000ca9a3b
+    m_ExpandedIDs: 000000005a9b00005c9b00005e9b0000609b0000629b0000649b0000669b0000689b00006a9b00006c9b00006e9b0000709b0000729b0000749b0000769b0000789b000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1251,8 +1251,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: f8c60000
-    m_LastClickedInstanceID: 50936
+    m_SelectedInstanceIDs: 988700005a8500001e820000
+    m_LastClickedInstanceID: 34712
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c623000038970000988400002e200100d017010008a200005aa000000aa2000000000000
     m_RenameOverlay:
@@ -1352,7 +1352,7 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 32486
+  m_LastSelectedObjectID: 75716
 --- !u!114 &18
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1408,9 +1408,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 436
-    y: 760
+    y: 753
     width: 1483
-    height: 239
+    height: 246
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1540,7 +1540,7 @@ MonoBehaviour:
       oldMaxSizes: 
       oldSplitSize: 0
     m_HorizontalSplitter:
-      ID: 99
+      ID: 534
       splitterInitialOffset: 0
       currentActiveSplitter: -1
       realSizes:

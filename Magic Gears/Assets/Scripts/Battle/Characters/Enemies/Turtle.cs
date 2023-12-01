@@ -121,7 +121,7 @@ public class Turtle : Enemy
 
     public IEnumerator EnemyAttack2()
     {
-        HUD.Log.text = "Turtle became passive and is ready to reflect any attacl!";
+        HUD.Log.text = "Turtle became passive and is ready to reflect any attack!";
         yield return new WaitForSeconds(1.5f);
         enemyAnimator.EnemyDefensiveAttack();
         audioSource.PlayOneShot(atk2Audio);

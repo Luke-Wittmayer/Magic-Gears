@@ -12630,7 +12630,7 @@ MonoBehaviour:
   currentHP: 100
   manaCostBasic: -15
   manaCostDefense: 20
-  manaCostOffense: 30
+  manaCostOffense: 20
   manaCostUltimate: 100
   HUD: {fileID: 1019223603}
   AttackButtons: {fileID: 1088804638}
@@ -12641,11 +12641,11 @@ MonoBehaviour:
   ultAudio: {fileID: 8300000, guid: c48a972d3d024c2408a3331750786a29, type: 3}
   playerIsSwallowed: 0
   healAllAmount: -200
-  offHP: 30
+  offHP: 25
   healTurns: 0
   maxHealTurns: 3
-  healAmount: -20
-  defMana: -20
+  healAmount: -10
+  defMana: -10
   healing: {fileID: 1025048501}
 --- !u!114 &337729180
 MonoBehaviour:
@@ -34913,7 +34913,7 @@ MonoBehaviour:
   currentHP: 130
   manaCostBasic: -10
   manaCostDefense: 10
-  manaCostOffense: 30
+  manaCostOffense: 20
   manaCostUltimate: 100
   HUD: {fileID: 1019223603}
   AttackButtons: {fileID: 783684683}
@@ -34924,8 +34924,8 @@ MonoBehaviour:
   ultAudio: {fileID: 8300000, guid: 1d74880bed4586644a16a79a2d9dc8af, type: 3}
   playerIsSwallowed: 0
   defMana: -20
-  offHP: 50
-  shieldAmount: 15
+  offHP: 26
+  shieldAmount: 10
   increaseAmount: 1.5
   ultimateOn: 0
   regShield: {fileID: 156490697}

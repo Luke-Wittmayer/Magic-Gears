@@ -92,8 +92,8 @@ public class Robot : Enemy
         HUD.SetEnemyMana();
         playerAnimator.Damaged();
 
-        HUD.Log.text = "Robot takes " + Unit.currentPlayerMana + " health points from " + currentPlayerUnit.unitName + "'s mana!";
-        bool gainHealth = TakeDamage(Unit.currentPlayerMana * -1);
+        HUD.Log.text = "Robot takes " + (int)(Unit.currentPlayerMana*1.5) + " health points from " + currentPlayerUnit.unitName + "'s mana!";
+        bool gainHealth = TakeDamage((int)(Unit.currentPlayerMana * -1 * 1.5));
         yield return new WaitForSeconds(2f);
 
         battlesystem.state = BattleState.PLAYERTURN;
@@ -114,9 +114,9 @@ public class Robot : Enemy
         HUD.SetEnemyMana();
         playerAnimator.Damaged();
 
-        HUD.Log.text = "Robot makes " + Unit.currentPlayerMana + " of damage";
+        HUD.Log.text = "Robot makes " + (int)(Unit.currentPlayerMana * 1.5) + " of damage";
         yield return new WaitForSeconds(2f);
-        bool isDead = currentPlayerUnit.TakeDamage(Unit.currentPlayerMana);
+        bool isDead = currentPlayerUnit.TakeDamage((int)(Unit.currentPlayerMana * 1.5));
         //HUD.SetPlayerHealth();
 
         if (isDead)

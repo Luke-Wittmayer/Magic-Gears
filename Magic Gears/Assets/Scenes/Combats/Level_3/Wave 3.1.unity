@@ -14747,11 +14747,11 @@ MonoBehaviour:
   currentPlayerUnit: {fileID: 188118540}
   unitName: Chest
   damageBasic: 35
-  maxHP: 100
-  currentHP: 100
+  maxHP: 150
+  currentHP: 150
   manaCostBasic: -25
-  manaCostDefense: 15
-  manaCostOffense: 15
+  manaCostDefense: 30
+  manaCostOffense: 40
   manaCostUltimate: 0
   HUD: {fileID: 405956252}
   AttackButtons: {fileID: 0}

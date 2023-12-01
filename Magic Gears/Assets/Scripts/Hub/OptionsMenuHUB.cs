@@ -13,6 +13,9 @@ public class OptionsMenuHUB : MonoBehaviour
     public static bool IsPaused = false;
     public GameObject Menu;
 
+    void Start() {
+        Time.timeScale = 1f;
+    }
     void Update() {
         if(Input.GetKeyDown(KeyCode.Escape)) {
             if(IsPaused) {

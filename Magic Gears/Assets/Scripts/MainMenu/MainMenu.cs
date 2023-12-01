@@ -8,7 +8,12 @@ public class MainMenu : MonoBehaviour
 {
     
     public void PlayGame() {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        if(storeLevel.hasOpened) {
+            SceneManager.LoadScene("Hub");
+        }
+        else {
+            SceneManager.LoadScene("Intro");
+        }
     }
 
     public void QuitGame() {

@@ -4218,12 +4218,12 @@ MonoBehaviour:
   enemyUnit: {fileID: 982900280}
   currentPlayerUnit: {fileID: 2123133280}
   unitName: Lunk
-  damageBasic: 20
-  maxHP: 100
-  currentHP: 50
-  manaCostBasic: -100
-  manaCostDefense: 15
-  manaCostOffense: 25
+  damageBasic: 10
+  maxHP: 130
+  currentHP: 130
+  manaCostBasic: -10
+  manaCostDefense: 10
+  manaCostOffense: 20
   manaCostUltimate: 100
   HUD: {fileID: 301124169}
   AttackButtons: {fileID: 57236509}
@@ -4233,9 +4233,9 @@ MonoBehaviour:
   atk3Audio: {fileID: 0}
   ultAudio: {fileID: 0}
   playerIsSwallowed: 0
-  defMana: -100
-  offHP: 25
-  shieldAmount: 5
+  defMana: -20
+  offHP: 26
+  shieldAmount: 10
   increaseAmount: 1.5
   ultimateOn: 0
   regShield: {fileID: 1424549766}
@@ -9915,9 +9915,9 @@ MonoBehaviour:
   unitName: Ocellus
   damageBasic: 10
   maxHP: 100
-  currentHP: 50
-  manaCostBasic: -10
-  manaCostDefense: 10
+  currentHP: 10
+  manaCostBasic: -15
+  manaCostDefense: 20
   manaCostOffense: 20
   manaCostUltimate: 100
   HUD: {fileID: 301124169}
@@ -9928,12 +9928,12 @@ MonoBehaviour:
   atk3Audio: {fileID: 0}
   ultAudio: {fileID: 0}
   playerIsSwallowed: 0
-  healAllAmount: -40
-  offHP: 30
+  healAllAmount: -100
+  offHP: 20
   healTurns: 0
   maxHealTurns: 3
-  healAmount: -7
-  defMana: -27
+  healAmount: -10
+  defMana: -10
   healing: {fileID: 1979816026}
 --- !u!114 &955277690
 MonoBehaviour:

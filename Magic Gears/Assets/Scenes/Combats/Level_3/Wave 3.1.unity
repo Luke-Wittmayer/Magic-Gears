@@ -14397,7 +14397,7 @@ MonoBehaviour:
   enemyUnit: {fileID: 817159002}
   currentPlayerUnit: {fileID: 188118540}
   unitName: Chest
-  damageBasic: 35
+  damageBasic: 30
   maxHP: 150
   currentHP: 150
   manaCostBasic: -25
